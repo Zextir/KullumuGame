@@ -29,7 +29,7 @@ public class WhaleExplosion : MonoBehaviour
         if (impactObjectPrefab != null)
         {
             GameObject impactInstance = Instantiate(impactObjectPrefab, transform.position, Quaternion.identity);
-            Destroy(impactInstance, 3f); // Destroy impact object after 3 seconds
+            Destroy(impactInstance, 1.5f); // Destroy impact object after 3 seconds
         }
 
         gameObject.SetActive(false); // Hide the falling object immediately
