@@ -9,39 +9,28 @@ public class Jump : MonoBehaviour
     float jumpHeight = 0f;
     float jumpTimer = 0f;
     Rigidbody player;
+    GravityInDenseAir gravityController;
 
     bool finishedJumping = false;
     bool holding = false;
 
-    [SerializeField] Vector3 customGravity = Physics.gravity;
+    Vector3 customGravity = Physics.gravity;
 
     float jumpAmount = 0f;
-
-    public float CustomGravity
-    {
-        get
-        {
-            return customGravity.y;
-        }
-        set
-        {
-            customGravity = new Vector3(0, value, 0);
-        }
-    }
 
 
     private void Start()
     {
         player = GetComponent<Rigidbody>();
+        gravityController = GetComponent<GravityInDenseAir>();
         player.useGravity = false;
     }
 
     void Update()
     {
-
         if (jumpTimer > 0f) jumpTimer -= Time.deltaTime;
-
         jumpAmount = Input.GetAxis("Jump");
+        customGravity.y = gravityController.Gravity;
     }
 
     private void FixedUpdate()
