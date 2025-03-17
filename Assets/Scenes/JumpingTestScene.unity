@@ -491,6 +491,21 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 2584506736884640694, guid: 99f0ef0ce8e8c4b4494d031b415650bc,
+        type: 3}
+      propertyPath: jumpForce
+      value: 15
+      objectReference: {fileID: 0}
+    - target: {fileID: 2584506736884640694, guid: 99f0ef0ce8e8c4b4494d031b415650bc,
+        type: 3}
+      propertyPath: jumpCooldown
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2584506736884640694, guid: 99f0ef0ce8e8c4b4494d031b415650bc,
+        type: 3}
+      propertyPath: maxJumpHeight
+      value: 1.75
+      objectReference: {fileID: 0}
     - target: {fileID: 5691348372741576695, guid: 99f0ef0ce8e8c4b4494d031b415650bc,
         type: 3}
       propertyPath: m_Name
