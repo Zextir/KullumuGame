@@ -151,9 +151,9 @@ namespace Opsive.UltimateCharacterController.Character.Abilities
 
             if (m_CharacterLocomotion.Grounded) {
                 // The character can't jump if they aren't on the ground nor if they recently landed.
-                if (m_LandTime + m_RecurrenceDelay >= Time.time) {
-                    return false;
-                }
+                //if (m_LandTime + m_RecurrenceDelay >= Time.time) {
+                //    return false;
+                //}
 
                 // The character can't jump if the slope is too steep.
                 if (m_PreventSlopeLimitJump) {
@@ -168,7 +168,7 @@ namespace Opsive.UltimateCharacterController.Character.Abilities
                 }
             } else {
                 // The airborne jump should play if the character walks off a ledge and did not initially jump.
-                if (m_AirborneJumpCount < m_MaxAirborneJumpCount) {
+                if (m_MaxAirborneJumpCount == -1 || m_AirborneJumpCount < m_MaxAirborneJumpCount) {
                     m_Jumping = true;
                     return true;
                 }
@@ -368,7 +368,7 @@ namespace Opsive.UltimateCharacterController.Character.Abilities
         /// </summary>
         private void OnAirborneJump()
         {
-            if (m_MaxAirborneJumpCount != -1 && m_AirborneJumpCount >= m_MaxAirborneJumpCount) {
+            if (m_MaxAirborneJumpCount != -1 && m_AirborneJumpCount >= m_MaxAirborneJumpCount || (m_JumpTime != -1 && m_JumpTime + m_RecurrenceDelay > Time.time)) {
                 return;
             }
 
