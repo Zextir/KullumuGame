@@ -1,20 +1,16 @@
-using Opsive.UltimateCharacterController.Character;
 using UnityEngine;
 
-public class GravityInDenseAir : MonoBehaviour
+public class DensityGravityHandler : MonoBehaviour
 {
-    UltimateCharacterLocomotion UCharacterLocomotion;
+    float gravityMultiplier = 1;
 
-    private void OnEnable()
-    {
-        UCharacterLocomotion = GetComponent<UltimateCharacterLocomotion>();
-    }
+    public float GravityMultiplier => gravityMultiplier;
 
     private void OnTriggerExit(Collider other)
     {
         DenseAir denseAir = other.GetComponent<DenseAir>();
         if (denseAir == null) return;
-        UCharacterLocomotion.GravityAmount = 1;
+        gravityMultiplier = 1;
     }
 
     private void OnTriggerEnter(Collider other)
@@ -26,11 +22,13 @@ public class GravityInDenseAir : MonoBehaviour
         float gravityModifier = (density - 1) * 3 + 1;
         if (gravityModifier < 0)
         {
-            UCharacterLocomotion.GravityAmount = 100;
+            gravityMultiplier = 100;
         }
         else
         {
-            UCharacterLocomotion.GravityAmount = 1 / gravityModifier;
+            gravityMultiplier = 1 / gravityModifier;
         }
     }
+
+
 }
