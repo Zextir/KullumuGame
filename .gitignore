@@ -71,3 +71,7 @@ crashlytics-build.properties
 # Temporary auto-generated Android Assets
 /[Aa]ssets/[Ss]treamingAssets/aa.meta
 /[Aa]ssets/[Ss]treamingAssets/aa/*
+
+#Large model files are stored in Google Drive
+Assets/Models/AlienTestModel.blend
+Assets/Models/AlienTestModel.blend.meta
