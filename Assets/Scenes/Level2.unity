@@ -1629,7 +1629,7 @@ MonoBehaviour:
           m_AudioConfig: {fileID: 0}
           m_AudioClips: []
         m_VerticalVelocityStopThreshold: 0.01
-        m_RecurrenceDelay: 0.2
+        m_RecurrenceDelay: 1
     - rid: 6591180104147402789
       type: {class: Fall, ns: Opsive.UltimateCharacterController.Character.Abilities,
         asm: Opsive.UltimateCharacterController}
