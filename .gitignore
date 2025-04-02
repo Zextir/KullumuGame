@@ -74,4 +74,3 @@ crashlytics-build.properties
 
 #Large model files are stored in Google Drive
 Assets/Models/AlienTestModel.blend
-Assets/Models/AlienTestModel.blend.meta
