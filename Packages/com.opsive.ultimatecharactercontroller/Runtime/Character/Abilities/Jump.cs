@@ -180,7 +180,6 @@ namespace Opsive.UltimateCharacterController.Character.Abilities
                     return false;
                 }
             }
-
             return true;
         }
 
