@@ -1510,7 +1510,7 @@ MonoBehaviour:
         m_AbilityMessageIcon: {fileID: 0}
         m_InspectorDescription: 
         m_SlideLimit:
-          m_MinValue: 20
+          m_MinValue: 15
           m_MaxValue: 89
         m_EdgeSlideLimit: 30
         m_Acceleration: 0.5
