@@ -582,9 +582,9 @@ GameObject:
   - component: {fileID: 6242103977915349752}
   - component: {fileID: 2629898459437137250}
   - component: {fileID: 6606366443061007216}
-  - component: {fileID: 8692760849394758260}
   - component: {fileID: 2171807864746287832}
   - component: {fileID: 225435943344050226}
+  - component: {fileID: 5273301426705038584}
   m_Layer: 31
   m_Name: Rhea
   m_TagString: Player
@@ -777,15 +777,16 @@ MonoBehaviour:
   m_MovementTypes:
   - rid: 6591180104147402786
   m_Abilities:
-  - rid: 6591180104147402787
-  - rid: 6591180104147402788
-  - rid: 2731092391512506368
-  - rid: 6591180104147402789
-  - rid: 6591180104147402790
-  - rid: 6591180104147402791
-  - rid: 2731092391512506369
-  - rid: 6591180104147402792
-  - rid: 6591180104147402793
+  - rid: 2051309532689989636
+  - rid: 2051309532689989637
+  - rid: 2051309532689989638
+  - rid: 2051309532689989639
+  - rid: 2051309532689989640
+  - rid: 2051309532689989641
+  - rid: 2051309532689989642
+  - rid: 2051309532689989643
+  - rid: 2051309532689989644
+  - rid: 2051309532689989645
   m_ItemAbilities:
   - rid: 6591180104147402794
   - rid: 6591180104147402795
@@ -822,8 +823,9 @@ MonoBehaviour:
     RefIds:
     - rid: -2
       type: {class: , ns: , asm: }
-    - rid: 2731092391512506368
-      type: {class: Glide, ns: , asm: Assembly-CSharp}
+    - rid: 2051309532689989636
+      type: {class: Die, ns: Opsive.UltimateCharacterController.Character.Abilities,
+        asm: Opsive.UltimateCharacterController}
       data:
         m_States:
         - m_Name: Default
@@ -831,8 +833,8 @@ MonoBehaviour:
           m_BlockList: []
           m_Default: 1
         m_Enabled: 1
-        m_StartType: 2
-        m_StopType: 2
+        m_StartType: 1
+        m_StopType: 1
         m_InputNames:
         - Jump
         m_WaitForDoublePressTapTimeout: 0
@@ -849,9 +851,9 @@ MonoBehaviour:
           m_AutoUpdateStartDelay: 1
           m_AutoUpdateInterval: 0.1
           m_AutoUpdateDuration: -1
-        m_State: 
+        m_State: Death
         m_StateAppendItemIdentifierName: 0
-        m_AbilityIndexParameter: 101
+        m_AbilityIndexParameter: 4
         m_StartAudioClipSet:
           m_AudioConfig: {fileID: 0}
           m_AudioClips: []
@@ -860,62 +862,7 @@ MonoBehaviour:
           m_AudioClips: []
         m_AllowPositionalInput: 1
         m_AllowRotationalInput: 1
-        m_UseGravity: 0
-        m_UseRootMotionPosition: 2
-        m_UseRootMotionRotation: 2
-        m_DetectHorizontalCollisions: 0
-        m_DetectVerticalCollisions: 0
-        m_DetectGroundCollisions: 0
-        m_AnimatorMotion: {fileID: 0}
-        m_StartEffectName: 
-        m_StartEffectIndex: -1
-        m_AllowEquippedSlotsMask: -1
-        m_AllowItemDefinitions: []
-        m_ImmediateUnequip: 0
-        m_ReequipSlots: 1
-        m_AbilityMessageText: 
-        m_AbilityMessageIcon: {fileID: 0}
-        m_InspectorDescription: 
-        gravityMultiplier: 0.576
-    - rid: 2731092391512506369
-      type: {class: SlideV2, ns: Opsive.UltimateCharacterController.Character.Abilities,
-        asm: Assembly-CSharp}
-      data:
-        m_States:
-        - m_Name: Default
-          m_Preset: {fileID: 0}
-          m_BlockList: []
-          m_Default: 1
-        m_Enabled: 1
-        m_StartType: 0
-        m_StopType: 0
-        m_InputNames: []
-        m_WaitForDoublePressTapTimeout: 0
-        m_LongPressDuration: 0.5
-        m_WaitForLongPressRelease: 0
-        m_AbilityStarter:
-          rid: -2
-        m_AbilityStopper:
-          rid: -2
-        m_AttributeModifier:
-          m_AttributeName: 
-          m_Amount: 0
-          m_AutoUpdate: 0
-          m_AutoUpdateStartDelay: 1
-          m_AutoUpdateInterval: 0.1
-          m_AutoUpdateDuration: -1
-        m_State: 
-        m_StateAppendItemIdentifierName: 0
-        m_AbilityIndexParameter: 102
-        m_StartAudioClipSet:
-          m_AudioConfig: {fileID: 0}
-          m_AudioClips: []
-        m_StopAudioClipSet:
-          m_AudioConfig: {fileID: 0}
-          m_AudioClips: []
-        m_AllowPositionalInput: 1
-        m_AllowRotationalInput: 1
-        m_UseGravity: 0
+        m_UseGravity: 2
         m_UseRootMotionPosition: 0
         m_UseRootMotionRotation: 0
         m_DetectHorizontalCollisions: 0
@@ -931,25 +878,9 @@ MonoBehaviour:
         m_AbilityMessageText: 
         m_AbilityMessageIcon: {fileID: 0}
         m_InspectorDescription: 
-        m_SlideLimit:
-          m_MinValue: 20
-          m_MaxValue: 89
-        m_EdgeSlideLimit: 30
-        m_Acceleration: 0.5
-        m_MaxSlideSpeed: 5
-        m_SlideDamping: 0.05
-        m_OverrideUpDirection: {x: 0, y: 0, z: 0}
-        m_moveSlideStopAngle: 1.5
-    - rid: 6591180104147402786
-      type: {class: Adventure, ns: Opsive.UltimateCharacterController.ThirdPersonController.Character.MovementTypes,
-        asm: Opsive.UltimateCharacterController}
-      data:
-        m_States:
-        - m_Name: Default
-          m_Preset: {fileID: 0}
-          m_BlockList: []
-          m_Default: 1
-    - rid: 6591180104147402787
+        m_CameraRotationalForce: {x: 0, y: 0, z: 0.75}
+        m_DisableColliders: 1
+    - rid: 2051309532689989637
       type: {class: ItemEquipVerifier, ns: Opsive.UltimateCharacterController.Character.Abilities,
         asm: Opsive.UltimateCharacterController}
       data:
@@ -1003,7 +934,7 @@ MonoBehaviour:
         m_AbilityMessageText: 
         m_AbilityMessageIcon: {fileID: 0}
         m_InspectorDescription: 
-    - rid: 6591180104147402788
+    - rid: 2051309532689989638
       type: {class: Jump, ns: Opsive.UltimateCharacterController.Character.Abilities,
         asm: Opsive.UltimateCharacterController}
       data:
@@ -1080,7 +1011,62 @@ MonoBehaviour:
           m_AudioClips: []
         m_VerticalVelocityStopThreshold: 0.01
         m_RecurrenceDelay: 1
-    - rid: 6591180104147402789
+    - rid: 2051309532689989639
+      type: {class: Glide, ns: , asm: Assembly-CSharp}
+      data:
+        m_States:
+        - m_Name: Default
+          m_Preset: {fileID: 0}
+          m_BlockList: []
+          m_Default: 1
+        m_Enabled: 1
+        m_StartType: 2
+        m_StopType: 2
+        m_InputNames:
+        - Jump
+        m_WaitForDoublePressTapTimeout: 0
+        m_LongPressDuration: 0.5
+        m_WaitForLongPressRelease: 0
+        m_AbilityStarter:
+          rid: -2
+        m_AbilityStopper:
+          rid: -2
+        m_AttributeModifier:
+          m_AttributeName: 
+          m_Amount: 0
+          m_AutoUpdate: 0
+          m_AutoUpdateStartDelay: 1
+          m_AutoUpdateInterval: 0.1
+          m_AutoUpdateDuration: -1
+        m_State: 
+        m_StateAppendItemIdentifierName: 0
+        m_AbilityIndexParameter: 101
+        m_StartAudioClipSet:
+          m_AudioConfig: {fileID: 0}
+          m_AudioClips: []
+        m_StopAudioClipSet:
+          m_AudioConfig: {fileID: 0}
+          m_AudioClips: []
+        m_AllowPositionalInput: 1
+        m_AllowRotationalInput: 1
+        m_UseGravity: 0
+        m_UseRootMotionPosition: 2
+        m_UseRootMotionRotation: 2
+        m_DetectHorizontalCollisions: 0
+        m_DetectVerticalCollisions: 0
+        m_DetectGroundCollisions: 0
+        m_AnimatorMotion: {fileID: 0}
+        m_StartEffectName: 
+        m_StartEffectIndex: -1
+        m_AllowEquippedSlotsMask: -1
+        m_AllowItemDefinitions: []
+        m_ImmediateUnequip: 0
+        m_ReequipSlots: 1
+        m_AbilityMessageText: 
+        m_AbilityMessageIcon: {fileID: 0}
+        m_InspectorDescription: 
+        gravityMultiplier: 0.576
+    - rid: 2051309532689989640
       type: {class: Fall, ns: Opsive.UltimateCharacterController.Character.Abilities,
         asm: Opsive.UltimateCharacterController}
       data:
@@ -1140,7 +1126,7 @@ MonoBehaviour:
         m_LandEvent:
           m_WaitForAnimationEvent: 1
           m_Duration: 0
-    - rid: 6591180104147402790
+    - rid: 2051309532689989641
       type: {class: MoveTowards, ns: Opsive.UltimateCharacterController.Character.Abilities,
         asm: Opsive.UltimateCharacterController}
       data:
@@ -1200,7 +1186,7 @@ MonoBehaviour:
         m_TeleportOnEarlyStop: 1
         m_DisableGameplayInput: 0
         m_IndependentMoveTowardsLocation: {fileID: 0}
-    - rid: 6591180104147402791
+    - rid: 2051309532689989642
       type: {class: SpeedChange, ns: Opsive.UltimateCharacterController.Character.Abilities,
         asm: Opsive.UltimateCharacterController}
       data:
@@ -1260,7 +1246,70 @@ MonoBehaviour:
         m_MaxSpeedChangeValue: 2
         m_SpeedParameterValue: 2
         m_RequireMovement: 1
-    - rid: 6591180104147402792
+    - rid: 2051309532689989643
+      type: {class: SlideV2, ns: Opsive.UltimateCharacterController.Character.Abilities,
+        asm: Assembly-CSharp}
+      data:
+        m_States:
+        - m_Name: Default
+          m_Preset: {fileID: 0}
+          m_BlockList: []
+          m_Default: 1
+        m_Enabled: 1
+        m_StartType: 0
+        m_StopType: 0
+        m_InputNames: []
+        m_WaitForDoublePressTapTimeout: 0
+        m_LongPressDuration: 0.5
+        m_WaitForLongPressRelease: 0
+        m_AbilityStarter:
+          rid: -2
+        m_AbilityStopper:
+          rid: -2
+        m_AttributeModifier:
+          m_AttributeName: 
+          m_Amount: 0
+          m_AutoUpdate: 0
+          m_AutoUpdateStartDelay: 1
+          m_AutoUpdateInterval: 0.1
+          m_AutoUpdateDuration: -1
+        m_State: 
+        m_StateAppendItemIdentifierName: 0
+        m_AbilityIndexParameter: 102
+        m_StartAudioClipSet:
+          m_AudioConfig: {fileID: 0}
+          m_AudioClips: []
+        m_StopAudioClipSet:
+          m_AudioConfig: {fileID: 0}
+          m_AudioClips: []
+        m_AllowPositionalInput: 1
+        m_AllowRotationalInput: 1
+        m_UseGravity: 0
+        m_UseRootMotionPosition: 0
+        m_UseRootMotionRotation: 0
+        m_DetectHorizontalCollisions: 0
+        m_DetectVerticalCollisions: 0
+        m_DetectGroundCollisions: 0
+        m_AnimatorMotion: {fileID: 0}
+        m_StartEffectName: 
+        m_StartEffectIndex: -1
+        m_AllowEquippedSlotsMask: -1
+        m_AllowItemDefinitions: []
+        m_ImmediateUnequip: 0
+        m_ReequipSlots: 1
+        m_AbilityMessageText: 
+        m_AbilityMessageIcon: {fileID: 0}
+        m_InspectorDescription: 
+        m_SlideLimit:
+          m_MinValue: 20
+          m_MaxValue: 89
+        m_EdgeSlideLimit: 30
+        m_Acceleration: 0.5
+        m_MaxSlideSpeed: 5
+        m_SlideDamping: 0.05
+        m_OverrideUpDirection: {x: 0, y: 0, z: 0}
+        m_moveSlideStopAngle: 1.5
+    - rid: 2051309532689989644
       type: {class: HeightChange, ns: Opsive.UltimateCharacterController.Character.Abilities,
         asm: Opsive.UltimateCharacterController}
       data:
@@ -1319,7 +1368,7 @@ MonoBehaviour:
         m_Height: 1
         m_CapsuleColliderHeightAdjustment: -0.4
         m_AllowSpeedChange: 0
-    - rid: 6591180104147402793
+    - rid: 2051309532689989645
       type: {class: Ragdoll, ns: Opsive.UltimateCharacterController.Character.Abilities,
         asm: Opsive.UltimateCharacterController}
       data:
@@ -1380,6 +1429,15 @@ MonoBehaviour:
         m_CameraRotationalForce: {x: 0, y: 0, z: 0.75}
         m_InterpolationMode: 0
         m_CollisionDetectionMode: 1
+    - rid: 6591180104147402786
+      type: {class: Adventure, ns: Opsive.UltimateCharacterController.ThirdPersonController.Character.MovementTypes,
+        asm: Opsive.UltimateCharacterController}
+      data:
+        m_States:
+        - m_Name: Default
+          m_Preset: {fileID: 0}
+          m_BlockList: []
+          m_Default: 1
     - rid: 6591180104147402794
       type: {class: Reload, ns: Opsive.UltimateCharacterController.Character.Abilities.Items,
         asm: Opsive.UltimateCharacterController}
@@ -2080,36 +2138,6 @@ MonoBehaviour:
     m_RotationOrder: 4
   m_DamagedEffectName: 
   m_DamagedEffectIndex: -1
---- !u!114 &8692760849394758260
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6991830603308436510}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 2473f4d1200d65d4e9388687553497ab, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_States:
-  - m_Name: Default
-    m_Preset: {fileID: 0}
-    m_BlockList: []
-    m_Default: 1
-  m_PositioningMode: 1
-  m_Grouping: -1
-  m_MinRespawnTime: 2
-  m_MaxRespawnTime: 3
-  m_ScheduleRespawnOnDeath: 1
-  m_ScheduleRespawnOnDisable: 1
-  m_RespawnAudioClipSet:
-    m_AudioConfig: {fileID: 0}
-    m_AudioClips: []
-  m_OnRespawnEvent:
-    m_PersistentCalls:
-      m_Calls: []
-  m_CheckForObstruction: 0
 --- !u!65 &2171807864746287832
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -2143,6 +2171,38 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e6ce1bf1b4c88264bbc9c949de5af291, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &5273301426705038584
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6991830603308436510}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 932b7b7000801bc43a74f0532139a701, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_States:
+  - m_Name: Default
+    m_Preset: {fileID: 0}
+    m_BlockList: []
+    m_Default: 1
+  m_PositioningMode: 2
+  m_Grouping: -1
+  m_MinRespawnTime: 2
+  m_MaxRespawnTime: 3
+  m_ScheduleRespawnOnDeath: 1
+  m_ScheduleRespawnOnDisable: 1
+  m_RespawnAudioClipSet:
+    m_AudioConfig: {fileID: 0}
+    m_AudioClips: []
+  m_OnRespawnEvent:
+    m_PersistentCalls:
+      m_Calls: []
+  m_RespawnAtClosestPoint: 1
+  m_RespawnAtLatestPoint: 1
+  m_CheckForObstruction: 0
 --- !u!1 &7246955482344172519
 GameObject:
   m_ObjectHideFlags: 0
