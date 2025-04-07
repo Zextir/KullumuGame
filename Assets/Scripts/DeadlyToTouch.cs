@@ -20,6 +20,8 @@ public class DeadlyToTouch : MonoBehaviour
         var ucl = toKill.GetComponent<UltimateCharacterLocomotion>();
         if (ucl != null)
         {
+            // TODO: Add some timer, so you have time to avoid death
+            //      -> keep in mind that if you fall too long into lava, you get below the graphics.
             ucl.GetAbility<Die>().StartAbility();
         }
     }    
