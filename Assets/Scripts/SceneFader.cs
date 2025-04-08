@@ -9,7 +9,7 @@ public class SceneFader : MonoBehaviour
 
     private void Start()
     {
-        //StartCoroutine(FadeFromBlack());
+        StartCoroutine(FadeFromBlack());
     }
 
     IEnumerator FadeFromBlack()
