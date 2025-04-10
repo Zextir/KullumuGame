@@ -10,10 +10,13 @@ public class GeyserShoot : MonoBehaviour
     [SerializeField] BoxCollider boxCollider;
     ParticleSystem.MainModule psMain;
 
+    [Header("Parameters")]
     [SerializeField] float interval = 10;
     [Tooltip("How much can the interval deviate from the main value?")]
     [SerializeField] float intervalRange = 3;
-    [SerializeField, Range(0,1)] float geyserActivityDurationPercentage = 0.1f;
+    [Tooltip("How much of the overall duration does the geyser stay active? (only change this value if you change the rate over time curve!)")]
+    [SerializeField, Range(0,1)] float geyserActivityDurationPercentage = 0.35f;
+    [Tooltip("The strength with which the geyser should shoot out objects.")]
     [SerializeField] float pushForce = 10f;
     
     Vector3 pushDirection = Vector3.up;
@@ -37,6 +40,7 @@ public class GeyserShoot : MonoBehaviour
     private void Start()
     {
         OnChangeParameters();
+        boxCollider.enabled = false;
         maxGeyserDistance = boxCollider.size.y * transform.localScale.x;
     }
 
@@ -56,7 +60,6 @@ public class GeyserShoot : MonoBehaviour
         boxCollider.enabled = true;
         burstCooldown = currentInterval;
         particleSystem.Play();
-        Debug.Log("burst");
     }
 
 
