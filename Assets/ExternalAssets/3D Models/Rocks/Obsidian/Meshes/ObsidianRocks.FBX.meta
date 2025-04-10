@@ -1,0 +1,173 @@
+fileFormatVersion: 2
+guid: 83a6f2d9507355043b3b647a589c5b44
+ModelImporter:
+  serializedVersion: 23
+  fileIDToRecycleName:
+    100000: //RootNode
+    100002: ObsidianRocks1
+    100004: ObsidianRocks3
+    100006: ObsidianRocks4
+    100008: ObsidianRocks5
+    100010: ObsidianRocks6
+    100012: ObsidianRocks7
+    100014: ObsidianRocksFlat1
+    100016: ObsidianRocksFlat2
+    100018: ObsidianRockSmall1
+    100020: ObsidianRockSmall2
+    100022: ObsidianRockSmall3
+    100024: ObsidianRockSmall4
+    100026: ObsidianRockSmall5
+    100028: ObsidianRockSmall6
+    100030: ObsidianRockSmall7
+    100032: ObsidianRockSmall8
+    400000: //RootNode
+    400002: ObsidianRocks1
+    400004: ObsidianRocks3
+    400006: ObsidianRocks4
+    400008: ObsidianRocks5
+    400010: ObsidianRocks6
+    400012: ObsidianRocks7
+    400014: ObsidianRocksFlat1
+    400016: ObsidianRocksFlat2
+    400018: ObsidianRockSmall1
+    400020: ObsidianRockSmall2
+    400022: ObsidianRockSmall3
+    400024: ObsidianRockSmall4
+    400026: ObsidianRockSmall5
+    400028: ObsidianRockSmall6
+    400030: ObsidianRockSmall7
+    400032: ObsidianRockSmall8
+    2100000: ObsidianRocks1
+    2100002: ObsidianRocks21
+    2100004: ObsidianRock3
+    2300000: ObsidianRocks1
+    2300002: ObsidianRocks3
+    2300004: ObsidianRocks4
+    2300006: ObsidianRocks5
+    2300008: ObsidianRocks6
+    2300010: ObsidianRocks7
+    2300012: ObsidianRocksFlat1
+    2300014: ObsidianRocksFlat2
+    2300016: ObsidianRockSmall1
+    2300018: ObsidianRockSmall2
+    2300020: ObsidianRockSmall3
+    2300022: ObsidianRockSmall4
+    2300024: ObsidianRockSmall5
+    2300026: ObsidianRockSmall6
+    2300028: ObsidianRockSmall7
+    2300030: ObsidianRockSmall8
+    3300000: ObsidianRocks1
+    3300002: ObsidianRocks3
+    3300004: ObsidianRocks4
+    3300006: ObsidianRocks5
+    3300008: ObsidianRocks6
+    3300010: ObsidianRocks7
+    3300012: ObsidianRocksFlat1
+    3300014: ObsidianRocksFlat2
+    3300016: ObsidianRockSmall1
+    3300018: ObsidianRockSmall2
+    3300020: ObsidianRockSmall3
+    3300022: ObsidianRockSmall4
+    3300024: ObsidianRockSmall5
+    3300026: ObsidianRockSmall6
+    3300028: ObsidianRockSmall7
+    3300030: ObsidianRockSmall8
+    4300000: ObsidianRocks1
+    4300002: ObsidianRocksFlat2
+    4300004: ObsidianRocks3
+    4300006: ObsidianRocks4
+    4300008: ObsidianRocks5
+    4300010: ObsidianRocks6
+    4300012: ObsidianRocks7
+    4300014: ObsidianRockSmall4
+    4300016: ObsidianRockSmall5
+    4300018: ObsidianRockSmall6
+    4300020: ObsidianRockSmall7
+    4300022: ObsidianRockSmall8
+    4300024: ObsidianRocksFlat1
+    4300026: ObsidianRockSmall2
+    4300028: ObsidianRockSmall1
+    4300030: ObsidianRockSmall3
+  externalObjects: {}
+  materials:
+    importMaterials: 1
+    materialName: 0
+    materialSearch: 1
+    materialLocation: 1
+  animations:
+    legacyGenerateAnimations: 4
+    bakeSimulation: 0
+    resampleCurves: 1
+    optimizeGameObjects: 0
+    motionNodeName: 
+    rigImportErrors: 
+    rigImportWarnings: 
+    animationImportErrors: 
+    animationImportWarnings: 
+    animationRetargetingWarnings: 
+    animationDoRetargetingWarnings: 0
+    importAnimatedCustomProperties: 0
+    importConstraints: 0
+    animationCompression: 1
+    animationRotationError: 0.5
+    animationPositionError: 0.5
+    animationScaleError: 0.5
+    animationWrapMode: 0
+    extraExposedTransformPaths: []
+    extraUserProperties: []
+    clipAnimations: []
+    isReadable: 1
+  meshes:
+    lODScreenPercentages: []
+    globalScale: 1
+    meshCompression: 0
+    addColliders: 0
+    importVisibility: 1
+    importBlendShapes: 1
+    importCameras: 1
+    importLights: 1
+    swapUVChannels: 0
+    generateSecondaryUV: 0
+    useFileUnits: 1
+    optimizeMeshForGPU: 1
+    keepQuads: 0
+    weldVertices: 1
+    preserveHierarchy: 0
+    indexFormat: 0
+    secondaryUVAngleDistortion: 8
+    secondaryUVAreaDistortion: 15.000001
+    secondaryUVHardAngle: 88
+    secondaryUVPackMargin: 4
+    useFileScale: 1
+    previousCalculatedGlobalScale: 1
+    hasPreviousCalculatedGlobalScale: 0
+  tangentSpace:
+    normalSmoothAngle: 60
+    normalImportMode: 0
+    tangentImportMode: 3
+    normalCalculationMode: 4
+  importAnimation: 1
+  copyAvatar: 0
+  humanDescription:
+    serializedVersion: 2
+    human: []
+    skeleton: []
+    armTwist: 0.5
+    foreArmTwist: 0.5
+    upperLegTwist: 0.5
+    legTwist: 0.5
+    armStretch: 0.05
+    legStretch: 0.05
+    feetSpacing: 0
+    rootMotionBoneName: 
+    rootMotionBoneRotation: {x: 0, y: 0, z: 0, w: 1}
+    hasTranslationDoF: 0
+    hasExtraRoot: 0
+    skeletonHasParents: 1
+  lastHumanDescriptionAvatarSource: {instanceID: 0}
+  animationType: 0
+  humanoidOversampling: 1
+  additionalBone: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
