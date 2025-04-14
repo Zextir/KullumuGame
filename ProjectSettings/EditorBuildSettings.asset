@@ -6,7 +6,7 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
-    path: Assets/Scenes/Level2.unity
+    path: Assets/Scenes/MainLevel.unity
     guid: 7001e3a59e031f643b145fc0133b052b
   - enabled: 1
     path: Assets/Scenes/LavaTunnel.unity

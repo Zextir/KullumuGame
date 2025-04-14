@@ -9,7 +9,7 @@ Material:
   m_PrefabAsset: {fileID: 0}
   m_Name: GroundFog Variant 4
   m_Shader: {fileID: 4800000, guid: b7839dad95683814aa64166edc107ae2, type: 3}
-  m_Parent: {fileID: 2100000, guid: f96090edaea7c564c80586f4385918fd, type: 2}
+  m_Parent: {fileID: 2100000, guid: 31a2e09daa2a9a14face7cb626fc9f9f, type: 2}
   m_ModifiedSerializedProperties: 0
   m_ValidKeywords:
   - _EMISSION
