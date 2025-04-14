@@ -111,8 +111,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 6921e273b19c9b0428cd92c60db4776b
-      internalID: -1657331529
+      spriteID: 831830494b0f1414083d0d68d7687ab8
+      internalID: 1660774833
       vertices: []
       indices: 
       edges: []
@@ -132,8 +132,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 2551536626beef1428cf8cc31eba4de4
-      internalID: 992002243
+      spriteID: 0732850d61e3acc498014bc3e60b7e0e
+      internalID: 1356049749
       vertices: []
       indices: 
       edges: []
@@ -153,8 +153,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 9a072b60bc8bc6749aab4dfe8746ef63
-      internalID: -1868172581
+      spriteID: 2fc73f2702d723549b87865d6c60af6d
+      internalID: -167650471
       vertices: []
       indices: 
       edges: []
@@ -174,8 +174,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: a0675ce98dc350f4f81d0c96e1432cbb
-      internalID: 36242919
+      spriteID: 53e48a0e99c21ce43bcc52547a65d6da
+      internalID: 92490200
       vertices: []
       indices: 
       edges: []
@@ -195,8 +195,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 69f357faf7b82774d9f51806873749d7
-      internalID: -724207672
+      spriteID: dd01ebd0ce8ba09488d67aa3dafedf68
+      internalID: 1817178536
       vertices: []
       indices: 
       edges: []
@@ -216,8 +216,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: e74d85d2a7f47b444aa0a29b93c71537
-      internalID: 557860625
+      spriteID: 0031dd7f6f9f5db47a80649ebe4351e0
+      internalID: -1377272978
       vertices: []
       indices: 
       edges: []
@@ -237,8 +237,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 6a5456b61fbf7b640995cf9754ea4937
-      internalID: 332394722
+      spriteID: f6508e3e175e4ae49b876de1b9d644f5
+      internalID: 131701612
       vertices: []
       indices: 
       edges: []
@@ -258,8 +258,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 378eefd2b582fb1479fdeece7bcd0023
-      internalID: -2079669064
+      spriteID: 8d25222c8f81cf24c9201a06c11627d9
+      internalID: 1333005040
       vertices: []
       indices: 
       edges: []
@@ -279,8 +279,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 5b8ced8e7e4c6c2458c859520f12fb45
-      internalID: -207608465
+      spriteID: 2532bdaa152a851409096b3976f65c2e
+      internalID: 292932996
       vertices: []
       indices: 
       edges: []
@@ -300,8 +300,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 261f2796c458c464dbb36d1d6a28704e
-      internalID: 911861121
+      spriteID: c952ef5bb06a7674282a53d997b4f216
+      internalID: -1975112292
       vertices: []
       indices: 
       edges: []
@@ -321,8 +321,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: e33e909d04736e547b8510d9b1af52a7
-      internalID: -1991405218
+      spriteID: 7ea0549b0d69305479f7c6295b100522
+      internalID: -1028143059
       vertices: []
       indices: 
       edges: []
@@ -330,7 +330,7 @@ TextureImporter:
     outline: []
     physicsShape: []
     bones: []
-    spriteID: 01e113c9dca97b945b89e50aebfc928a
+    spriteID: cab63375d62a3844a8972548ac2ee4bb
     internalID: 0
     vertices: []
     indices: 
@@ -338,17 +338,17 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      frontFruits_0: -1657331529
-      frontFruits_1: 992002243
-      frontFruits_10: -1991405218
-      frontFruits_2: -1868172581
-      frontFruits_3: 36242919
-      frontFruits_4: -724207672
-      frontFruits_5: 557860625
-      frontFruits_6: 332394722
-      frontFruits_7: -2079669064
-      frontFruits_8: -207608465
-      frontFruits_9: 911861121
+      frontFruits_0: 1660774833
+      frontFruits_1: 1356049749
+      frontFruits_10: -1028143059
+      frontFruits_2: -167650471
+      frontFruits_3: 92490200
+      frontFruits_4: 1817178536
+      frontFruits_5: -1377272978
+      frontFruits_6: 131701612
+      frontFruits_7: 1333005040
+      frontFruits_8: 292932996
+      frontFruits_9: -1975112292
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
