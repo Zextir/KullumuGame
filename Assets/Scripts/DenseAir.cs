@@ -1,12 +1,13 @@
 using UnityEngine;
+using Unity;
 
 public class DenseAir : MonoBehaviour
 {
     [SerializeField, Range(0.1f,4)] float densityMultiplier = 1;
     [SerializeField] Color color = Color.green;
     [SerializeField] new ParticleSystem particleSystem;
-     
-    static Vector2 alphaMinMax = new Vector2(0.001f, 0.05f); 
+
+    static Vector2 alphaMinMax = new Vector2(0.1f, 0.5f); 
     static Vector2 densityMinMax = new Vector2(0.1f, 4f);
 
     Vector3 colliderSize;

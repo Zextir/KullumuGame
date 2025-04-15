@@ -15699,12 +15699,27 @@ PrefabInstance:
     - target: {fileID: 4237186559758418263, guid: 317580ee60a385e4db308fdacf3ff4b4,
         type: 3}
       propertyPath: InitialModule.startColor.maxColor.a
-      value: 0.0020994626
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 4237186559758418263, guid: 317580ee60a385e4db308fdacf3ff4b4,
+        type: 3}
+      propertyPath: InitialModule.startColor.maxColor.r
+      value: 0.8509804
       objectReference: {fileID: 0}
     - target: {fileID: 7378373042015521564, guid: 317580ee60a385e4db308fdacf3ff4b4,
         type: 3}
       propertyPath: m_Name
       value: DenseGas
+      objectReference: {fileID: 0}
+    - target: {fileID: 8304438399518037857, guid: 317580ee60a385e4db308fdacf3ff4b4,
+        type: 3}
+      propertyPath: color.a
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 8304438399518037857, guid: 317580ee60a385e4db308fdacf3ff4b4,
+        type: 3}
+      propertyPath: densityMultiplier
+      value: 4
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -56083,7 +56098,7 @@ PrefabInstance:
     - target: {fileID: 4237186559758418263, guid: 317580ee60a385e4db308fdacf3ff4b4,
         type: 3}
       propertyPath: InitialModule.startColor.maxColor.a
-      value: 0.0020994626
+      value: 0.1089752
       objectReference: {fileID: 0}
     - target: {fileID: 7378373042015521564, guid: 317580ee60a385e4db308fdacf3ff4b4,
         type: 3}
@@ -56093,7 +56108,7 @@ PrefabInstance:
     - target: {fileID: 8304438399518037857, guid: 317580ee60a385e4db308fdacf3ff4b4,
         type: 3}
       propertyPath: color.a
-      value: 0.0020994626
+      value: 0.1089752
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -111474,7 +111489,7 @@ PrefabInstance:
     - target: {fileID: 4237186559758418263, guid: 317580ee60a385e4db308fdacf3ff4b4,
         type: 3}
       propertyPath: InitialModule.startColor.maxColor.a
-      value: 0.0020994626
+      value: 0.1089752
       objectReference: {fileID: 0}
     - target: {fileID: 7378373042015521564, guid: 317580ee60a385e4db308fdacf3ff4b4,
         type: 3}
