@@ -19,6 +19,8 @@ public class DenseAir : MonoBehaviour
     private void Start()
     {
         particleSystem = GetComponent<ParticleSystem>();
+        ChangeParticles();
+        ChangeCollider();
     }
 
     private void OnValidate()
