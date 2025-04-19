@@ -12,6 +12,7 @@ Material:
   m_Parent: {fileID: 2100000, guid: f96090edaea7c564c80586f4385918fd, type: 2}
   m_ModifiedSerializedProperties: 2
   m_ValidKeywords:
+  - _COLORCOLOR_ON
   - _EMISSION
   - _FADING_ON
   - _SOFTPARTICLES_ON
