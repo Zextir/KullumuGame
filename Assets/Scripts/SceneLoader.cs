@@ -16,7 +16,7 @@ public class SceneLoader : MonoBehaviour
             SceneTransitionManager.SpawnPointName = spawnPointInTargetScene;
 
             // Load the new scene
-            SceneManager.LoadScene(targetScene);
+            SceneFadeController.Instance.FadeToScene(targetScene, spawnPointInTargetScene);
         }
     }
 }
