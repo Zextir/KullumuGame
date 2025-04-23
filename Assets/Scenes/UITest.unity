@@ -122,18 +122,6 @@ NavMeshSettings:
     debug:
       m_Flags: 0
   m_NavMeshData: {fileID: 0}
---- !u!114 &44097705 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 1960181364008995878, guid: 053f0f58dc02af649bd89be9d7f496f3,
-    type: 3}
-  m_PrefabInstance: {fileID: 395942938}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 67db9e8f0e2ae9c40bc1e2b64352a6b4, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1001 &395942938
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -146,11 +134,6 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: UIHandler
-      objectReference: {fileID: 0}
-    - target: {fileID: 1925813884299389434, guid: 053f0f58dc02af649bd89be9d7f496f3,
-        type: 3}
-      propertyPath: m_IsActive
-      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 1993984413771966316, guid: 053f0f58dc02af649bd89be9d7f496f3,
         type: 3}
@@ -252,89 +235,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 2662683998390730092, guid: 053f0f58dc02af649bd89be9d7f496f3,
-        type: 3}
-      propertyPath: m_AnchorMax.x
-      value: 0.44444445
-      objectReference: {fileID: 0}
-    - target: {fileID: 2662683998390730092, guid: 053f0f58dc02af649bd89be9d7f496f3,
-        type: 3}
-      propertyPath: m_AnchorMax.y
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 2662683998390730092, guid: 053f0f58dc02af649bd89be9d7f496f3,
-        type: 3}
-      propertyPath: m_AnchorMin.x
-      value: 0.44444445
-      objectReference: {fileID: 0}
-    - target: {fileID: 3408306051275409188, guid: 053f0f58dc02af649bd89be9d7f496f3,
-        type: 3}
-      propertyPath: m_AnchorMax.x
-      value: 0.44444445
-      objectReference: {fileID: 0}
-    - target: {fileID: 3408306051275409188, guid: 053f0f58dc02af649bd89be9d7f496f3,
-        type: 3}
-      propertyPath: m_AnchorMax.y
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 3408306051275409188, guid: 053f0f58dc02af649bd89be9d7f496f3,
-        type: 3}
-      propertyPath: m_AnchorMin.x
-      value: 0.44444445
-      objectReference: {fileID: 0}
-    - target: {fileID: 3768777929071678403, guid: 053f0f58dc02af649bd89be9d7f496f3,
-        type: 3}
-      propertyPath: settingName
-      value: gamma
-      objectReference: {fileID: 0}
-    - target: {fileID: 4607779700616571275, guid: 053f0f58dc02af649bd89be9d7f496f3,
-        type: 3}
-      propertyPath: settingName
-      value: brightness
-      objectReference: {fileID: 0}
-    - target: {fileID: 5473377547805592467, guid: 053f0f58dc02af649bd89be9d7f496f3,
-        type: 3}
-      propertyPath: settingName
-      value: volume
-      objectReference: {fileID: 0}
-    - target: {fileID: 6300190276874471483, guid: 053f0f58dc02af649bd89be9d7f496f3,
-        type: 3}
-      propertyPath: m_IsActive
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 6578620594380170556, guid: 053f0f58dc02af649bd89be9d7f496f3,
-        type: 3}
-      propertyPath: m_AnchorMax.x
-      value: 0.8
-      objectReference: {fileID: 0}
-    - target: {fileID: 6578620594380170556, guid: 053f0f58dc02af649bd89be9d7f496f3,
-        type: 3}
-      propertyPath: m_AnchorMax.y
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 6578620594380170556, guid: 053f0f58dc02af649bd89be9d7f496f3,
-        type: 3}
-      propertyPath: m_AnchorMin.x
-      value: 0.8
-      objectReference: {fileID: 0}
-    - target: {fileID: 7245098824957662326, guid: 053f0f58dc02af649bd89be9d7f496f3,
-        type: 3}
-      propertyPath: m_MaxValue
-      value: 10
-      objectReference: {fileID: 0}
-    - target: {fileID: 8495522027936836701, guid: 053f0f58dc02af649bd89be9d7f496f3,
-        type: 3}
-      propertyPath: m_IsActive
-      value: 1
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents:
-    - targetCorrespondingSourceObject: {fileID: 8495522027936836701, guid: 053f0f58dc02af649bd89be9d7f496f3,
-        type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 395942943}
+    m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 053f0f58dc02af649bd89be9d7f496f3, type: 3}
 --- !u!224 &395942939 stripped
 RectTransform:
@@ -342,28 +246,6 @@ RectTransform:
     type: 3}
   m_PrefabInstance: {fileID: 395942938}
   m_PrefabAsset: {fileID: 0}
---- !u!1 &395942942 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 8495522027936836701, guid: 053f0f58dc02af649bd89be9d7f496f3,
-    type: 3}
-  m_PrefabInstance: {fileID: 395942938}
-  m_PrefabAsset: {fileID: 0}
---- !u!114 &395942943
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 395942942}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 73a2088527bdc5c4da2c258a79c1e560, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  brightnessSlider: {fileID: 1922616855}
-  gammaSlider: {fileID: 44097705}
-  volumeSlider: {fileID: 770198169}
-  first: 0
 --- !u!1 &568131122
 GameObject:
   m_ObjectHideFlags: 0
@@ -456,18 +338,6 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &770198169 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 7245098824957662326, guid: 053f0f58dc02af649bd89be9d7f496f3,
-    type: 3}
-  m_PrefabInstance: {fileID: 395942938}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 67db9e8f0e2ae9c40bc1e2b64352a6b4, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &1602382084
 GameObject:
   m_ObjectHideFlags: 0
@@ -519,7 +389,7 @@ MonoBehaviour:
   m_UiScaleMode: 1
   m_ReferencePixelsPerUnit: 100
   m_ScaleFactor: 1
-  m_ReferenceResolution: {x: 800, y: 600}
+  m_ReferenceResolution: {x: 1920, y: 1080}
   m_ScreenMatchMode: 0
   m_MatchWidthOrHeight: 0
   m_PhysicalUnit: 3
@@ -756,18 +626,6 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &1922616855 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 1192479897834960494, guid: 053f0f58dc02af649bd89be9d7f496f3,
-    type: 3}
-  m_PrefabInstance: {fileID: 395942938}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 67db9e8f0e2ae9c40bc1e2b64352a6b4, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
   m_ObjectHideFlags: 0

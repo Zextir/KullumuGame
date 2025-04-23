@@ -1,6 +1,4 @@
 using System.Collections.Generic;
-using Opsive.UltimateCharacterController.Demo.Zones;
-using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -19,7 +17,7 @@ public class Settings : MonoBehaviour
         return settings[key];
     }
 
-    private void InitSettings()
+    private void Start()
     {
         if (!settings.ContainsKey("brightness"))
             settings.Add("brightness", 5);
@@ -30,7 +28,7 @@ public class Settings : MonoBehaviour
     }
     private void OnEnable()
     {
-        InitSettings();
+        //InitSettings();
         LoadSettings();
     }
 
@@ -60,9 +58,6 @@ public class Settings : MonoBehaviour
         PlayerPrefs.SetInt("gamma", settings["gamma"]);
         PlayerPrefs.SetInt("volume", settings["volume"]);
         PlayerPrefs.Save();
-
-
-        Debug.Log(settings["brightness"]);
 
     }
 }

@@ -15,6 +15,7 @@ public class CustomSliderBuilder : MonoBehaviour
     Slider slider;
 
     int segments;
+    int height = 50;
 
     private void Start()
     {
@@ -26,11 +27,13 @@ public class CustomSliderBuilder : MonoBehaviour
     void Build()
     {
         segments = (int)(slider.maxValue - slider.minValue) + 1;
-        int height = 20;
-        int width = 30 * segments - 10;
+        int width = (int)(height * 1.5 * segments - height / 2);
+
+
 
         customSlider.sizeDelta = new Vector2(width, height);
-        handleArea.sizeDelta = new Vector2(width - 20, height);
+        handleArea.sizeDelta = new Vector2(width - height, height);
+        handleArea.anchoredPosition = new Vector2(height / 2, 0);
 
         filledLayout.CreateSlider(segments);
         unfilledLayout.CreateSlider(segments);
@@ -39,7 +42,7 @@ public class CustomSliderBuilder : MonoBehaviour
 
     public void UpdateFill()
     {
-        int padding = 30 * (segments - (int)slider.value) - 5;
+        int padding = (int)(1.5 * height * (segments - (int)slider.value) - height / 2);
         fillMask.padding = new Vector4(0, 0, padding, 0);
     }
 
