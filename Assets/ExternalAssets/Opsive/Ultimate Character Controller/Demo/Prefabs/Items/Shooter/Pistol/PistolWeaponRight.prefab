@@ -529,7 +529,9 @@ PrefabInstance:
       propertyPath: m_States.Array.data[6].m_BlockList.Array.data[0]
       value: DualPistols
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 3968242969038325551, guid: b23a9704fc828694e8abf1e2367566c5, type: 3}
+    - {fileID: 1924861293791313033, guid: b23a9704fc828694e8abf1e2367566c5, type: 3}
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents: []

@@ -1737,7 +1737,9 @@ PrefabInstance:
       propertyPath: m_AllowCameraZoom
       value: 0
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 1076836589067129657, guid: 553bd82b2dacd2f4d98afc55e35d675e, type: 3}
+    - {fileID: 2546167652902086815, guid: 553bd82b2dacd2f4d98afc55e35d675e, type: 3}
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents: []
