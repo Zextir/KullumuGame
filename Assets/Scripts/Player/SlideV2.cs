@@ -83,7 +83,13 @@ namespace Opsive.UltimateCharacterController.Character.Abilities
             {
                 return false;
             }
-            if (!MovingDownward())
+
+            if (m_CharacterLocomotion.Velocity.magnitude <= m_CharacterLocomotion.ColliderSpacing)
+            {
+                return false;
+            }
+
+            if (m_CharacterLocomotion.Moving && !MovingDownward())
             {
                 return false;
             }
@@ -205,7 +211,7 @@ namespace Opsive.UltimateCharacterController.Character.Abilities
         {
             if (force) { return true; }
 
-            return !CanSlide()/* && m_SlideSpeed <= m_CharacterLocomotion.ColliderSpacing*/;
+            return !CanSlide() || m_SlideSpeed <= m_CharacterLocomotion.ColliderSpacing;
         }
 
         /// <summary>
