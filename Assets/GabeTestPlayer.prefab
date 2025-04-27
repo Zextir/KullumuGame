@@ -1,0 +1,149 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1001 &3858113616265673029
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 338829172253371710, guid: 8a09f169283efeb4b9d0c7cfdb97fd19,
+        type: 3}
+      propertyPath: m_Intensity
+      value: 300
+      objectReference: {fileID: 0}
+    - target: {fileID: 3829030176068699948, guid: 8a09f169283efeb4b9d0c7cfdb97fd19,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4057148582490759116, guid: 8a09f169283efeb4b9d0c7cfdb97fd19,
+        type: 3}
+      propertyPath: m_SlopeLimit
+      value: 100
+      objectReference: {fileID: 0}
+    - target: {fileID: 4057148582490759116, guid: 8a09f169283efeb4b9d0c7cfdb97fd19,
+        type: 3}
+      propertyPath: m_MaxStepHeight
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4057148582490759116, guid: 8a09f169283efeb4b9d0c7cfdb97fd19,
+        type: 3}
+      propertyPath: managedReferences[2051309532689989643].m_MaxSlideSpeed
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4057148582490759116, guid: 8a09f169283efeb4b9d0c7cfdb97fd19,
+        type: 3}
+      propertyPath: managedReferences[2051309532689989643].m_moveSlideStopAngle
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 4057148582490759116, guid: 8a09f169283efeb4b9d0c7cfdb97fd19,
+        type: 3}
+      propertyPath: managedReferences[2051309532689989643].m_AbilityIndexParameter
+      value: 102
+      objectReference: {fileID: 0}
+    - target: {fileID: 4057148582490759116, guid: 8a09f169283efeb4b9d0c7cfdb97fd19,
+        type: 3}
+      propertyPath: managedReferences[2051309532689989643].m_SlideLimit.m_MaxValue
+      value: 89
+      objectReference: {fileID: 0}
+    - target: {fileID: 4057148582490759116, guid: 8a09f169283efeb4b9d0c7cfdb97fd19,
+        type: 3}
+      propertyPath: managedReferences[2051309532689989643].m_SlideLimit.m_MinValue
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 5200448004301074997, guid: 8a09f169283efeb4b9d0c7cfdb97fd19,
+        type: 3}
+      propertyPath: m_Name
+      value: Player Variant
+      objectReference: {fileID: 0}
+    - target: {fileID: 5200448004301074997, guid: 8a09f169283efeb4b9d0c7cfdb97fd19,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5611113569108605930, guid: 8a09f169283efeb4b9d0c7cfdb97fd19,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -3303.9526
+      objectReference: {fileID: 0}
+    - target: {fileID: 5611113569108605930, guid: 8a09f169283efeb4b9d0c7cfdb97fd19,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 428.00018
+      objectReference: {fileID: 0}
+    - target: {fileID: 5611113569108605930, guid: 8a09f169283efeb4b9d0c7cfdb97fd19,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 395.00012
+      objectReference: {fileID: 0}
+    - target: {fileID: 5611113569108605930, guid: 8a09f169283efeb4b9d0c7cfdb97fd19,
+        type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 0.7071068
+      objectReference: {fileID: 0}
+    - target: {fileID: 5611113569108605930, guid: 8a09f169283efeb4b9d0c7cfdb97fd19,
+        type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5611113569108605930, guid: 8a09f169283efeb4b9d0c7cfdb97fd19,
+        type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0.7071068
+      objectReference: {fileID: 0}
+    - target: {fileID: 5611113569108605930, guid: 8a09f169283efeb4b9d0c7cfdb97fd19,
+        type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5611113569108605930, guid: 8a09f169283efeb4b9d0c7cfdb97fd19,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5611113569108605930, guid: 8a09f169283efeb4b9d0c7cfdb97fd19,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 90
+      objectReference: {fileID: 0}
+    - target: {fileID: 5611113569108605930, guid: 8a09f169283efeb4b9d0c7cfdb97fd19,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8302313907175767402, guid: 8a09f169283efeb4b9d0c7cfdb97fd19,
+        type: 3}
+      propertyPath: far clip plane
+      value: 9999999
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects:
+    - {fileID: 3829030176068699948, guid: 8a09f169283efeb4b9d0c7cfdb97fd19, type: 3}
+    m_AddedGameObjects: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 5200448004301074997, guid: 8a09f169283efeb4b9d0c7cfdb97fd19,
+        type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 4199261719296559606}
+  m_SourcePrefab: {fileID: 100100000, guid: 8a09f169283efeb4b9d0c7cfdb97fd19, type: 3}
+--- !u!1 &9052646522887195504 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 5200448004301074997, guid: 8a09f169283efeb4b9d0c7cfdb97fd19,
+    type: 3}
+  m_PrefabInstance: {fileID: 3858113616265673029}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &4199261719296559606
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 9052646522887195504}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cf2117795e426f84db9691dd5c0feefb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  player: {fileID: 9052646522887195504}
