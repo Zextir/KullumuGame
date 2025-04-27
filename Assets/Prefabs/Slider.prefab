@@ -443,9 +443,9 @@ MonoBehaviour:
   m_OnValueChanged:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 552473826243454772}
+      - m_Target: {fileID: 8816833627980607785}
         m_TargetAssemblyTypeName: CustomSliderBuilder, Assembly-CSharp
-        m_MethodName: UpdateFill
+        m_MethodName: 
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -472,3 +472,4 @@ MonoBehaviour:
   fillMask: {fileID: 6578011599671006918}
   handleArea: {fileID: 566026807999442043}
   customSlider: {fileID: 914863220926407013}
+  settingName: 

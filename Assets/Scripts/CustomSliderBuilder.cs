@@ -40,10 +40,16 @@ public class CustomSliderBuilder : MonoBehaviour
         UpdateFill();
     }
 
-    public void UpdateFill()
+    void UpdateFill()
     {
         int padding = (int)(1.5 * height * (segments - (int)slider.value) - height / 2);
         fillMask.padding = new Vector4(0, 0, padding, 0);
+    }
+
+    public void OnChange()
+    {
+        Settings.Set(settingName, slider.value);
+        UpdateFill();
     }
 
 }

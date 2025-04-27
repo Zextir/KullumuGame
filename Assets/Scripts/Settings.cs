@@ -4,60 +4,68 @@ using UnityEngine.UI;
 
 public class Settings : MonoBehaviour
 {
-    [SerializeField] Slider brightnessSlider;
-    [SerializeField] Slider gammaSlider;
-    [SerializeField] Slider volumeSlider;
+    //[SerializeField] Slider brightnessSlider;
+    //[SerializeField] Slider gammaSlider;
+    //[SerializeField] Slider volumeSlider;
 
-    static Dictionary<string, int> settings = new Dictionary<string, int>();
+    static Dictionary<string, int> defaultSettings = new Dictionary<string, int>()
+    {
+        { "brightness", 5 },
+        { "gamma", 6 },
+        { "volume", 5 }
+    };
 
     public bool first = false;
 
     public static int GetSetting(string key)
     {
-        return settings[key];
+        return PlayerPrefs.GetInt(key, defaultSettings[key]);
     }
 
-    private void Start()
+    public static void Set(string key, float value)
     {
-        if (!settings.ContainsKey("brightness"))
-            settings.Add("brightness", 5);
-        if (!settings.ContainsKey("gamma"))
-            settings.Add("gamma", 5);
-        if (!settings.ContainsKey("volume"))
-            settings.Add("volume", 5);
-    }
-    private void OnEnable()
-    {
-        //InitSettings();
-        LoadSettings();
-    }
-
-    private void OnDisable()
-    {
-        if (first)
-        {
-            first = false;
-            return;
-        }
-        SaveSettings();
-    }
-
-    void LoadSettings()
-    {
-        settings["brightness"] = PlayerPrefs.GetInt("brightness", settings["brightness"]);
-        settings["gamma"] = PlayerPrefs.GetInt("gamma", settings["gamma"]);
-        settings["volume"] = PlayerPrefs.GetInt("volume", settings["volume"]);
-    }
-
-    void SaveSettings()
-    {
-        settings["brightness"] = (int)brightnessSlider.value;
-        settings["gamma"] = (int)gammaSlider.value;
-        settings["volume"] = (int)volumeSlider.value;
-        PlayerPrefs.SetInt("brightness", settings["brightness"]);
-        PlayerPrefs.SetInt("gamma", settings["gamma"]);
-        PlayerPrefs.SetInt("volume", settings["volume"]);
+        PlayerPrefs.SetInt(key, (int)value);
         PlayerPrefs.Save();
-
     }
+
+    //private void OnEnable()
+    //{
+    //    if (!defaultSettings.ContainsKey("brightness"))
+    //        defaultSettings.Add("brightness", 5);
+    //    if (!defaultSettings.ContainsKey("gamma"))
+    //        defaultSettings.Add("gamma", 5);
+    //    if (!defaultSettings.ContainsKey("volume"))
+    //        defaultSettings.Add("volume", 5);
+    //}
+    //private void OnEnable()
+    //{
+    //    //InitSettings();
+    //    //LoadSettings();
+    //}
+
+    //private void OnDisable()
+    //{
+    //    if (first)
+    //    {
+    //        first = false;
+    //        return;
+    //    }
+    //    SaveSettings();
+    //}
+
+    ////void LoadSettings()
+    ////{
+    ////    defaultSettings["brightness"] = 
+    ////    defaultSettings["gamma"] = PlayerPrefs.GetInt("gamma", defaultSettings["gamma"]);
+    ////    defaultSettings["volume"] = PlayerPrefs.GetInt("volume", defaultSettings["volume"]);
+    ////}
+
+    //void SaveSettings()
+    //{
+    //    PlayerPrefs.SetInt("brightness", (int)brightnessSlider.value);
+    //    PlayerPrefs.SetInt("gamma", (int)gammaSlider.value);
+    //    PlayerPrefs.SetInt("volume", (int)volumeSlider.value);
+    //    PlayerPrefs.Save();
+
+    //}
 }

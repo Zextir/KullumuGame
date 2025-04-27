@@ -1481,30 +1481,10 @@ PrefabInstance:
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_Target
       value: 
       objectReference: {fileID: 6300190276874471483}
-    - target: {fileID: 1568902944415210662, guid: 0211dba888b57f04ca4572609a9dc690,
-        type: 3}
-      propertyPath: settingName
-      value: volume
-      objectReference: {fileID: 0}
     - target: {fileID: 3158891748257545064, guid: 0211dba888b57f04ca4572609a9dc690,
         type: 3}
       propertyPath: m_Name
       value: SettingsMenu
-      objectReference: {fileID: 0}
-    - target: {fileID: 4232057594854785859, guid: 0211dba888b57f04ca4572609a9dc690,
-        type: 3}
-      propertyPath: m_MaxValue
-      value: 10
-      objectReference: {fileID: 0}
-    - target: {fileID: 7044355711926697662, guid: 0211dba888b57f04ca4572609a9dc690,
-        type: 3}
-      propertyPath: settingName
-      value: brightness
-      objectReference: {fileID: 0}
-    - target: {fileID: 7673544993906459894, guid: 0211dba888b57f04ca4572609a9dc690,
-        type: 3}
-      propertyPath: settingName
-      value: gamma
       objectReference: {fileID: 0}
     - target: {fileID: 8176310056620945864, guid: 0211dba888b57f04ca4572609a9dc690,
         type: 3}
@@ -1609,73 +1589,17 @@ PrefabInstance:
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents:
-    - targetCorrespondingSourceObject: {fileID: 3158891748257545064, guid: 0211dba888b57f04ca4572609a9dc690,
-        type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 7400211656577895971}
+    m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 0211dba888b57f04ca4572609a9dc690, type: 3}
---- !u!114 &1192479897834960494 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 5673410923941650779, guid: 0211dba888b57f04ca4572609a9dc690,
-    type: 3}
-  m_PrefabInstance: {fileID: 6787077517982553909}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 67db9e8f0e2ae9c40bc1e2b64352a6b4, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
---- !u!114 &1960181364008995878 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 4972956520963316499, guid: 0211dba888b57f04ca4572609a9dc690,
-    type: 3}
-  m_PrefabInstance: {fileID: 6787077517982553909}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 67db9e8f0e2ae9c40bc1e2b64352a6b4, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!224 &3407146455339345661 stripped
 RectTransform:
   m_CorrespondingSourceObject: {fileID: 8176310056620945864, guid: 0211dba888b57f04ca4572609a9dc690,
     type: 3}
   m_PrefabInstance: {fileID: 6787077517982553909}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &7245098824957662326 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 4232057594854785859, guid: 0211dba888b57f04ca4572609a9dc690,
-    type: 3}
-  m_PrefabInstance: {fileID: 6787077517982553909}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 67db9e8f0e2ae9c40bc1e2b64352a6b4, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &8495522027936836701 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 3158891748257545064, guid: 0211dba888b57f04ca4572609a9dc690,
     type: 3}
   m_PrefabInstance: {fileID: 6787077517982553909}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &7400211656577895971
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8495522027936836701}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 73a2088527bdc5c4da2c258a79c1e560, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  brightnessSlider: {fileID: 1192479897834960494}
-  gammaSlider: {fileID: 1960181364008995878}
-  volumeSlider: {fileID: 7245098824957662326}
-  first: 0
