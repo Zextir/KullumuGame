@@ -123,10 +123,12 @@ namespace Opsive.UltimateCharacterController.Game
         /// <param name="position">The position of the spawn point.</param>
         /// <param name="rotation">The rotation of the spawn point.</param>
         /// <returns>True if the spawn point was successfully retrieved.</returns>
-        public static bool GetPlacement(GameObject spawningObject, int grouping, ref Vector3 position, ref Quaternion rotation)
+        public static bool GetPlacement(GameObject spawningObject, int grouping, ref Vector3 position, ref Quaternion rotation, bool getClosestPoint = false)
         {
-            return Instance.GetPlacementInternal(spawningObject, grouping, ref position, ref rotation);
+            return Instance.GetPlacementInternal(spawningObject, grouping, ref position, ref rotation, getClosestPoint);
         }
+
+
 
         /// <summary>
         /// Internal method which gets the position and rotation of the spawn point with the specified grouping.
@@ -137,7 +139,7 @@ namespace Opsive.UltimateCharacterController.Game
         /// <param name="position">The position of the spawn point.</param>
         /// <param name="rotation">The rotation of the spawn point.</param>
         /// <returns>True if the spawn point was successfully retrieved.</returns>
-        protected virtual bool GetPlacementInternal(GameObject spawningObject, int grouping, ref Vector3 position, ref Quaternion rotation)
+        protected virtual bool GetPlacementInternal(GameObject spawningObject, int grouping, ref Vector3 position, ref Quaternion rotation, bool getClosestPoint)
         {
             List<SpawnPoint> spawnPoints;
             if (!m_SpawnPointGroupings.TryGetValue(grouping, out spawnPoints)) {
@@ -151,6 +153,33 @@ namespace Opsive.UltimateCharacterController.Game
                 if (firstSpawnPoint.GetPlacement(spawningObject, ref position, ref rotation)) {
                     return true;
                 }
+            }
+
+            // Find the spawn point closest to the object
+            if (getClosestPoint)
+            {
+                Vector3 originalPosition = position;
+                float bestDistance = float.PositiveInfinity;
+                Vector3 spawnPosition = position;
+                Quaternion spawnRotation = rotation;
+                bool foundPoint = false;
+                foreach (SpawnPoint spawnPoint in spawnPoints)
+                {
+                    if (spawnPoint.GetPlacement(spawningObject, ref position, ref rotation))
+                    {
+                        float distance = (originalPosition - position).magnitude;
+                        if (distance < bestDistance)
+                        {
+                            bestDistance = distance;
+                            spawnPosition = position;
+                            spawnRotation = rotation;
+                        }
+                        foundPoint = true;
+                    }
+                }
+                position = spawnPosition;
+                rotation = spawnRotation;
+                return foundPoint;
             }
 
             // Choose a random spawn point and get the spawn placement.
