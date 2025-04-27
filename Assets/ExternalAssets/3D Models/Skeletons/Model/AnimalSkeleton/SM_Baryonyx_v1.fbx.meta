@@ -1,9 +1,5 @@
 fileFormatVersion: 2
-<<<<<<<< HEAD:Assets/rune.fbx.meta
-guid: a9442607ddf83934fb340463c69747df
-========
 guid: 196a4cfc58b42544aa2c24a7b80aae18
->>>>>>>> new-assets:Assets/ExternalAssets/3D Models/Skeletons/Model/AnimalSkeleton/SM_Baryonyx_v1.fbx.meta
 ModelImporter:
   serializedVersion: 22200
   internalIDToNameTable: []

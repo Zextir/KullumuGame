@@ -2203,6 +2203,38 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1a897f5a5a4d08a469a06636cdd1c7b2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &5273301426705038584
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6991830603308436510}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 932b7b7000801bc43a74f0532139a701, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_States:
+  - m_Name: Default
+    m_Preset: {fileID: 0}
+    m_BlockList: []
+    m_Default: 1
+  m_PositioningMode: 2
+  m_Grouping: -1
+  m_MinRespawnTime: 2
+  m_MaxRespawnTime: 3
+  m_ScheduleRespawnOnDeath: 1
+  m_ScheduleRespawnOnDisable: 1
+  m_RespawnAudioClipSet:
+    m_AudioConfig: {fileID: 0}
+    m_AudioClips: []
+  m_OnRespawnEvent:
+    m_PersistentCalls:
+      m_Calls: []
+  m_RespawnAtClosestPoint: 1
+  m_RespawnAtLatestPoint: 1
+  m_CheckForObstruction: 0
 --- !u!1 &7246955482344172519
 GameObject:
   m_ObjectHideFlags: 0
