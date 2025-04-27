@@ -6,6 +6,7 @@ TagManager:
   tags:
   - CinemachineTarget
   - WhaleCollider
+  - FadeImage
   layers:
   - Default
   - TransparentFX
