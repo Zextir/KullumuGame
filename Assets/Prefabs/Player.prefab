@@ -636,7 +636,7 @@ MonoBehaviour:
     m_Bits: 1879048230
   m_SolidObjectLayers:
     serializedVersion: 2
-    m_Bits: 2415919051
+    m_Bits: 2348810251
 --- !u!54 &1715720914731110905
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -757,7 +757,7 @@ MonoBehaviour:
   m_ContinuousCollisionDetection: 1
   m_ColliderLayerMask:
     serializedVersion: 2
-    m_Bits: 2415919099
+    m_Bits: 2348810299
   m_MaxCollisionCount: 100
   m_MaxSoftForceFrames: 100
   m_MaxMovementCollisionChecks: 5
@@ -919,8 +919,8 @@ MonoBehaviour:
         m_AllowPositionalInput: 1
         m_AllowRotationalInput: 1
         m_UseGravity: 0
-        m_UseRootMotionPosition: 0
-        m_UseRootMotionRotation: 0
+        m_UseRootMotionPosition: 2
+        m_UseRootMotionRotation: 2
         m_DetectHorizontalCollisions: 0
         m_DetectVerticalCollisions: 0
         m_DetectGroundCollisions: 0
