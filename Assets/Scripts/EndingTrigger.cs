@@ -1,3 +1,4 @@
+using Opsive.UltimateCharacterController.Character;
 using UnityEngine;
 using UnityEngine.Rendering;
 using UnityEngine.Rendering.Universal;
@@ -37,7 +38,9 @@ public class BloomTrigger : MonoBehaviour
     public GameObject objectToActivate;
     public float objectActivationDelay = 2f;
 
+
     private Camera cameraComponent;
+    private UltimateCharacterLocomotion ucl;
 
     private bool isTriggered = false;
     private bool canvasFadeStarted = false;
@@ -57,18 +60,10 @@ public class BloomTrigger : MonoBehaviour
     private float elapsedCanvasFadeTime = 0f;
     private float elapsedObjectActivationTime = 0f;
 
+    private float elapsedCameraFreezeTime = 0f;
+
     private void Start()
     {
-        if (volume != null && volume.sharedProfile.TryGet(out bloom))
-        {
-            initialThreshold = bloom.threshold.value;
-            initialIntensity = bloom.intensity.value;
-        }
-        else
-        {
-            Debug.LogError("Bloom not found in the assigned Volume Profile!");
-        }
-
         if (audioSource != null)
         {
             initialAudioVolume = 0f;
@@ -109,6 +104,7 @@ public class BloomTrigger : MonoBehaviour
             elapsedIntensityTime += Time.deltaTime;
             elapsedAudioTime += Time.deltaTime;
             elapsedFOVTime += Time.deltaTime;
+            elapsedCameraFreezeTime += Time.deltaTime;
 
             float tThreshold = Mathf.Clamp01(elapsedThresholdTime / thresholdTransitionDuration);
             float tIntensity = Mathf.Clamp01(elapsedIntensityTime / intensityTransitionDuration);
@@ -169,6 +165,13 @@ public class BloomTrigger : MonoBehaviour
                 }
             }
 
+            if (elapsedCameraFreezeTime > intensityTransitionDuration / 2 && ucl != null)
+            {
+  
+                ucl.TimeScale = 0f;
+                
+            }
+
             // Stop updating if all completed
             if (tThreshold >= 1f && tIntensity >= 1f && tFOV >= 1f && (!fadeAudio || elapsedAudioTime >= audioFadeDuration))
             {
@@ -193,6 +196,19 @@ public class BloomTrigger : MonoBehaviour
             canvasFadeStarted = false;
             canvasFadeCompleted = false;
             objectActivated = false;
+
+            ucl = other.GetComponent<UltimateCharacterLocomotion>();
+
+
+            if (volume != null && volume.sharedProfile.TryGet(out bloom))
+            {
+                initialThreshold = bloom.threshold.value;
+                initialIntensity = bloom.intensity.value;
+            }
+            else
+            {
+                Debug.LogError("Bloom not found in the assigned Volume Profile!");
+            }
 
             if (audioSource != null)
             {

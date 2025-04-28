@@ -15,6 +15,11 @@ public class BrightnessAdjustment : MonoBehaviour
     private void OnEnable()
     {
         volumeProfile = GetComponent<Volume>().sharedProfile;
+        if (volumeProfile.TryGet<Bloom>(out var bloom))
+        {
+            bloom.threshold.value = 1.45f;
+            bloom.intensity.value = 4.26f;
+        }
     }
 
 
@@ -27,11 +32,9 @@ public class BrightnessAdjustment : MonoBehaviour
         {
             brightness = currentBrightness;
             currentBrightness = RemapBrightness(currentBrightness);
-            Debug.Log("updating brightness!");
             if (volumeProfile.TryGet<ColorAdjustments>(out var colorAdjustments))
             {
                 colorAdjustments.postExposure.value = currentBrightness;
-                Debug.Log(volumeProfile.name);
             }
            
         }
@@ -39,13 +42,11 @@ public class BrightnessAdjustment : MonoBehaviour
         {
             gamma = currentGamma;
             currentGamma = RemapGamma(currentGamma);
-            Debug.Log("updating gamma!");
             if (volumeProfile.TryGet<LiftGammaGain>(out var liftGammaGain))
             {
                 Vector4 gammaSettings = liftGammaGain.gamma.value;
                 gammaSettings.w = currentGamma;
                 liftGammaGain.gamma.value = gammaSettings;
-                Debug.Log(volumeProfile.name);
             }
         }
 
