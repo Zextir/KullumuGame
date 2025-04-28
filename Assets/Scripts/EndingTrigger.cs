@@ -59,7 +59,7 @@ public class BloomTrigger : MonoBehaviour
 
     private void Start()
     {
-        if (volume != null && volume.profile.TryGet(out bloom))
+        if (volume != null && volume.sharedProfile.TryGet(out bloom))
         {
             initialThreshold = bloom.threshold.value;
             initialIntensity = bloom.intensity.value;
@@ -115,9 +115,11 @@ public class BloomTrigger : MonoBehaviour
             float tAudio = Mathf.Clamp01(elapsedAudioTime / audioFadeDuration);
             float tFOV = Mathf.Clamp01(elapsedFOVTime / fovTransitionDuration);
 
+
             // Smooth Interpolation
             bloom.threshold.value = Mathf.Lerp(initialThreshold, targetThreshold, tThreshold);
             bloom.intensity.value = Mathf.Lerp(initialIntensity, targetIntensity, tIntensity);
+
 
             if (audioSource != null && fadeAudio)
             {
