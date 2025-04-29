@@ -90,5 +90,8 @@ crashlytics-build.properties
 
 # Ignore FMOD editor logs.
 fmod_editor.log
+
+
+# --- Character Model (too large for git) ---
 Assets/Models/TestModel_Main.blend
 Assets/Models/TestModel_Main.blend.meta
