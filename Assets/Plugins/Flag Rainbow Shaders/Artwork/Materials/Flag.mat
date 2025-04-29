@@ -68,7 +68,7 @@ Material:
     - _WaveIntensity: 0.5
     - _WaveSpeed: 10
     - _Wave_Intensity: 1
-    - _Wave_Speed: 2
+    - _Wave_Speed: 4
     - _WindIntensity: 2.89
     m_Colors: []
   m_BuildTextureStacks: []
