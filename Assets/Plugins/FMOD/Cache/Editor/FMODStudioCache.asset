@@ -54,6 +54,33 @@ MonoBehaviour:
   MinDistance: 1
   MaxDistance: 20
   Length: 0
+--- !u!114 &-5937323797974730286
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/Areas/Lava Tunnel
+  m_EditorClassIdentifier: 
+  Path: event:/Areas/Lava Tunnel
+  Guid:
+    Data1: 558903657
+    Data2: 1340610609
+    Data3: -806184308
+    Data4: -784220988
+  Banks:
+  - {fileID: 2862739291524880399}
+  IsStream: 0
+  Is3D: 1
+  IsOneShot: 0
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 0
 --- !u!114 &-4916872571329140236
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -96,7 +123,7 @@ MonoBehaviour:
   Path: Assets/Audio/FMOD Audio Bank/Master.bank
   Name: Master
   StudioPath: bank:/Master
-  lastModified: 638813028801654571
+  lastModified: 638816175712402546
   FileSizes: []
   Exists: 1
 --- !u!114 &-4088799935958276998
@@ -126,6 +153,26 @@ MonoBehaviour:
   MinDistance: 1
   MaxDistance: 20
   Length: 0
+--- !u!114 &-2814541760579694099
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c18180ecb35941f4682ae60107b85b7c, type: 3}
+  m_Name: bank:/Master.strings.bank
+  m_EditorClassIdentifier: 
+  Path: Assets/Audio/FMOD Audio Bank/Master.strings.bank
+  Name: Master.strings
+  StudioPath: bank:/Master.strings
+  lastModified: 638816172529581410
+  FileSizes:
+  - Name: 
+    Value: 1056
+  Exists: 1
 --- !u!114 &-995998435214175195
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -153,6 +200,33 @@ MonoBehaviour:
   MinDistance: 1
   MaxDistance: 20
   Length: 0
+--- !u!114 &-10369535077839262
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/Areas/Lava Fields
+  m_EditorClassIdentifier: 
+  Path: event:/Areas/Lava Fields
+  Guid:
+    Data1: 673560212
+    Data2: 1322726105
+    Data3: -1839928435
+    Data4: 855655448
+  Banks:
+  - {fileID: 2862739291524880399}
+  IsStream: 1
+  Is3D: 1
+  IsOneShot: 0
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 0
 --- !u!114 &11400000
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -166,21 +240,21 @@ MonoBehaviour:
   m_Name: FMODStudioCache
   m_EditorClassIdentifier: 
   EditorBanks:
-  - {fileID: 6607839847621249894}
-  - {fileID: -4830447100154974406}
+  - {fileID: -2814541760579694099}
+  - {fileID: 2862739291524880399}
   EditorEvents:
-  - {fileID: -4916872571329140236}
-  - {fileID: 487936414824634620}
-  - {fileID: -995998435214175195}
-  - {fileID: -8482425969818105121}
-  - {fileID: -4088799935958276998}
-  - {fileID: -7800055037372452321}
+  - {fileID: 1431900741491801266}
+  - {fileID: 8904369104449760131}
+  - {fileID: -5937323797974730286}
+  - {fileID: -10369535077839262}
+  - {fileID: 7671533492976416755}
+  - {fileID: 3912052685073581777}
   EditorParameters: []
   MasterBanks:
-  - {fileID: -4830447100154974406}
+  - {fileID: 2862739291524880399}
   StringsBanks:
-  - {fileID: 6607839847621249894}
-  cacheTime: 638813028801664700
+  - {fileID: -2814541760579694099}
+  cacheTime: 638816175712402546
   cacheVersion: 131624
 --- !u!114 &487936414824634620
 MonoBehaviour:
@@ -209,6 +283,78 @@ MonoBehaviour:
   MinDistance: 1
   MaxDistance: 20
   Length: 0
+--- !u!114 &1431900741491801266
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/Objects/Kullumu Tree
+  m_EditorClassIdentifier: 
+  Path: event:/Objects/Kullumu Tree
+  Guid:
+    Data1: -717509307
+    Data2: 1125977571
+    Data3: -292327783
+    Data4: 1856374687
+  Banks:
+  - {fileID: 2862739291524880399}
+  IsStream: 1
+  Is3D: 1
+  IsOneShot: 0
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 0
+--- !u!114 &2862739291524880399
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c18180ecb35941f4682ae60107b85b7c, type: 3}
+  m_Name: bank:/Master.bank
+  m_EditorClassIdentifier: 
+  Path: Assets/Audio/FMOD Audio Bank/Master.bank
+  Name: Master
+  StudioPath: bank:/Master
+  lastModified: 638816175712402546
+  FileSizes: []
+  Exists: 1
+--- !u!114 &3912052685073581777
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/Areas/White Water
+  m_EditorClassIdentifier: 
+  Path: event:/Areas/White Water
+  Guid:
+    Data1: 1077117140
+    Data2: 1237291906
+    Data3: 58407590
+    Data4: 1527072102
+  Banks:
+  - {fileID: 2862739291524880399}
+  IsStream: 1
+  Is3D: 1
+  IsOneShot: 0
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 0
 --- !u!114 &6607839847621249894
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -224,8 +370,62 @@ MonoBehaviour:
   Path: Assets/Audio/FMOD Audio Bank/Master.strings.bank
   Name: Master.strings
   StudioPath: bank:/Master.strings
-  lastModified: 638813028801664700
+  lastModified: 638816172529581410
   FileSizes:
   - Name: 
     Value: 1056
   Exists: 1
+--- !u!114 &7671533492976416755
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/Areas/Plains
+  m_EditorClassIdentifier: 
+  Path: event:/Areas/Plains
+  Guid:
+    Data1: -1968425569
+    Data2: 1171913247
+    Data3: 1658892470
+    Data4: 1778806336
+  Banks:
+  - {fileID: 2862739291524880399}
+  IsStream: 1
+  Is3D: 1
+  IsOneShot: 0
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 0
+--- !u!114 &8904369104449760131
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/Areas/Forest
+  m_EditorClassIdentifier: 
+  Path: event:/Areas/Forest
+  Guid:
+    Data1: 956627026
+    Data2: 1115213182
+    Data3: -1949082227
+    Data4: 1368346801
+  Banks:
+  - {fileID: 2862739291524880399}
+  IsStream: 1
+  Is3D: 1
+  IsOneShot: 0
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 0
