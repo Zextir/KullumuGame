@@ -37,12 +37,20 @@ public class BloomTrigger : MonoBehaviour
     public GameObject objectToActivate;
     public float objectActivationDelay = 2f;
 
+    [Header("Slow Motion Settings")]
+    public float slowMotionTimeScale = 0.3f;
+    public float slowMotionDuration = 3f;
+    public float slowMotionStartDelay = 1f;
+    public float slowMotionTransitionDuration = 1f;
+
     private Camera cameraComponent;
 
     private bool isTriggered = false;
     private bool canvasFadeStarted = false;
     private bool canvasFadeCompleted = false;
     private bool objectActivated = false;
+    private bool isSlowingDown = false;
+    private bool isInSlowMotion = false;
 
     private float initialThreshold;
     private float initialIntensity;
@@ -56,6 +64,10 @@ public class BloomTrigger : MonoBehaviour
     private float elapsedCanvasFadeDelay = 0f;
     private float elapsedCanvasFadeTime = 0f;
     private float elapsedObjectActivationTime = 0f;
+    private float elapsedSlowMotionTime = 0f;
+    private float slowMotionStartTime = 0f;
+
+    private float initialTimeScale = 1f;
 
     private void Start()
     {
@@ -99,6 +111,8 @@ public class BloomTrigger : MonoBehaviour
         {
             objectToActivate.SetActive(false);
         }
+
+        Time.timeScale = 1f; // Ensure normal speed at start
     }
 
     private void Update()
@@ -167,10 +181,43 @@ public class BloomTrigger : MonoBehaviour
                 }
             }
 
-            // Stop updating if all completed
-            if (tThreshold >= 1f && tIntensity >= 1f && tFOV >= 1f && (!fadeAudio || elapsedAudioTime >= audioFadeDuration))
+            // Trigger slow motion after FOV transition
+            if (tFOV >= 1f && !isSlowingDown && !isInSlowMotion)
             {
-                // Do nothing special here, since the canvas and object continue independently
+                isSlowingDown = true;
+                slowMotionStartTime = Time.unscaledTime;
+            }
+
+            // Gradually transition to slow motion
+            if (isSlowingDown)
+            {
+                float delayElapsed = Time.unscaledTime - slowMotionStartTime;
+
+                if (delayElapsed >= slowMotionStartDelay)
+                {
+                    float transitionElapsed = delayElapsed - slowMotionStartDelay;
+                    float tSlow = Mathf.Clamp01(transitionElapsed / slowMotionTransitionDuration);
+                    Time.timeScale = Mathf.Lerp(initialTimeScale, slowMotionTimeScale, tSlow);
+
+                    if (tSlow >= 1f)
+                    {
+                        isInSlowMotion = true;
+                        isSlowingDown = false;
+                        elapsedSlowMotionTime = 0f;
+                    }
+                }
+            }
+
+            // Optional: return to normal speed after slow motion duration
+            if (isInSlowMotion)
+            {
+                elapsedSlowMotionTime += Time.unscaledDeltaTime;
+
+                if (elapsedSlowMotionTime >= slowMotionDuration)
+                {
+                    Time.timeScale = 1f;
+                    isInSlowMotion = false;
+                }
             }
         }
     }
@@ -187,10 +234,14 @@ public class BloomTrigger : MonoBehaviour
             elapsedCanvasFadeDelay = 0f;
             elapsedCanvasFadeTime = 0f;
             elapsedObjectActivationTime = 0f;
+            elapsedSlowMotionTime = 0f;
 
             canvasFadeStarted = false;
             canvasFadeCompleted = false;
             objectActivated = false;
+            isSlowingDown = false;
+            isInSlowMotion = false;
+            Time.timeScale = 1f;
 
             if (audioSource != null)
             {
