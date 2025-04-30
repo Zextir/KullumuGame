@@ -15,6 +15,11 @@ public class BrightnessAdjustment : MonoBehaviour
     private void OnEnable()
     {
         volumeProfile = GetComponent<Volume>().sharedProfile;
+        if (volumeProfile.TryGet<Bloom>(out var bloom))
+        {
+            bloom.threshold.value = 1.45f;
+            bloom.intensity.value = 4.26f;
+        }
     }
 
 
@@ -31,6 +36,7 @@ public class BrightnessAdjustment : MonoBehaviour
             {
                 colorAdjustments.postExposure.value = currentBrightness;
             }
+           
         }
         if (currentGamma != gamma)
         {
