@@ -1,5 +1,4 @@
 using UnityEngine;
-using Unity;
 
 public class DenseAir : MonoBehaviour
 {
@@ -61,7 +60,32 @@ public class DenseAir : MonoBehaviour
         BoxCollider boxCollider = GetComponent<BoxCollider>();
         if (boxCollider != null)
         {
-            boxCollider.size = colliderSize;
+            boxCollider.size = new Vector3(colliderSize.x * 1.2f, colliderSize.y * 1.5f, colliderSize.z * 1.2f);
+        }
+    }
+
+    private void OnTriggerEnter(Collider other)
+    {
+        if (other.tag == "Player") return;
+
+        Rigidbody rb = other.GetComponent<Rigidbody>();
+        if (rb != null)
+        {
+            rb.useGravity = false;
+            rb.drag = 1f;
+        }
+    }
+
+
+    private void OnTriggerExit(Collider other)
+    {
+        if (other.tag == "Player") return;
+
+        Rigidbody rb = other.GetComponent<Rigidbody>();
+        if (rb != null)
+        {
+            rb.useGravity = true;
+            rb.drag = 0f;
         }
     }
 }
