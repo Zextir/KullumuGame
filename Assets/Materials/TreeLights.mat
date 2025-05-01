@@ -22,7 +22,7 @@ Material:
   m_PrefabAsset: {fileID: 0}
   m_Name: TreeLights
   m_Shader: {fileID: 4800000, guid: 933532a4fcc9baf4fa0491de14d08ed7, type: 3}
-  m_Parent: {fileID: 2100000, guid: 76f15b9f6e2e3f9499a91a4f4872842e, type: 2}
+  m_Parent: {fileID: 2100000, guid: cedcee94a99b7b44f90bc15e284a714e, type: 2}
   m_ModifiedSerializedProperties: 0
   m_ValidKeywords:
   - _EMISSION
@@ -43,6 +43,6 @@ Material:
     m_Colors:
     - _BaseColor: {r: 1, g: 0.6428847, b: 0, a: 1}
     - _Color: {r: 1, g: 0.6428846, b: 0, a: 1}
-    - _EmissionColor: {r: 1.7207954, g: 0.4658877, b: 0, a: 1}
+    - _EmissionColor: {r: 5.9921575, g: 1.622315, b: 0, a: 1}
     - _SpecColor: {r: 0.19999996, g: 0.19999996, b: 0.19999996, a: 1}
   m_BuildTextureStacks: []

@@ -49123,10 +49123,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9e5191db95658be49b53bf03ea053e5a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  sceneToLoad: LavaTunnel
-  loadingSceneName: LoadingScene
-  fadeImage: {fileID: 2048620392}
-  fadeDuration: 1
+  targetScene: 
+  spawnPointInTargetScene: 
 --- !u!4 &1145876403 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: 418b89debdc9a144fa79bb0b8c0d90c2,
