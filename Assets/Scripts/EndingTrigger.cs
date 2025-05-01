@@ -1,3 +1,4 @@
+using Opsive.UltimateCharacterController.Character;
 using UnityEngine;
 using UnityEngine.Rendering;
 using UnityEngine.Rendering.Universal;
@@ -44,6 +45,7 @@ public class BloomTrigger : MonoBehaviour
     public float slowMotionTransitionDuration = 1f;
 
     private Camera cameraComponent;
+    private UltimateCharacterLocomotion ucl;
 
     private bool isTriggered = false;
     private bool canvasFadeStarted = false;
@@ -69,18 +71,10 @@ public class BloomTrigger : MonoBehaviour
 
     private float initialTimeScale = 1f;
 
+    private float elapsedCameraFreezeTime = 0f;
+
     private void Start()
     {
-        if (volume != null && volume.profile.TryGet(out bloom))
-        {
-            initialThreshold = bloom.threshold.value;
-            initialIntensity = bloom.intensity.value;
-        }
-        else
-        {
-            Debug.LogError("Bloom not found in the assigned Volume Profile!");
-        }
-
         if (audioSource != null)
         {
             initialAudioVolume = 0f;
@@ -123,15 +117,18 @@ public class BloomTrigger : MonoBehaviour
             elapsedIntensityTime += Time.deltaTime;
             elapsedAudioTime += Time.deltaTime;
             elapsedFOVTime += Time.deltaTime;
+            elapsedCameraFreezeTime += Time.deltaTime;
 
             float tThreshold = Mathf.Clamp01(elapsedThresholdTime / thresholdTransitionDuration);
             float tIntensity = Mathf.Clamp01(elapsedIntensityTime / intensityTransitionDuration);
             float tAudio = Mathf.Clamp01(elapsedAudioTime / audioFadeDuration);
             float tFOV = Mathf.Clamp01(elapsedFOVTime / fovTransitionDuration);
 
+
             // Smooth Interpolation
             bloom.threshold.value = Mathf.Lerp(initialThreshold, targetThreshold, tThreshold);
             bloom.intensity.value = Mathf.Lerp(initialIntensity, targetIntensity, tIntensity);
+
 
             if (audioSource != null && fadeAudio)
             {
@@ -181,6 +178,18 @@ public class BloomTrigger : MonoBehaviour
                 }
             }
 
+            
+            if (elapsedCameraFreezeTime > intensityTransitionDuration / 2 && ucl != null)
+            {
+  
+                ucl.TimeScale = 0f;
+                
+            }
+
+            // // Stop updating if all completed
+            // if (tThreshold >= 1f && tIntensity >= 1f && tFOV >= 1f && (!fadeAudio || elapsedAudioTime >= audioFadeDuration))
+
+            
             // Trigger slow motion after FOV transition
             if (tFOV >= 1f && !isSlowingDown && !isInSlowMotion)
             {
@@ -242,6 +251,19 @@ public class BloomTrigger : MonoBehaviour
             isSlowingDown = false;
             isInSlowMotion = false;
             Time.timeScale = 1f;
+
+            ucl = other.GetComponent<UltimateCharacterLocomotion>();
+
+
+            if (volume != null && volume.sharedProfile.TryGet(out bloom))
+            {
+                initialThreshold = bloom.threshold.value;
+                initialIntensity = bloom.intensity.value;
+            }
+            else
+            {
+                Debug.LogError("Bloom not found in the assigned Volume Profile!");
+            }
 
             if (audioSource != null)
             {
