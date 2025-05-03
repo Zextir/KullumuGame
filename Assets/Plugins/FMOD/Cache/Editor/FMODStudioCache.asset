@@ -78,8 +78,8 @@ MonoBehaviour:
   Is3D: 1
   IsOneShot: 0
   Parameters: []
-  MinDistance: 1
-  MaxDistance: 20
+  MinDistance: 600
+  MaxDistance: 1200
   Length: 0
 --- !u!114 &-4916872571329140236
 MonoBehaviour:
@@ -126,6 +126,33 @@ MonoBehaviour:
   lastModified: 638816175712402546
   FileSizes: []
   Exists: 1
+--- !u!114 &-4678791875471636333
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/Footsteps/Footsteps on Bone
+  m_EditorClassIdentifier: 
+  Path: event:/Footsteps/Footsteps on Bone
+  Guid:
+    Data1: 1742797264
+    Data2: 1105401547
+    Data3: -709588604
+    Data4: -548387230
+  Banks:
+  - {fileID: 2862739291524880399}
+  IsStream: 0
+  Is3D: 1
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 0
 --- !u!114 &-4088799935958276998
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -168,10 +195,10 @@ MonoBehaviour:
   Path: Assets/Audio/FMOD Audio Bank/Master.strings.bank
   Name: Master.strings
   StudioPath: bank:/Master.strings
-  lastModified: 638816172529581410
+  lastModified: 638818814420633651
   FileSizes:
   - Name: 
-    Value: 1056
+    Value: 1166
   Exists: 1
 --- !u!114 &-995998435214175195
 MonoBehaviour:
@@ -224,8 +251,8 @@ MonoBehaviour:
   Is3D: 1
   IsOneShot: 0
   Parameters: []
-  MinDistance: 1
-  MaxDistance: 20
+  MinDistance: 600
+  MaxDistance: 1800
   Length: 0
 --- !u!114 &11400000
 MonoBehaviour:
@@ -249,12 +276,14 @@ MonoBehaviour:
   - {fileID: -10369535077839262}
   - {fileID: 7671533492976416755}
   - {fileID: 3912052685073581777}
+  - {fileID: 2294236447002037851}
+  - {fileID: -4678791875471636333}
   EditorParameters: []
   MasterBanks:
   - {fileID: 2862739291524880399}
   StringsBanks:
   - {fileID: -2814541760579694099}
-  cacheTime: 638816175712402546
+  cacheTime: 638818814420633651
   cacheVersion: 131624
 --- !u!114 &487936414824634620
 MonoBehaviour:
@@ -310,6 +339,33 @@ MonoBehaviour:
   MinDistance: 1
   MaxDistance: 20
   Length: 0
+--- !u!114 &2294236447002037851
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/Objects/Lava Pool
+  m_EditorClassIdentifier: 
+  Path: event:/Objects/Lava Pool
+  Guid:
+    Data1: -1507190386
+    Data2: 1152568763
+    Data3: -968614259
+    Data4: 344811230
+  Banks:
+  - {fileID: 2862739291524880399}
+  IsStream: 1
+  Is3D: 1
+  IsOneShot: 0
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 0
 --- !u!114 &2862739291524880399
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -325,7 +381,7 @@ MonoBehaviour:
   Path: Assets/Audio/FMOD Audio Bank/Master.bank
   Name: Master
   StudioPath: bank:/Master
-  lastModified: 638816175712402546
+  lastModified: 638818814420633651
   FileSizes: []
   Exists: 1
 --- !u!114 &3912052685073581777
@@ -352,8 +408,8 @@ MonoBehaviour:
   Is3D: 1
   IsOneShot: 0
   Parameters: []
-  MinDistance: 1
-  MaxDistance: 20
+  MinDistance: 800
+  MaxDistance: 1400
   Length: 0
 --- !u!114 &6607839847621249894
 MonoBehaviour:
@@ -399,8 +455,8 @@ MonoBehaviour:
   Is3D: 1
   IsOneShot: 0
   Parameters: []
-  MinDistance: 1
-  MaxDistance: 20
+  MinDistance: 1200
+  MaxDistance: 2000
   Length: 0
 --- !u!114 &8904369104449760131
 MonoBehaviour:
