@@ -15,6 +15,7 @@ MonoBehaviour:
   m_Data:
     m_ObjectType: Opsive.UltimateCharacterController.Traits.CharacterRespawner
     m_ValueHashes: 3bd0f56eefda1d70dade6c21
+    m_LongValueHashes: 
     m_ValuePositions: 000000000100000002000000
     m_Values: 000000000000
     m_UnityObjects: []
