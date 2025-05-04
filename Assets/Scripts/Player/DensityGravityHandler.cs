@@ -1,10 +1,19 @@
+using Opsive.UltimateCharacterController.Character;
 using UnityEngine;
 
 public class DensityGravityHandler : MonoBehaviour
 {
     float gravityMultiplier = 1;
+    UltimateCharacterLocomotion ucl;
+    Glide glide;
 
     public float GravityMultiplier => gravityMultiplier;
+
+    private void OnEnable()
+    {
+        ucl = GetComponent<UltimateCharacterLocomotion>();
+        if (ucl != null) glide = ucl.GetAbility<Glide>();
+    }
 
     private void OnTriggerExit(Collider other)
     {
@@ -30,5 +39,12 @@ public class DensityGravityHandler : MonoBehaviour
         }
     }
 
+    private void Update()
+    {
+        if (ucl == null) return;
+        float modifiedGravity = gravityMultiplier;
+        if (glide != null && glide.IsActive) modifiedGravity *= glide.GravityMultiplier;
+        ucl.GravityAmount = modifiedGravity;
+    }
 
 }
