@@ -45,6 +45,12 @@ namespace Opsive.UltimateCharacterController.Character.Abilities
         private Vector3 m_SlideDirection;
         private Vector3 m_Momentum;
 
+
+
+        private bool prevDownwards = true;
+        private bool slopeChanged = false;
+        private bool slowing = false;
+
         public override bool IsConcurrent { get { return true; } }
 
         /// <summary>
@@ -138,6 +144,11 @@ namespace Opsive.UltimateCharacterController.Character.Abilities
         {
             base.UpdatePosition();
 
+            bool downwards = MovingDownward();
+            slopeChanged = prevDownwards != downwards;
+            prevDownwards = downwards;
+
+
             m_SlideSpeed /= (1 + m_SlideDamping * m_CharacterLocomotion.TimeScale * Time.timeScale);
 
             // The slide value uses the ground's physic material to get the amount of friction of the material.
@@ -151,6 +162,7 @@ namespace Opsive.UltimateCharacterController.Character.Abilities
             var minSlideValue = m_SlideLimit.MinValue;
             if (!increaseSlideSpeed)
             {
+                slowing = true;
                 // The character may be on the edge.
                 var ray = new Ray(m_CharacterLocomotion.TargetPosition + m_CharacterLocomotion.Up * m_CharacterLocomotion.ColliderSpacing * 2, -upDirection);
                 if (!Physics.Raycast(ray, m_CharacterLocomotion.MaxStepHeight, m_CharacterLayerManager.SolidObjectLayers, QueryTriggerInteraction.Ignore))
@@ -162,6 +174,7 @@ namespace Opsive.UltimateCharacterController.Character.Abilities
 
             if (increaseSlideSpeed)
             {
+                slowing = false;
                 // The character may be on a step.
                 if (Physics.Raycast(MathUtility.TransformPoint(m_CharacterLocomotion.TargetPosition, m_CharacterLocomotion.Rotation, Vector3.forward * m_CharacterLocomotion.SkinWidth) +
                                                             upDirection * m_CharacterLocomotion.MaxStepHeight,
@@ -197,8 +210,10 @@ namespace Opsive.UltimateCharacterController.Character.Abilities
             }
             else if (direction.sqrMagnitude > 0)
             {
+
                 // The slope is changing directions.
                 m_Momentum = direction.normalized;
+                
             }
         }
 
@@ -209,9 +224,19 @@ namespace Opsive.UltimateCharacterController.Character.Abilities
         /// <returns>True if the ability can be stopped.</returns>
         public override bool CanStopAbility(bool force)
         {
+            //return m_CharacterLocomotion.Moving && !MovingDownward();
             if (force) { return true; }
 
-            return !CanSlide() || m_SlideSpeed <= m_CharacterLocomotion.ColliderSpacing;
+            Debug.Log(slowing);
+
+            float velocity = m_CharacterLocomotion.Velocity.magnitude;
+            float motorAcceleration = m_CharacterLocomotion.MotorAcceleration.magnitude;
+
+            Debug.Log(velocity);
+
+            return velocity <= motorAcceleration + 1f ||
+                (slowing && velocity <= motorAcceleration * 1.7f) /*||
+                (!MovingDownward() && velocity <= motorAcceleration * 2f)*/;
         }
 
         /// <summary>
@@ -232,6 +257,13 @@ namespace Opsive.UltimateCharacterController.Character.Abilities
                 StopAbility(true);
             }
         }
+
+        public override bool ShouldBlockAbilityStart(Ability startingAbility)
+        {
+            return startingAbility is SpeedChange;
+        }
+
+     
 
         /// <summary>
         /// The ability has stopped running.
@@ -267,8 +299,12 @@ namespace Opsive.UltimateCharacterController.Character.Abilities
 
             var moveSlideAngle =  Mathf.Acos(Vector3.Dot(slideDirection, velocity) / velocity.magnitude);
 
+            //Debug.Log(moveSlideAngle < MoveSlideStopAngle);
+
             return moveSlideAngle < MoveSlideStopAngle;
         }
+
+
 
     }
 
