@@ -30,7 +30,7 @@ Material:
   - GRABPASS
   - DepthOnly
   - SHADOWCASTER
-  m_LockedProperties: 
+  m_LockedProperties: :m_LightmapFlags
   m_SavedProperties:
     serializedVersion: 3
     m_TexEnvs: []
@@ -39,10 +39,10 @@ Material:
     - _ColorMode: 4
     - _Smoothness: 0
     m_Colors:
-    - _BaseColor: {r: 1, g: 1, b: 1, a: 1}
+    - _BaseColor: {r: 1, g: 1, b: 1, a: 0.015686275}
     - _BaseColorAddSubDiff: {r: 1, g: 0, b: 0, a: 0}
-    - _Color: {r: 1, g: 1, b: 1, a: 1}
-    - _EmissionColor: {r: 10.515692, g: 1.9544858, b: 0.23147576, a: 1}
+    - _Color: {r: 1, g: 1, b: 1, a: 0.015686275}
+    - _EmissionColor: {r: 1.1845257, g: 2.3396225, b: 2.246774, a: 1}
   m_BuildTextureStacks: []
 --- !u!114 &7705336411151353976
 MonoBehaviour:
