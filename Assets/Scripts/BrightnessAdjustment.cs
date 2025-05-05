@@ -18,7 +18,7 @@ public class BrightnessAdjustment : MonoBehaviour
         if (volumeProfile.TryGet<Bloom>(out var bloom))
         {
             bloom.threshold.value = 1.45f;
-            bloom.intensity.value = 4.26f;
+            bloom.intensity.value = 1.45f;
         }
     }
 

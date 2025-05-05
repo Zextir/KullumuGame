@@ -1,6 +1,7 @@
 using UnityEngine;
 
-[RequireComponent(typeof(AudioSource), typeof(Collider))]
+[RequireComponent(typeof(Collider))]
+// typeof(AudioSource), 
 public class ShrinkOnGroundHit : MonoBehaviour
 {
     public float shrinkDuration = 10f;
@@ -8,13 +9,13 @@ public class ShrinkOnGroundHit : MonoBehaviour
     private Vector3 initialScale;
     private bool hasHitGround = false;
     private float timer = 0f;
-    private AudioSource audioSource;
+    // private AudioSource audioSource;
 
     void Start()
     {
         initialScale = transform.localScale;
-        audioSource = GetComponent<AudioSource>();
-        audioSource.loop = false; // Ensure it plays only once
+        // audioSource = GetComponent<AudioSource>();
+        // audioSource.loop = false; // Ensure it plays only once
     }
 
     void Update()
@@ -39,10 +40,10 @@ public class ShrinkOnGroundHit : MonoBehaviour
             hasHitGround = true;
             timer = 0f;
 
-            if (audioSource != null && !audioSource.isPlaying)
-            {
-                audioSource.Play(); // Plays once on first hit
-            }
+            // if (audioSource != null && !audioSource.isPlaying)
+            // {
+            //    audioSource.Play(); // Plays once on first hit
+            // }
         }
     }
 }
