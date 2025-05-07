@@ -4,7 +4,12 @@ using UnityEngine;
 
 public class Interact : MonoBehaviour
 
+
 {
+    public CanvasGroup popupCanvasGroup; // Reference to the CanvasGroup on the panel
+    public float fadeDuration = 0.5f;
+    private Coroutine currentFade;
+
     public GameObject popupPanel;  // The UI panel to show
     public Transform player; // The player character (to detect if inside trigger)
 
@@ -12,43 +17,180 @@ public class Interact : MonoBehaviour
 
     void Start()
     {
-        // Ensure the popup panel is inactive initially
-        popupPanel.SetActive(false);
+        popupPanel.SetActive(true); // Make sure it's active for fading to work
+        popupCanvasGroup.alpha = 0f;
+        popupCanvasGroup.interactable = false;
+        popupCanvasGroup.blocksRaycasts = false;
     }
 
-    void Update()
+    private void OnTriggerEnter(Collider other)
     {
-        // If the player is inside the trigger zone, show the popup panel
-        if (isPlayerInRange)
+        if (other.CompareTag("Character"))
+        {
+            isPlayerInRange = true;
+            Debug.Log("Player entered interaction range.");
+            StartFade(1f); // Fade in
+        }
+    }
+
+    private void OnTriggerExit(Collider other)
+    {
+        if (other.CompareTag("Character"))
+        {
+            isPlayerInRange = false;
+            Debug.Log("Player exited interaction range.");
+            StartFade(0f); // Fade out
+        }
+    }
+
+    private void StartFade(float targetAlpha)
+    {
+        if (currentFade != null)
+            StopCoroutine(currentFade);
+        currentFade = StartCoroutine(FadeCanvasGroup(targetAlpha));
+    }
+
+    private IEnumerator FadeCanvasGroup(float targetAlpha)
+    {
+        float startAlpha = popupCanvasGroup.alpha;
+        float time = 0f;
+
+        // Ensure the panel stays active while fading
+        if (targetAlpha > 0f)
         {
             popupPanel.SetActive(true);
         }
-        else
+
+        while (time < fadeDuration)
+        {
+            popupCanvasGroup.alpha = Mathf.Lerp(startAlpha, targetAlpha, time / fadeDuration);
+            time += Time.deltaTime;
+            yield return null;
+        }
+
+        popupCanvasGroup.alpha = targetAlpha;
+
+        bool visible = targetAlpha > 0.9f;
+        popupCanvasGroup.interactable = visible;
+        popupCanvasGroup.blocksRaycasts = visible;
+
+        // Only disable after fully faded out
+        if (targetAlpha == 0f)
         {
             popupPanel.SetActive(false);
         }
     }
-
-    // When the player enters the trigger zone
-    private void OnTriggerEnter(Collider other)
-    {
-        if (other.CompareTag("Character")) // Check if the player has entered the trigger
-        {
-            isPlayerInRange = true; // Player is inside the trigger zone
-            Debug.Log("Player entered interaction range.");
-        }
-    }
-
-    // When the player exits the trigger zone
-    private void OnTriggerExit(Collider other)
-    {
-        if (other.CompareTag("Character")) // Check if the player has exited the trigger
-        {
-            isPlayerInRange = false; // Player is no longer inside the trigger zone
-            Debug.Log("Player exited interaction range.");
-        }
-    }
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+// {
+
+//     public CanvasGroup popupCanvasGroup; // Reference to the CanvasGroup on the panel
+//     public float fadeDuration = 0.5f;
+//     private Coroutine currentFade;
+
+
+//     public GameObject popupPanel;  // The UI panel to show
+//     public Transform player; // The player character (to detect if inside trigger)
+
+//     private bool isPlayerInRange = false; // To track whether the player is inside the trigger
+
+//     void Start()
+//     {
+//         // Ensure the popup panel is inactive initially
+//         popupPanel.SetActive(false);
+
+//         popupCanvasGroup.alpha = 0f;
+//         popupCanvasGroup.interactable = false;
+//         popupCanvasGroup.blocksRaycasts = false;
+//     }
+
+//     void Update()
+//     {
+//         // If the player is inside the trigger zone, show the popup panel
+//         if (isPlayerInRange)
+//         {
+//             popupPanel.SetActive(true);
+//         }
+//         else
+//         {
+//             popupPanel.SetActive(false);
+//         }
+//     }
+
+//     // When the player enters the trigger zone
+//     private void OnTriggerEnter(Collider other)
+//     {
+//         if (other.CompareTag("Character")) // Check if the player has entered the trigger
+//         {
+//             isPlayerInRange = true; // Player is inside the trigger zone
+//             Debug.Log("Player entered interaction range.");
+//             StartFade(1f); // Fade in
+//         }
+//     }
+
+//     // When the player exits the trigger zone
+//     private void OnTriggerExit(Collider other)
+//     {
+//         if (other.CompareTag("Character")) // Check if the player has exited the trigger
+//         {
+//             isPlayerInRange = false; // Player is no longer inside the trigger zone
+//             Debug.Log("Player exited interaction range.");
+//             StartFade(0f); // Fade out
+//         }
+//     }
+
+//     private void StartFade(float targetAlpha)
+//     {
+//         if (currentFade != null)
+//             StopCoroutine(currentFade);
+//         currentFade = StartCoroutine(FadeCanvasGroup(targetAlpha));
+//     }
+
+//     private IEnumerator FadeCanvasGroup(float targetAlpha)
+//     {
+//         float startAlpha = popupCanvasGroup.alpha;
+//         float time = 0f;
+
+//         while (time < fadeDuration)
+//         {
+//             popupCanvasGroup.alpha = Mathf.Lerp(startAlpha, targetAlpha, time / fadeDuration);
+//             time += Time.deltaTime;
+//             yield return null;
+//         }
+
+//         popupCanvasGroup.alpha = targetAlpha;
+
+//         // Enable/disable interaction based on visibility
+//         popupCanvasGroup.interactable = targetAlpha > 0.9f;
+//         popupCanvasGroup.blocksRaycasts = targetAlpha > 0.9f;
+//     }
+// }
 
 
 
