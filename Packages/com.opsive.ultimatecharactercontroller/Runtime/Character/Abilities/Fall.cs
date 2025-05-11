@@ -105,12 +105,15 @@ namespace Opsive.UltimateCharacterController.Character.Abilities
         {
             base.Update();
 
-            m_StateIndex = inFloat ? 2 : 0;
-            SetAbilityIntDataParameter(m_StateIndex);
+            if (m_StateIndex != 1)
+            {
+                m_StateIndex = inFloat ? 2 : 0;
+                SetAbilityIntDataParameter(m_StateIndex);
+            }
+            
 
             // Set the Float Data parameter for the blend tree.
             SetAbilityFloatDataParameter(m_CharacterLocomotion.LocalVelocity.y);
-
         }
 
         /// <summary>
