@@ -595,7 +595,7 @@ MonoBehaviour:
   - rid: 2051309532689989641
   - rid: 110651718066241537
   - rid: 110651718066241538
-  - rid: 110651819258806274
+  - rid: 110651819258806275
   - rid: 110651718066241540
   - rid: 110651718066241541
   m_ItemAbilities:
@@ -931,7 +931,7 @@ MonoBehaviour:
         m_InspectorDescription: 
         gravityMultiplier: 0.576
         playerInput: {fileID: 6185324423905921195}
-    - rid: 110651819258806274
+    - rid: 110651819258806275
       type: {class: SlideV2, ns: Opsive.UltimateCharacterController.Character.Abilities,
         asm: Assembly-CSharp}
       data:
@@ -994,12 +994,10 @@ MonoBehaviour:
         m_SlideDamping: 0.035
         m_OverrideUpDirection: {x: 0, y: 0, z: 0}
         m_moveSlideStopAngle: 2
-        noSlidingPrefab: {fileID: 6391012249407876208, guid: 589b29c91e64e8e40b9428f6abbbb13f,
-          type: 3}
-        normalSlidingPrefab: {fileID: 6391012249407876208, guid: f859aa5abb413754594b38671577a37c,
-          type: 3}
-        increasedSlidingPrefab: {fileID: 6391012249407876208, guid: 9e03fbc5e08e5444bbdb22d580797f5c,
-          type: 3}
+        slidingPrefabs:
+        - {fileID: 6391012249407876208, guid: 589b29c91e64e8e40b9428f6abbbb13f, type: 3}
+        - {fileID: 6391012249407876208, guid: f859aa5abb413754594b38671577a37c, type: 3}
+        - {fileID: 6391012249407876208, guid: 9e03fbc5e08e5444bbdb22d580797f5c, type: 3}
     - rid: 2051309532689989636
       type: {class: Die, ns: Opsive.UltimateCharacterController.Character.Abilities,
         asm: Opsive.UltimateCharacterController}

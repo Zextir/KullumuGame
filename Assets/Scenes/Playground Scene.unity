@@ -1355,11 +1355,6 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 6410373129064516881, guid: 8a09f169283efeb4b9d0c7cfdb97fd19,
-        type: 3}
-      propertyPath: m_LocalPosition.y
-      value: -3
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -3041,7 +3036,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c26b6c01fe7cab44195d37aca1b996a5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  hasIncreasedSliding: 0
+  levelOfSliding: 2
 --- !u!1 &389239819
 GameObject:
   m_ObjectHideFlags: 0
@@ -7133,7 +7128,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c26b6c01fe7cab44195d37aca1b996a5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  hasIncreasedSliding: 0
+  levelOfSliding: 1
 --- !u!1001 &1179462997
 PrefabInstance:
   m_ObjectHideFlags: 0

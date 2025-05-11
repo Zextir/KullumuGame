@@ -4,9 +4,9 @@ using UnityEngine;
 
 public class Slideable : MonoBehaviour
 {
-    [SerializeField] bool hasIncreasedSliding = false;
+    [SerializeField] uint levelOfSliding = 1;
 
-    public bool HasIncreasedSliding => hasIncreasedSliding;
+    public uint LevelOfSliding => levelOfSliding;
 
 
     bool area = false;
@@ -15,6 +15,7 @@ public class Slideable : MonoBehaviour
     {
         foreach (var collider in GetComponents<Collider>())
             area |= collider.isTrigger;
+        if (area && levelOfSliding < 2) levelOfSliding = 2;
     }
 
     private void OnTriggerStay(Collider other)
@@ -31,6 +32,7 @@ public class Slideable : MonoBehaviour
     private void OnTriggerExit(Collider other)
     {
         if (!area) return;
+
         var ucl = other.GetComponent<UltimateCharacterLocomotion>();
         if (ucl == null) return;
         var slide = ucl.GetAbility<SlideV2>();
@@ -38,5 +40,8 @@ public class Slideable : MonoBehaviour
         slide.IncreasedSlideArea = null;
     }
 
-
+    private void OnValidate()
+    {
+        if (levelOfSliding == 0) levelOfSliding = 1;
+    }
 }

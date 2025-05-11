@@ -6,6 +6,7 @@
 
 namespace Opsive.UltimateCharacterController.Character.Abilities
 {
+    using System.Collections.Generic;
     using Opsive.Shared.Events;
     using Opsive.UltimateCharacterController.Utility;
     using UnityEngine;
@@ -32,12 +33,8 @@ namespace Opsive.UltimateCharacterController.Character.Abilities
         [Tooltip("The moving vs. sliding angle (in radians) at which the character should stop sliding.")]
         [SerializeField, Range(0,4)] protected float m_moveSlideStopAngle = 1.5f;
 
-        [Tooltip("Prefab containing the sliding values when on a surface the character can't slide on.")]
-        [SerializeField] UltimateCharacterLocomotion noSlidingPrefab;
-        [Tooltip("Prefab containing the sliding values for normal sliding conditions.")]
-        [SerializeField] UltimateCharacterLocomotion normalSlidingPrefab;
-        [Tooltip("Prefab containing the sliding values for increased sliding conditions.")]
-        [SerializeField] UltimateCharacterLocomotion increasedSlidingPrefab;
+        [Tooltip("Prefabs containing the values for the different levels of sliding. Ordered from no sliding to most sliding.")]
+        public UltimateCharacterLocomotion[] slidingPrefabs;
 
         public Shared.Utility.MinMaxFloat SlideLimit { get { return m_SlideLimit; } set { m_SlideLimit = value; } }
         public float EdgeSlideLimit { get { return m_EdgeSlideLimit; } set { m_EdgeSlideLimit = value; } }
@@ -58,9 +55,7 @@ namespace Opsive.UltimateCharacterController.Character.Abilities
         private Slideable currentSlopeSurface;
         private Slideable increasedSlideArea;
 
-        private SlideV2 noSliding;
-        private SlideV2 normalSliding;
-        private SlideV2 increasedSliding;
+        private List<SlideV2> slidingValues = new List<SlideV2>();
 
         public override bool IsConcurrent { get { return true; } }
         public Slideable IncreasedSlideArea
@@ -71,14 +66,18 @@ namespace Opsive.UltimateCharacterController.Character.Abilities
             }
         }
 
-        private bool HasIncreasedSliding
+
+        private int LevelOfSliding
         {
             get
             {
-                if (currentSlopeSurface == null) return false;
-                return currentSlopeSurface.HasIncreasedSliding || increasedSlideArea != null;
+                if (currentSlopeSurface == null) return 0;
+                if (increasedSlideArea == null) return (int)currentSlopeSurface.LevelOfSliding;
+                var actualLevel = Mathf.Max(currentSlopeSurface.LevelOfSliding, increasedSlideArea.LevelOfSliding);
+                return (int)Mathf.Clamp(actualLevel, 0, slidingValues.Count - 1);
             }
         }
+
 
         /// <summary>
         /// Initialize the default values.
@@ -88,9 +87,12 @@ namespace Opsive.UltimateCharacterController.Character.Abilities
             base.Awake();
 
             EventHandler.RegisterEvent<bool>(m_GameObject, "OnCharacterGrounded", OnGrounded);
-            if (noSlidingPrefab != null) noSliding = noSlidingPrefab.GetAbility<SlideV2>();
-            if (normalSlidingPrefab != null) normalSliding = normalSlidingPrefab.GetAbility<SlideV2>();
-            if (increasedSlidingPrefab != null) increasedSliding = increasedSlidingPrefab.GetAbility<SlideV2>();
+            foreach (var slidingPrefab in slidingPrefabs)
+                if (slidingPrefab != null)
+                {
+                    SlideV2 slideValue = slidingPrefab.GetAbility<SlideV2>();
+                    if (slideValue != null) slidingValues.Add(slideValue);
+                }
         }
 
         /// <summary>
@@ -180,16 +182,16 @@ namespace Opsive.UltimateCharacterController.Character.Abilities
 
         private void SetSlidingValues()
         {
-            SlideV2 slidingValues = OnSlidingSurface() ? (HasIncreasedSliding ? increasedSliding : normalSliding) : noSliding;
-            if (slidingValues == null) return;
+            SlideV2 slidingValue = OnSlidingSurface() ? slidingValues[LevelOfSliding] : slidingValues[0];
+            if (slidingValue == null) return;
 
-            SlideLimit = slidingValues.SlideLimit;
-            EdgeSlideLimit = slidingValues.EdgeSlideLimit;
-            Acceleration = slidingValues.Acceleration;
-            MaxSlideSpeed = slidingValues.MaxSlideSpeed;
-            SlideDamping = slidingValues.SlideDamping;
-            OverrideUpDirection = slidingValues.OverrideUpDirection;
-            MoveSlideStopAngle = slidingValues.MoveSlideStopAngle;
+            SlideLimit = slidingValue.SlideLimit;
+            EdgeSlideLimit = slidingValue.EdgeSlideLimit;
+            Acceleration = slidingValue.Acceleration;
+            MaxSlideSpeed = slidingValue.MaxSlideSpeed;
+            SlideDamping = slidingValue.SlideDamping;
+            OverrideUpDirection = slidingValue.OverrideUpDirection;
+            MoveSlideStopAngle = slidingValue.MoveSlideStopAngle;
         }
 
         /// <summary>
