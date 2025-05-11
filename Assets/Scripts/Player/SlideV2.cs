@@ -227,12 +227,10 @@ namespace Opsive.UltimateCharacterController.Character.Abilities
             //return m_CharacterLocomotion.Moving && !MovingDownward();
             if (force) { return true; }
 
-            Debug.Log(slowing);
 
             float velocity = m_CharacterLocomotion.Velocity.magnitude;
             float motorAcceleration = m_CharacterLocomotion.MotorAcceleration.magnitude;
 
-            Debug.Log(velocity);
 
             return velocity <= motorAcceleration + 1f ||
                 (slowing && velocity <= motorAcceleration * 1.7f) /*||
