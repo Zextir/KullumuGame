@@ -2,7 +2,7 @@ using Opsive.UltimateCharacterController.Character.Abilities;
 using UnityEngine;
 
 using Opsive.Shared.Events;
-using Opsive.UltimateCharacterController.Character;
+using Opsive.Shared.Input;
 
 
 [DefaultInputName("Jump")]
@@ -16,6 +16,9 @@ public class Glide : Ability
     [Tooltip("Multiplier applied to gravity while gliding.")]
     [SerializeField, Range(0,1)] float gravityMultiplier = 0.8f;
 
+    [Tooltip("The character's input. Should be a childObject of this object.")]
+    [SerializeField] PlayerInput playerInput;
+
     public float GravityMultiplier => gravityMultiplier;
 
 
@@ -28,9 +31,12 @@ public class Glide : Ability
 
     void SwitchToGliding(Ability ability, bool activated)
     {
+        if (playerInput == null) return;
         if (ability is Jump && !activated)
         {
-            StartAbility();
+            bool inputPressed = true;
+            foreach (var input in m_InputNames) inputPressed &= playerInput.GetButton(input);
+            if (inputPressed) StartAbility();
         }
     }
 
