@@ -8,18 +8,18 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/MainMenuUI.unity
     guid: b91127a35b8266041b2accd3deff9cc3
+  - enabled: 1
+    path: Assets/Scenes/MainLevel.unity
+    guid: 7001e3a59e031f643b145fc0133b052b
+  - enabled: 1
+    path: Assets/Scenes/LavaTunnel.unity
+    guid: f18d98a7d704ae945a138d4122ced4a4
   - enabled: 0
     path: Assets/Scenes/Level1.unity
     guid: b5600418ce477e94cbabb7f95f5fafda
   - enabled: 0
     path: Assets/Scenes/LoadingScene.unity
     guid: 62e1e419c2ee5ab46aa95546cf7f7a2f
-  - enabled: 1
-    path: Assets/Scenes/LavaTunnel.unity
-    guid: f18d98a7d704ae945a138d4122ced4a4
-  - enabled: 1
-    path: Assets/Scenes/MainLevel.unity
-    guid: 7001e3a59e031f643b145fc0133b052b
   m_configObjects:
     com.unity.input.settings: {fileID: 11400000, guid: 9e7be553448fa2546aea5752021cbcf7,
       type: 2}
