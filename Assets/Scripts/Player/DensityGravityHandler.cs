@@ -1,4 +1,5 @@
 using Opsive.UltimateCharacterController.Character;
+using Opsive.UltimateCharacterController.Character.Abilities;
 using UnityEngine;
 
 public class DensityGravityHandler : MonoBehaviour
@@ -6,13 +7,18 @@ public class DensityGravityHandler : MonoBehaviour
     float gravityMultiplier = 1;
     UltimateCharacterLocomotion ucl;
     Glide glide;
+    Fall fall;
 
     public float GravityMultiplier => gravityMultiplier;
 
     private void OnEnable()
     {
         ucl = GetComponent<UltimateCharacterLocomotion>();
-        if (ucl != null) glide = ucl.GetAbility<Glide>();
+        if (ucl != null)
+        {
+            glide = ucl.GetAbility<Glide>();
+            fall = ucl.GetAbility<Fall>();
+        }
     }
 
     private void OnTriggerExit(Collider other)
@@ -22,7 +28,7 @@ public class DensityGravityHandler : MonoBehaviour
         gravityMultiplier = 1;
     }
 
-    private void OnTriggerEnter(Collider other)
+    private void OnTriggerStay(Collider other)
     {
         DenseAir denseAir = other.GetComponent<DenseAir>();
         if (denseAir == null) return;
@@ -44,6 +50,8 @@ public class DensityGravityHandler : MonoBehaviour
         if (ucl == null) return;
         float modifiedGravity = gravityMultiplier;
         if (glide != null && glide.IsActive) modifiedGravity *= glide.GravityMultiplier;
+        if (fall != null) fall.InFloat = gravityMultiplier != 1;
+
         ucl.GravityAmount = modifiedGravity;
     }
 

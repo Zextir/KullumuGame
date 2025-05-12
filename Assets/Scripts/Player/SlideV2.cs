@@ -7,6 +7,7 @@
 namespace Opsive.UltimateCharacterController.Character.Abilities
 {
     using Opsive.Shared.Events;
+    using Opsive.UltimateCharacterController.Game;
     using Opsive.UltimateCharacterController.Utility;
     using UnityEngine;
 
@@ -132,6 +133,11 @@ namespace Opsive.UltimateCharacterController.Character.Abilities
         protected override void AbilityStarted()
         {
             base.AbilityStarted();
+            var speedChange = m_CharacterLocomotion.GetAbility<SpeedChangeGradual>();
+            if (speedChange != null)
+            {
+                speedChange.StopAbility();
+            }
             m_SlideSpeed = 0;
             m_SlideDirection = Vector3.zero;
             m_CharacterLocomotion.ForceStickToGround = true;
@@ -227,12 +233,10 @@ namespace Opsive.UltimateCharacterController.Character.Abilities
             //return m_CharacterLocomotion.Moving && !MovingDownward();
             if (force) { return true; }
 
-            Debug.Log(slowing);
 
             float velocity = m_CharacterLocomotion.Velocity.magnitude;
             float motorAcceleration = m_CharacterLocomotion.MotorAcceleration.magnitude;
 
-            Debug.Log(velocity);
 
             return velocity <= motorAcceleration + 1f ||
                 (slowing && velocity <= motorAcceleration * 1.7f) /*||
@@ -260,10 +264,15 @@ namespace Opsive.UltimateCharacterController.Character.Abilities
 
         public override bool ShouldBlockAbilityStart(Ability startingAbility)
         {
-            return startingAbility is SpeedChange;
+            return startingAbility is SpeedChange || startingAbility is SpeedChangeGradual;
         }
 
-     
+        //public override bool ShouldStopActiveAbility(Ability activeAbility)
+        //{
+        //    return activeAbility is SpeedChange || activeAbility is SpeedChangeGradual;
+        //}
+
+
 
         /// <summary>
         /// The ability has stopped running.
@@ -299,7 +308,6 @@ namespace Opsive.UltimateCharacterController.Character.Abilities
 
             var moveSlideAngle =  Mathf.Acos(Vector3.Dot(slideDirection, velocity) / velocity.magnitude);
 
-            //Debug.Log(moveSlideAngle < MoveSlideStopAngle);
 
             return moveSlideAngle < MoveSlideStopAngle;
         }
