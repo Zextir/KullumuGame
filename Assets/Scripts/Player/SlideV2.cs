@@ -6,8 +6,8 @@
 
 namespace Opsive.UltimateCharacterController.Character.Abilities
 {
+    using System.Collections.Generic;
     using Opsive.Shared.Events;
-    using Opsive.UltimateCharacterController.Game;
     using Opsive.UltimateCharacterController.Utility;
     using UnityEngine;
 
@@ -33,6 +33,9 @@ namespace Opsive.UltimateCharacterController.Character.Abilities
         [Tooltip("The moving vs. sliding angle (in radians) at which the character should stop sliding.")]
         [SerializeField, Range(0,4)] protected float m_moveSlideStopAngle = 1.5f;
 
+        [Tooltip("Prefabs containing the values for the different levels of sliding. Ordered from no sliding to most sliding.")]
+        public UltimateCharacterLocomotion[] slidingPrefabs;
+
         public Shared.Utility.MinMaxFloat SlideLimit { get { return m_SlideLimit; } set { m_SlideLimit = value; } }
         public float EdgeSlideLimit { get { return m_EdgeSlideLimit; } set { m_EdgeSlideLimit = value; } }
         public float Acceleration { get { return m_Acceleration; } set { m_Acceleration = value; } }
@@ -47,12 +50,34 @@ namespace Opsive.UltimateCharacterController.Character.Abilities
         private Vector3 m_Momentum;
 
 
-
-        private bool prevDownwards = true;
-        private bool slopeChanged = false;
         private bool slowing = false;
 
+        private Slideable currentSlopeSurface;
+        private Slideable increasedSlideArea;
+
+        private List<SlideV2> slidingValues = new List<SlideV2>();
+
         public override bool IsConcurrent { get { return true; } }
+        public Slideable IncreasedSlideArea
+        {
+            set
+            {
+                increasedSlideArea = value;
+            }
+        }
+
+
+        private int LevelOfSliding
+        {
+            get
+            {
+                if (currentSlopeSurface == null) return 0;
+                if (increasedSlideArea == null) return (int)currentSlopeSurface.LevelOfSliding;
+                var actualLevel = Mathf.Max(currentSlopeSurface.LevelOfSliding, increasedSlideArea.LevelOfSliding);
+                return (int)Mathf.Clamp(actualLevel, 0, slidingValues.Count - 1);
+            }
+        }
+
 
         /// <summary>
         /// Initialize the default values.
@@ -62,6 +87,12 @@ namespace Opsive.UltimateCharacterController.Character.Abilities
             base.Awake();
 
             EventHandler.RegisterEvent<bool>(m_GameObject, "OnCharacterGrounded", OnGrounded);
+            foreach (var slidingPrefab in slidingPrefabs)
+                if (slidingPrefab != null)
+                {
+                    SlideV2 slideValue = slidingPrefab.GetAbility<SlideV2>();
+                    if (slideValue != null) slidingValues.Add(slideValue);
+                }
         }
 
         /// <summary>
@@ -101,6 +132,13 @@ namespace Opsive.UltimateCharacterController.Character.Abilities
                 return false;
             }
 
+            // Is the character on a surface that allows sliding?
+            var slopeRaycastHit = DetermineSlideSurface();
+
+            if (!OnSlidingSurface()) return false;
+
+            SetSlidingValues();
+
             // If the character is on an edge then the slope limit is different.
             var upDirection = m_OverrideUpDirection.sqrMagnitude > 0 ? m_OverrideUpDirection : m_Transform.up;
             var slopeAngle = Vector3.Angle(m_CharacterLocomotion.GroundedRaycastHit.normal, upDirection);
@@ -110,11 +148,6 @@ namespace Opsive.UltimateCharacterController.Character.Abilities
                 return slopeAngle >= m_EdgeSlideLimit - 0.001f;
             }
 
-            ray = new Ray(m_CharacterLocomotion.GroundedRaycastHit.point + m_CharacterLocomotion.GroundedRaycastHit.normal * m_CharacterLocomotion.ColliderSpacing, -m_CharacterLocomotion.GroundedRaycastHit.normal);
-            if (!Physics.Raycast(ray, out var slopeRaycastHit, m_CharacterLocomotion.ColliderSpacing * 2, m_CharacterLayerManager.SolidObjectLayers, QueryTriggerInteraction.Ignore))
-            {
-                return false;
-            }
 
             // The character cannot slide if the slope isn't steep enough or is too steep.
             slopeAngle = Vector3.Angle(slopeRaycastHit.normal, upDirection);
@@ -125,6 +158,40 @@ namespace Opsive.UltimateCharacterController.Character.Abilities
 
             // The character can slide.
             return true;
+        }
+
+
+        private void UpdateSlide()
+        {
+            DetermineSlideSurface();
+            SetSlidingValues();
+        }
+
+        private RaycastHit DetermineSlideSurface()
+        {
+            Ray ray = new Ray(m_CharacterLocomotion.GroundedRaycastHit.point + m_CharacterLocomotion.GroundedRaycastHit.normal * m_CharacterLocomotion.ColliderSpacing, -m_CharacterLocomotion.GroundedRaycastHit.normal);
+            bool hit = Physics.Raycast(ray, out var slopeRaycastHit, m_CharacterLocomotion.ColliderSpacing * 2, m_CharacterLayerManager.SolidObjectLayers, QueryTriggerInteraction.Ignore);
+            currentSlopeSurface = hit ? slopeRaycastHit.transform.GetComponent<Slideable>() : null;
+            return slopeRaycastHit;
+        }
+
+        private bool OnSlidingSurface()
+        {
+            return currentSlopeSurface != null;
+        }
+
+        private void SetSlidingValues()
+        {
+            SlideV2 slidingValue = OnSlidingSurface() ? slidingValues[LevelOfSliding] : slidingValues[0];
+            if (slidingValue == null) return;
+
+            SlideLimit = slidingValue.SlideLimit;
+            EdgeSlideLimit = slidingValue.EdgeSlideLimit;
+            Acceleration = slidingValue.Acceleration;
+            MaxSlideSpeed = slidingValue.MaxSlideSpeed;
+            SlideDamping = slidingValue.SlideDamping;
+            OverrideUpDirection = slidingValue.OverrideUpDirection;
+            MoveSlideStopAngle = slidingValue.MoveSlideStopAngle;
         }
 
         /// <summary>
@@ -150,9 +217,9 @@ namespace Opsive.UltimateCharacterController.Character.Abilities
         {
             base.UpdatePosition();
 
+            UpdateSlide();
+
             bool downwards = MovingDownward();
-            slopeChanged = prevDownwards != downwards;
-            prevDownwards = downwards;
 
 
             m_SlideSpeed /= (1 + m_SlideDamping * m_CharacterLocomotion.TimeScale * Time.timeScale);
@@ -237,7 +304,6 @@ namespace Opsive.UltimateCharacterController.Character.Abilities
             float velocity = m_CharacterLocomotion.Velocity.magnitude;
             float motorAcceleration = m_CharacterLocomotion.MotorAcceleration.magnitude;
 
-
             return velocity <= motorAcceleration + 1f ||
                 (slowing && velocity <= motorAcceleration * 1.7f) /*||
                 (!MovingDownward() && velocity <= motorAcceleration * 2f)*/;
@@ -267,10 +333,6 @@ namespace Opsive.UltimateCharacterController.Character.Abilities
             return startingAbility is SpeedChange || startingAbility is SpeedChangeGradual;
         }
 
-        //public override bool ShouldStopActiveAbility(Ability activeAbility)
-        //{
-        //    return activeAbility is SpeedChange || activeAbility is SpeedChangeGradual;
-        //}
 
 
 
