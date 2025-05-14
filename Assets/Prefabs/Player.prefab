@@ -590,13 +590,14 @@ MonoBehaviour:
   - rid: 2051309532689989636
   - rid: 2051309532689989637
   - rid: 2051309532689989638
-  - rid: 2051309532689989639
+  - rid: 110651819258806273
   - rid: 2051309532689989640
   - rid: 2051309532689989641
-  - rid: 2051309532689989642
-  - rid: 2051309532689989643
-  - rid: 2051309532689989644
-  - rid: 2051309532689989645
+  - rid: 110651718066241537
+  - rid: 110651718066241538
+  - rid: 110651819258806275
+  - rid: 110651718066241540
+  - rid: 110651718066241541
   m_ItemAbilities:
   - rid: 6591180104147402794
   - rid: 6591180104147402795
@@ -633,6 +634,370 @@ MonoBehaviour:
     RefIds:
     - rid: -2
       type: {class: , ns: , asm: }
+    - rid: 110651718066241537
+      type: {class: SpeedChange, ns: Opsive.UltimateCharacterController.Character.Abilities,
+        asm: Opsive.UltimateCharacterController}
+      data:
+        m_States:
+        - m_Name: Default
+          m_Preset: {fileID: 0}
+          m_BlockList: []
+          m_Default: 1
+        m_Enabled: 0
+        m_StartType: 3
+        m_StopType: 2
+        m_InputNames:
+        - Change Speeds
+        m_WaitForDoublePressTapTimeout: 0
+        m_LongPressDuration: 0.5
+        m_WaitForLongPressRelease: 0
+        m_AbilityStarter:
+          rid: -2
+        m_AbilityStopper:
+          rid: -2
+        m_AttributeModifier:
+          m_AttributeName: 
+          m_Amount: 0
+          m_AutoUpdate: 0
+          m_AutoUpdateStartDelay: 1
+          m_AutoUpdateInterval: 0.1
+          m_AutoUpdateDuration: -1
+        m_State: Run
+        m_StateAppendItemIdentifierName: 0
+        m_AbilityIndexParameter: -1
+        m_StartAudioClipSet:
+          m_AudioConfig: {fileID: 0}
+          m_AudioClips: []
+        m_StopAudioClipSet:
+          m_AudioConfig: {fileID: 0}
+          m_AudioClips: []
+        m_AllowPositionalInput: 1
+        m_AllowRotationalInput: 1
+        m_UseGravity: 0
+        m_UseRootMotionPosition: 0
+        m_UseRootMotionRotation: 0
+        m_DetectHorizontalCollisions: 0
+        m_DetectVerticalCollisions: 0
+        m_DetectGroundCollisions: 0
+        m_AnimatorMotion: {fileID: 0}
+        m_StartEffectName: 
+        m_StartEffectIndex: -1
+        m_AllowEquippedSlotsMask: -1
+        m_AllowItemDefinitions: []
+        m_ImmediateUnequip: 0
+        m_ReequipSlots: 1
+        m_AbilityMessageText: 
+        m_AbilityMessageIcon: {fileID: 0}
+        m_InspectorDescription: 
+        m_SpeedChangeMultiplier: 2
+        m_MinSpeedChangeValue: -2
+        m_MaxSpeedChangeValue: 2
+        m_SpeedParameterValue: 2
+        m_RequireMovement: 1
+    - rid: 110651718066241538
+      type: {class: SpeedChangeGradual, ns: Opsive.UltimateCharacterController.Character.Abilities,
+        asm: Assembly-CSharp}
+      data:
+        m_States:
+        - m_Name: Default
+          m_Preset: {fileID: 0}
+          m_BlockList: []
+          m_Default: 1
+        m_Enabled: 1
+        m_StartType: 3
+        m_StopType: 2
+        m_InputNames:
+        - Change Speeds
+        m_WaitForDoublePressTapTimeout: 0
+        m_LongPressDuration: 0.5
+        m_WaitForLongPressRelease: 0
+        m_AbilityStarter:
+          rid: -2
+        m_AbilityStopper:
+          rid: -2
+        m_AttributeModifier:
+          m_AttributeName: 
+          m_Amount: 0
+          m_AutoUpdate: 0
+          m_AutoUpdateStartDelay: 1
+          m_AutoUpdateInterval: 0.1
+          m_AutoUpdateDuration: -1
+        m_State: Run
+        m_StateAppendItemIdentifierName: 0
+        m_AbilityIndexParameter: -1
+        m_StartAudioClipSet:
+          m_AudioConfig: {fileID: 0}
+          m_AudioClips: []
+        m_StopAudioClipSet:
+          m_AudioConfig: {fileID: 0}
+          m_AudioClips: []
+        m_AllowPositionalInput: 1
+        m_AllowRotationalInput: 1
+        m_UseGravity: 0
+        m_UseRootMotionPosition: 0
+        m_UseRootMotionRotation: 0
+        m_DetectHorizontalCollisions: 0
+        m_DetectVerticalCollisions: 0
+        m_DetectGroundCollisions: 0
+        m_AnimatorMotion: {fileID: 0}
+        m_StartEffectName: 
+        m_StartEffectIndex: -1
+        m_AllowEquippedSlotsMask: -1
+        m_AllowItemDefinitions: []
+        m_ImmediateUnequip: 0
+        m_ReequipSlots: 1
+        m_AbilityMessageText: 
+        m_AbilityMessageIcon: {fileID: 0}
+        m_InspectorDescription: 
+        m_SpeedChangeMultiplier: 2
+        m_MinSpeedChangeValue: -2
+        m_MaxSpeedChangeValue: 2
+        m_SpeedParameterValue: 2
+        m_RequireMovement: 1
+        m_ChangeDuration: 0.5
+    - rid: 110651718066241540
+      type: {class: HeightChange, ns: Opsive.UltimateCharacterController.Character.Abilities,
+        asm: Opsive.UltimateCharacterController}
+      data:
+        m_States:
+        - m_Name: Default
+          m_Preset: {fileID: 0}
+          m_BlockList: []
+          m_Default: 1
+        m_Enabled: 1
+        m_StartType: 2
+        m_StopType: 4
+        m_InputNames:
+        - Crouch
+        m_WaitForDoublePressTapTimeout: 0
+        m_LongPressDuration: 0.5
+        m_WaitForLongPressRelease: 0
+        m_AbilityStarter:
+          rid: -2
+        m_AbilityStopper:
+          rid: -2
+        m_AttributeModifier:
+          m_AttributeName: 
+          m_Amount: 0
+          m_AutoUpdate: 0
+          m_AutoUpdateStartDelay: 1
+          m_AutoUpdateInterval: 0.1
+          m_AutoUpdateDuration: -1
+        m_State: Crouch
+        m_StateAppendItemIdentifierName: 0
+        m_AbilityIndexParameter: 3
+        m_StartAudioClipSet:
+          m_AudioConfig: {fileID: 0}
+          m_AudioClips: []
+        m_StopAudioClipSet:
+          m_AudioConfig: {fileID: 0}
+          m_AudioClips: []
+        m_AllowPositionalInput: 1
+        m_AllowRotationalInput: 1
+        m_UseGravity: 0
+        m_UseRootMotionPosition: 0
+        m_UseRootMotionRotation: 0
+        m_DetectHorizontalCollisions: 0
+        m_DetectVerticalCollisions: 0
+        m_DetectGroundCollisions: 0
+        m_AnimatorMotion: {fileID: 0}
+        m_StartEffectName: 
+        m_StartEffectIndex: -1
+        m_AllowEquippedSlotsMask: -1
+        m_AllowItemDefinitions: []
+        m_ImmediateUnequip: 0
+        m_ReequipSlots: 1
+        m_AbilityMessageText: 
+        m_AbilityMessageIcon: {fileID: 0}
+        m_InspectorDescription: 
+        m_ConcurrentAbility: 1
+        m_Height: 1
+        m_CapsuleColliderHeightAdjustment: -0.4
+        m_AllowSpeedChange: 0
+    - rid: 110651718066241541
+      type: {class: Ragdoll, ns: Opsive.UltimateCharacterController.Character.Abilities,
+        asm: Opsive.UltimateCharacterController}
+      data:
+        m_States:
+        - m_Name: Default
+          m_Preset: {fileID: 0}
+          m_BlockList: []
+          m_Default: 1
+        m_Enabled: 1
+        m_StartType: 1
+        m_StopType: 1
+        m_InputNames: []
+        m_WaitForDoublePressTapTimeout: 0
+        m_LongPressDuration: 0.5
+        m_WaitForLongPressRelease: 0
+        m_AbilityStarter:
+          rid: -2
+        m_AbilityStopper:
+          rid: -2
+        m_AttributeModifier:
+          m_AttributeName: 
+          m_Amount: 0
+          m_AutoUpdate: 0
+          m_AutoUpdateStartDelay: 1
+          m_AutoUpdateInterval: 0.1
+          m_AutoUpdateDuration: -1
+        m_State: Death
+        m_StateAppendItemIdentifierName: 0
+        m_AbilityIndexParameter: -1
+        m_StartAudioClipSet:
+          m_AudioConfig: {fileID: 0}
+          m_AudioClips: []
+        m_StopAudioClipSet:
+          m_AudioConfig: {fileID: 0}
+          m_AudioClips: []
+        m_AllowPositionalInput: 0
+        m_AllowRotationalInput: 0
+        m_UseGravity: 2
+        m_UseRootMotionPosition: 0
+        m_UseRootMotionRotation: 0
+        m_DetectHorizontalCollisions: 2
+        m_DetectVerticalCollisions: 2
+        m_DetectGroundCollisions: 0
+        m_AnimatorMotion: {fileID: 0}
+        m_StartEffectName: 
+        m_StartEffectIndex: -1
+        m_AllowEquippedSlotsMask: -1
+        m_AllowItemDefinitions: []
+        m_ImmediateUnequip: 0
+        m_ReequipSlots: 1
+        m_AbilityMessageText: 
+        m_AbilityMessageIcon: {fileID: 0}
+        m_InspectorDescription: 
+        m_StartOnDeath: 1
+        m_StartDelay: 0
+        m_RagdollLayer: 31
+        m_InactiveRagdollLayer: 30
+        m_CameraRotationalForce: {x: 0, y: 0, z: 0.75}
+        m_InterpolationMode: 0
+        m_CollisionDetectionMode: 1
+    - rid: 110651819258806273
+      type: {class: Glide, ns: , asm: Assembly-CSharp}
+      data:
+        m_States:
+        - m_Name: Default
+          m_Preset: {fileID: 0}
+          m_BlockList: []
+          m_Default: 1
+        m_Enabled: 1
+        m_StartType: 2
+        m_StopType: 2
+        m_InputNames:
+        - Jump
+        m_WaitForDoublePressTapTimeout: 0
+        m_LongPressDuration: 0.5
+        m_WaitForLongPressRelease: 0
+        m_AbilityStarter:
+          rid: -2
+        m_AbilityStopper:
+          rid: -2
+        m_AttributeModifier:
+          m_AttributeName: 
+          m_Amount: 0
+          m_AutoUpdate: 0
+          m_AutoUpdateStartDelay: 1
+          m_AutoUpdateInterval: 0.1
+          m_AutoUpdateDuration: -1
+        m_State: 
+        m_StateAppendItemIdentifierName: 0
+        m_AbilityIndexParameter: 101
+        m_StartAudioClipSet:
+          m_AudioConfig: {fileID: 0}
+          m_AudioClips: []
+        m_StopAudioClipSet:
+          m_AudioConfig: {fileID: 0}
+          m_AudioClips: []
+        m_AllowPositionalInput: 1
+        m_AllowRotationalInput: 1
+        m_UseGravity: 0
+        m_UseRootMotionPosition: 2
+        m_UseRootMotionRotation: 2
+        m_DetectHorizontalCollisions: 0
+        m_DetectVerticalCollisions: 0
+        m_DetectGroundCollisions: 0
+        m_AnimatorMotion: {fileID: 0}
+        m_StartEffectName: 
+        m_StartEffectIndex: -1
+        m_AllowEquippedSlotsMask: -1
+        m_AllowItemDefinitions: []
+        m_ImmediateUnequip: 0
+        m_ReequipSlots: 1
+        m_AbilityMessageText: 
+        m_AbilityMessageIcon: {fileID: 0}
+        m_InspectorDescription: 
+        gravityMultiplier: 0.576
+        playerInput: {fileID: 6185324423905921195}
+    - rid: 110651819258806275
+      type: {class: SlideV2, ns: Opsive.UltimateCharacterController.Character.Abilities,
+        asm: Assembly-CSharp}
+      data:
+        m_States:
+        - m_Name: Default
+          m_Preset: {fileID: 0}
+          m_BlockList: []
+          m_Default: 1
+        m_Enabled: 1
+        m_StartType: 0
+        m_StopType: 0
+        m_InputNames: []
+        m_WaitForDoublePressTapTimeout: 0
+        m_LongPressDuration: 0.5
+        m_WaitForLongPressRelease: 0
+        m_AbilityStarter:
+          rid: -2
+        m_AbilityStopper:
+          rid: -2
+        m_AttributeModifier:
+          m_AttributeName: 
+          m_Amount: 0
+          m_AutoUpdate: 0
+          m_AutoUpdateStartDelay: 1
+          m_AutoUpdateInterval: 0.1
+          m_AutoUpdateDuration: -1
+        m_State: 
+        m_StateAppendItemIdentifierName: 0
+        m_AbilityIndexParameter: 102
+        m_StartAudioClipSet:
+          m_AudioConfig: {fileID: 0}
+          m_AudioClips: []
+        m_StopAudioClipSet:
+          m_AudioConfig: {fileID: 0}
+          m_AudioClips: []
+        m_AllowPositionalInput: 1
+        m_AllowRotationalInput: 1
+        m_UseGravity: 0
+        m_UseRootMotionPosition: 0
+        m_UseRootMotionRotation: 0
+        m_DetectHorizontalCollisions: 0
+        m_DetectVerticalCollisions: 0
+        m_DetectGroundCollisions: 0
+        m_AnimatorMotion: {fileID: 0}
+        m_StartEffectName: 
+        m_StartEffectIndex: -1
+        m_AllowEquippedSlotsMask: -1
+        m_AllowItemDefinitions: []
+        m_ImmediateUnequip: 0
+        m_ReequipSlots: 1
+        m_AbilityMessageText: 
+        m_AbilityMessageIcon: {fileID: 0}
+        m_InspectorDescription: 
+        m_SlideLimit:
+          m_MinValue: 20
+          m_MaxValue: 89
+        m_EdgeSlideLimit: 30
+        m_Acceleration: 0.5
+        m_MaxSlideSpeed: 7
+        m_SlideDamping: 0.035
+        m_OverrideUpDirection: {x: 0, y: 0, z: 0}
+        m_moveSlideStopAngle: 2
+        slidingPrefabs:
+        - {fileID: 6391012249407876208, guid: 589b29c91e64e8e40b9428f6abbbb13f, type: 3}
+        - {fileID: 6391012249407876208, guid: f859aa5abb413754594b38671577a37c, type: 3}
+        - {fileID: 6391012249407876208, guid: 9e03fbc5e08e5444bbdb22d580797f5c, type: 3}
     - rid: 2051309532689989636
       type: {class: Die, ns: Opsive.UltimateCharacterController.Character.Abilities,
         asm: Opsive.UltimateCharacterController}
@@ -821,61 +1186,6 @@ MonoBehaviour:
           m_AudioClips: []
         m_VerticalVelocityStopThreshold: 0.01
         m_RecurrenceDelay: 1
-    - rid: 2051309532689989639
-      type: {class: Glide, ns: , asm: Assembly-CSharp}
-      data:
-        m_States:
-        - m_Name: Default
-          m_Preset: {fileID: 0}
-          m_BlockList: []
-          m_Default: 1
-        m_Enabled: 1
-        m_StartType: 2
-        m_StopType: 2
-        m_InputNames:
-        - Jump
-        m_WaitForDoublePressTapTimeout: 0
-        m_LongPressDuration: 0.5
-        m_WaitForLongPressRelease: 0
-        m_AbilityStarter:
-          rid: -2
-        m_AbilityStopper:
-          rid: -2
-        m_AttributeModifier:
-          m_AttributeName: 
-          m_Amount: 0
-          m_AutoUpdate: 0
-          m_AutoUpdateStartDelay: 1
-          m_AutoUpdateInterval: 0.1
-          m_AutoUpdateDuration: -1
-        m_State: 
-        m_StateAppendItemIdentifierName: 0
-        m_AbilityIndexParameter: 101
-        m_StartAudioClipSet:
-          m_AudioConfig: {fileID: 0}
-          m_AudioClips: []
-        m_StopAudioClipSet:
-          m_AudioConfig: {fileID: 0}
-          m_AudioClips: []
-        m_AllowPositionalInput: 1
-        m_AllowRotationalInput: 1
-        m_UseGravity: 0
-        m_UseRootMotionPosition: 2
-        m_UseRootMotionRotation: 2
-        m_DetectHorizontalCollisions: 0
-        m_DetectVerticalCollisions: 0
-        m_DetectGroundCollisions: 0
-        m_AnimatorMotion: {fileID: 0}
-        m_StartEffectName: 
-        m_StartEffectIndex: -1
-        m_AllowEquippedSlotsMask: -1
-        m_AllowItemDefinitions: []
-        m_ImmediateUnequip: 0
-        m_ReequipSlots: 1
-        m_AbilityMessageText: 
-        m_AbilityMessageIcon: {fileID: 0}
-        m_InspectorDescription: 
-        gravityMultiplier: 0.576
     - rid: 2051309532689989640
       type: {class: Fall, ns: Opsive.UltimateCharacterController.Character.Abilities,
         asm: Opsive.UltimateCharacterController}
@@ -996,249 +1306,6 @@ MonoBehaviour:
         m_TeleportOnEarlyStop: 1
         m_DisableGameplayInput: 0
         m_IndependentMoveTowardsLocation: {fileID: 0}
-    - rid: 2051309532689989642
-      type: {class: SpeedChange, ns: Opsive.UltimateCharacterController.Character.Abilities,
-        asm: Opsive.UltimateCharacterController}
-      data:
-        m_States:
-        - m_Name: Default
-          m_Preset: {fileID: 0}
-          m_BlockList: []
-          m_Default: 1
-        m_Enabled: 1
-        m_StartType: 3
-        m_StopType: 2
-        m_InputNames:
-        - Change Speeds
-        m_WaitForDoublePressTapTimeout: 0
-        m_LongPressDuration: 0.5
-        m_WaitForLongPressRelease: 0
-        m_AbilityStarter:
-          rid: -2
-        m_AbilityStopper:
-          rid: -2
-        m_AttributeModifier:
-          m_AttributeName: 
-          m_Amount: 0
-          m_AutoUpdate: 0
-          m_AutoUpdateStartDelay: 1
-          m_AutoUpdateInterval: 0.1
-          m_AutoUpdateDuration: -1
-        m_State: Run
-        m_StateAppendItemIdentifierName: 0
-        m_AbilityIndexParameter: -1
-        m_StartAudioClipSet:
-          m_AudioConfig: {fileID: 0}
-          m_AudioClips: []
-        m_StopAudioClipSet:
-          m_AudioConfig: {fileID: 0}
-          m_AudioClips: []
-        m_AllowPositionalInput: 1
-        m_AllowRotationalInput: 1
-        m_UseGravity: 0
-        m_UseRootMotionPosition: 0
-        m_UseRootMotionRotation: 0
-        m_DetectHorizontalCollisions: 0
-        m_DetectVerticalCollisions: 0
-        m_DetectGroundCollisions: 0
-        m_AnimatorMotion: {fileID: 0}
-        m_StartEffectName: 
-        m_StartEffectIndex: -1
-        m_AllowEquippedSlotsMask: -1
-        m_AllowItemDefinitions: []
-        m_ImmediateUnequip: 0
-        m_ReequipSlots: 1
-        m_AbilityMessageText: 
-        m_AbilityMessageIcon: {fileID: 0}
-        m_InspectorDescription: 
-        m_SpeedChangeMultiplier: 2
-        m_MinSpeedChangeValue: -2
-        m_MaxSpeedChangeValue: 2
-        m_SpeedParameterValue: 2
-        m_RequireMovement: 1
-    - rid: 2051309532689989643
-      type: {class: SlideV2, ns: Opsive.UltimateCharacterController.Character.Abilities,
-        asm: Assembly-CSharp}
-      data:
-        m_States:
-        - m_Name: Default
-          m_Preset: {fileID: 0}
-          m_BlockList: []
-          m_Default: 1
-        m_Enabled: 1
-        m_StartType: 0
-        m_StopType: 0
-        m_InputNames: []
-        m_WaitForDoublePressTapTimeout: 0
-        m_LongPressDuration: 0.5
-        m_WaitForLongPressRelease: 0
-        m_AbilityStarter:
-          rid: -2
-        m_AbilityStopper:
-          rid: -2
-        m_AttributeModifier:
-          m_AttributeName: 
-          m_Amount: 0
-          m_AutoUpdate: 0
-          m_AutoUpdateStartDelay: 1
-          m_AutoUpdateInterval: 0.1
-          m_AutoUpdateDuration: -1
-        m_State: 
-        m_StateAppendItemIdentifierName: 0
-        m_AbilityIndexParameter: 102
-        m_StartAudioClipSet:
-          m_AudioConfig: {fileID: 0}
-          m_AudioClips: []
-        m_StopAudioClipSet:
-          m_AudioConfig: {fileID: 0}
-          m_AudioClips: []
-        m_AllowPositionalInput: 1
-        m_AllowRotationalInput: 1
-        m_UseGravity: 0
-        m_UseRootMotionPosition: 0
-        m_UseRootMotionRotation: 0
-        m_DetectHorizontalCollisions: 0
-        m_DetectVerticalCollisions: 0
-        m_DetectGroundCollisions: 0
-        m_AnimatorMotion: {fileID: 0}
-        m_StartEffectName: 
-        m_StartEffectIndex: -1
-        m_AllowEquippedSlotsMask: -1
-        m_AllowItemDefinitions: []
-        m_ImmediateUnequip: 0
-        m_ReequipSlots: 1
-        m_AbilityMessageText: 
-        m_AbilityMessageIcon: {fileID: 0}
-        m_InspectorDescription: 
-        m_SlideLimit:
-          m_MinValue: 20
-          m_MaxValue: 89
-        m_EdgeSlideLimit: 30
-        m_Acceleration: 0.5
-        m_MaxSlideSpeed: 5
-        m_SlideDamping: 0.05
-        m_OverrideUpDirection: {x: 0, y: 0, z: 0}
-        m_moveSlideStopAngle: 1.5
-    - rid: 2051309532689989644
-      type: {class: HeightChange, ns: Opsive.UltimateCharacterController.Character.Abilities,
-        asm: Opsive.UltimateCharacterController}
-      data:
-        m_States:
-        - m_Name: Default
-          m_Preset: {fileID: 0}
-          m_BlockList: []
-          m_Default: 1
-        m_Enabled: 1
-        m_StartType: 2
-        m_StopType: 4
-        m_InputNames:
-        - Crouch
-        m_WaitForDoublePressTapTimeout: 0
-        m_LongPressDuration: 0.5
-        m_WaitForLongPressRelease: 0
-        m_AbilityStarter:
-          rid: -2
-        m_AbilityStopper:
-          rid: -2
-        m_AttributeModifier:
-          m_AttributeName: 
-          m_Amount: 0
-          m_AutoUpdate: 0
-          m_AutoUpdateStartDelay: 1
-          m_AutoUpdateInterval: 0.1
-          m_AutoUpdateDuration: -1
-        m_State: Crouch
-        m_StateAppendItemIdentifierName: 0
-        m_AbilityIndexParameter: 3
-        m_StartAudioClipSet:
-          m_AudioConfig: {fileID: 0}
-          m_AudioClips: []
-        m_StopAudioClipSet:
-          m_AudioConfig: {fileID: 0}
-          m_AudioClips: []
-        m_AllowPositionalInput: 1
-        m_AllowRotationalInput: 1
-        m_UseGravity: 0
-        m_UseRootMotionPosition: 0
-        m_UseRootMotionRotation: 0
-        m_DetectHorizontalCollisions: 0
-        m_DetectVerticalCollisions: 0
-        m_DetectGroundCollisions: 0
-        m_AnimatorMotion: {fileID: 0}
-        m_StartEffectName: 
-        m_StartEffectIndex: -1
-        m_AllowEquippedSlotsMask: -1
-        m_AllowItemDefinitions: []
-        m_ImmediateUnequip: 0
-        m_ReequipSlots: 1
-        m_AbilityMessageText: 
-        m_AbilityMessageIcon: {fileID: 0}
-        m_InspectorDescription: 
-        m_ConcurrentAbility: 1
-        m_Height: 1
-        m_CapsuleColliderHeightAdjustment: -0.4
-        m_AllowSpeedChange: 0
-    - rid: 2051309532689989645
-      type: {class: Ragdoll, ns: Opsive.UltimateCharacterController.Character.Abilities,
-        asm: Opsive.UltimateCharacterController}
-      data:
-        m_States:
-        - m_Name: Default
-          m_Preset: {fileID: 0}
-          m_BlockList: []
-          m_Default: 1
-        m_Enabled: 1
-        m_StartType: 1
-        m_StopType: 1
-        m_InputNames: []
-        m_WaitForDoublePressTapTimeout: 0
-        m_LongPressDuration: 0.5
-        m_WaitForLongPressRelease: 0
-        m_AbilityStarter:
-          rid: -2
-        m_AbilityStopper:
-          rid: -2
-        m_AttributeModifier:
-          m_AttributeName: 
-          m_Amount: 0
-          m_AutoUpdate: 0
-          m_AutoUpdateStartDelay: 1
-          m_AutoUpdateInterval: 0.1
-          m_AutoUpdateDuration: -1
-        m_State: Death
-        m_StateAppendItemIdentifierName: 0
-        m_AbilityIndexParameter: -1
-        m_StartAudioClipSet:
-          m_AudioConfig: {fileID: 0}
-          m_AudioClips: []
-        m_StopAudioClipSet:
-          m_AudioConfig: {fileID: 0}
-          m_AudioClips: []
-        m_AllowPositionalInput: 0
-        m_AllowRotationalInput: 0
-        m_UseGravity: 2
-        m_UseRootMotionPosition: 0
-        m_UseRootMotionRotation: 0
-        m_DetectHorizontalCollisions: 2
-        m_DetectVerticalCollisions: 2
-        m_DetectGroundCollisions: 0
-        m_AnimatorMotion: {fileID: 0}
-        m_StartEffectName: 
-        m_StartEffectIndex: -1
-        m_AllowEquippedSlotsMask: -1
-        m_AllowItemDefinitions: []
-        m_ImmediateUnequip: 0
-        m_ReequipSlots: 1
-        m_AbilityMessageText: 
-        m_AbilityMessageIcon: {fileID: 0}
-        m_InspectorDescription: 
-        m_StartOnDeath: 1
-        m_StartDelay: 0
-        m_RagdollLayer: 31
-        m_InactiveRagdollLayer: 30
-        m_CameraRotationalForce: {x: 0, y: 0, z: 0.75}
-        m_InterpolationMode: 0
-        m_CollisionDetectionMode: 1
     - rid: 6591180104147402786
       type: {class: Adventure, ns: Opsive.UltimateCharacterController.ThirdPersonController.Character.MovementTypes,
         asm: Opsive.UltimateCharacterController}

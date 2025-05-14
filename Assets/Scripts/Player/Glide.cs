@@ -2,7 +2,7 @@ using Opsive.UltimateCharacterController.Character.Abilities;
 using UnityEngine;
 
 using Opsive.Shared.Events;
-using Opsive.UltimateCharacterController.Character;
+using Opsive.Shared.Input;
 
 
 [DefaultInputName("Jump")]
@@ -16,11 +16,8 @@ public class Glide : Ability
     [Tooltip("Multiplier applied to gravity while gliding.")]
     [SerializeField, Range(0,1)] float gravityMultiplier = 0.8f;
 
-    //private float originalGravity = -1;
-    //private UltimateCharacterLocomotion UCharacterLocomotion;
-
-    //private DensityGravityHandler densityGravityHandler;
-
+    [Tooltip("The character's input. Should be a childObject of this object.")]
+    [SerializeField] PlayerInput playerInput;
 
     public float GravityMultiplier => gravityMultiplier;
 
@@ -28,17 +25,18 @@ public class Glide : Ability
     public override void Awake()
     {
         base.Awake();
-        //UCharacterLocomotion = GetComponent<UltimateCharacterLocomotion>();
-        //densityGravityHandler = GetComponent<DensityGravityHandler>();
         EventHandler.RegisterEvent<Ability, bool>(m_GameObject, "OnCharacterAbilityActive", SwitchToGliding);
         EventHandler.RegisterEvent<bool>(m_GameObject, "OnCharacterGrounded", OnGrounded);
     }
 
     void SwitchToGliding(Ability ability, bool activated)
     {
+        if (playerInput == null) return;
         if (ability is Jump && !activated)
         {
-            StartAbility();
+            bool inputPressed = true;
+            foreach (var input in m_InputNames) inputPressed &= playerInput.GetButton(input);
+            if (inputPressed) StartAbility();
         }
     }
 
@@ -47,21 +45,6 @@ public class Glide : Ability
         StopAbility(true);
     }
 
-
-    //on ability start: set gravity, collision is false
-    //protected override void AbilityStarted()
-    //{
-    //    base.AbilityStarted();
-    //    float modifiedGravity = gravityMultiplier;
-    //    if (densityGravityHandler != null) modifiedGravity *= densityGravityHandler.GravityMultiplier;
-    //    UCharacterLocomotion.GravityAmount = modifiedGravity;
-    //}
-
-    //protected override void AbilityStopped(bool force)
-    //{
-    //    base.AbilityStopped(force);
-    //    UCharacterLocomotion.GravityAmount = densityGravityHandler != null ? densityGravityHandler.GravityMultiplier : 1;
-    //}
 
     public override bool ShouldBlockAbilityStart(Ability startingAbility)
     {

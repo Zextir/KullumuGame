@@ -28,31 +28,6 @@ PrefabInstance:
       propertyPath: m_MaxStepHeight
       value: 1
       objectReference: {fileID: 0}
-    - target: {fileID: 4057148582490759116, guid: 8a09f169283efeb4b9d0c7cfdb97fd19,
-        type: 3}
-      propertyPath: managedReferences[2051309532689989643].m_MaxSlideSpeed
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 4057148582490759116, guid: 8a09f169283efeb4b9d0c7cfdb97fd19,
-        type: 3}
-      propertyPath: managedReferences[2051309532689989643].m_moveSlideStopAngle
-      value: 2
-      objectReference: {fileID: 0}
-    - target: {fileID: 4057148582490759116, guid: 8a09f169283efeb4b9d0c7cfdb97fd19,
-        type: 3}
-      propertyPath: managedReferences[2051309532689989643].m_AbilityIndexParameter
-      value: 102
-      objectReference: {fileID: 0}
-    - target: {fileID: 4057148582490759116, guid: 8a09f169283efeb4b9d0c7cfdb97fd19,
-        type: 3}
-      propertyPath: managedReferences[2051309532689989643].m_SlideLimit.m_MaxValue
-      value: 89
-      objectReference: {fileID: 0}
-    - target: {fileID: 4057148582490759116, guid: 8a09f169283efeb4b9d0c7cfdb97fd19,
-        type: 3}
-      propertyPath: managedReferences[2051309532689989643].m_SlideLimit.m_MinValue
-      value: 5
-      objectReference: {fileID: 0}
     - target: {fileID: 5200448004301074997, guid: 8a09f169283efeb4b9d0c7cfdb97fd19,
         type: 3}
       propertyPath: m_Name
