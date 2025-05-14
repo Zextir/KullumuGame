@@ -25,7 +25,7 @@ public class Interact : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
-        if (other.CompareTag("Character"))
+        if (other.CompareTag("Player"))
         {
             isPlayerInRange = true;
             Debug.Log("Player entered interaction range.");
@@ -35,7 +35,7 @@ public class Interact : MonoBehaviour
 
     private void OnTriggerExit(Collider other)
     {
-        if (other.CompareTag("Character"))
+        if (other.CompareTag("Player"))
         {
             isPlayerInRange = false;
             Debug.Log("Player exited interaction range.");
