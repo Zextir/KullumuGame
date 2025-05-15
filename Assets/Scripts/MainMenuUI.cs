@@ -17,7 +17,7 @@ public class MainMenuUI : MonoBehaviour
 
         loading.SetActive(true);
 
-        AsyncOperation asyncLoad = SceneManager.LoadSceneAsync("MainLevel");
+        AsyncOperation asyncLoad = SceneManager.LoadSceneAsync("Final_Starting_Village");
         asyncLoad.allowSceneActivation = false;
 
         while (asyncLoad.progress < 0.9f)
