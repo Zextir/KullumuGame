@@ -38,9 +38,14 @@ namespace Opsive.UltimateCharacterController.Character.Abilities
         public override int AbilityIntData => m_StateIndex;
         public override float AbilityFloatData => m_CharacterLocomotion.LocalVelocity.y;
 
+
+        private bool inFloat = false;
+        public bool InFloat { set { inFloat = value; } }
+
         private int m_StateIndex;
         private bool m_Landed;
 
+        
         [Snapshot] protected bool Landed { get => m_Landed; set => m_Landed = value; }
 
         /// <summary>
@@ -100,8 +105,15 @@ namespace Opsive.UltimateCharacterController.Character.Abilities
         {
             base.Update();
 
+            if (m_StateIndex != 1)
+            {
+                m_StateIndex = inFloat ? 2 : 0;
+                SetAbilityIntDataParameter(m_StateIndex);
+            }
+
             // Set the Float Data parameter for the blend tree.
             SetAbilityFloatDataParameter(m_CharacterLocomotion.LocalVelocity.y);
+
         }
 
         /// <summary>
@@ -121,7 +133,7 @@ namespace Opsive.UltimateCharacterController.Character.Abilities
                 SetAbilityIntDataParameter(m_StateIndex);
                 m_LandEvent.WaitForEvent();
             } else {
-                m_StateIndex = 0;
+                m_StateIndex = inFloat ? 2 : 0;
                 SetAbilityIntDataParameter(m_StateIndex);
             }
         }
