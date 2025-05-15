@@ -8,6 +8,8 @@ TagManager:
   - WhaleCollider
   - FadeImage
   - Ground
+  - Interactable
+  - Character
   layers:
   - Default
   - TransparentFX
