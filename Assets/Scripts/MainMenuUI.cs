@@ -5,19 +5,20 @@ using System.Collections;
 public class MainMenuUI : MonoBehaviour
 {
     [SerializeField] GameObject loading;
-    public void PlayGame()
+
+    public void PlayGame(string scene)
     {
-        StartCoroutine(LoadSceneWithMinimumTime());
+        StartCoroutine(LoadSceneWithMinimumTime(scene));
     }
 
-    IEnumerator LoadSceneWithMinimumTime()
+    IEnumerator LoadSceneWithMinimumTime(string scene)
     {
         float startTime = Time.time;
         float minimumLoadDelay = 4f;
 
         loading.SetActive(true);
 
-        AsyncOperation asyncLoad = SceneManager.LoadSceneAsync("Final_Starting_Village");
+        AsyncOperation asyncLoad = SceneManager.LoadSceneAsync(scene);
         asyncLoad.allowSceneActivation = false;
 
         while (asyncLoad.progress < 0.9f)
