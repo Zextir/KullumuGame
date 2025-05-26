@@ -17,6 +17,7 @@ public class DeadlyToTouch : MonoBehaviour
 
     private void ActivateDeath(GameObject toKill)
     {
+        print ($"DeadlyToTouch: {toKill.name} touched {gameObject.name}");
         var ucl = toKill.GetComponent<UltimateCharacterLocomotion>();
         if (ucl != null)
         {
