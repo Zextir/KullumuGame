@@ -1,21 +1,23 @@
 using System.Collections;
-using System.Collections.Generic;
+using Opsive.UltimateCharacterController.Camera;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
 
 public class CutsceneTrigger : MonoBehaviour
-
-
-
 {
     public GameObject[] objectsToActivate;
     public Transform fallingObject;
     public float fallSpeed = 5f;
     public float stopYPosition = 0f;
 
+    [Header("Camera settings")]
     public Transform lookTarget;
     public Camera playerCamera;
+    public CameraController cameraController;
+    public CameraControllerHandler cameraControllerHandler;
+
+    [Header("Look and shake settings")]
     public float lookDuration = 2f;
     public float lookSpeed = 5f;
 
@@ -29,7 +31,8 @@ public class CutsceneTrigger : MonoBehaviour
 
     [Header("Player Control Settings")]
     public string playerTag = "Player";
-    public string movementScriptName = "PlayerMovement";
+    public string movementScriptName = "UltimateCharacterLocomotion";
+    public GameObject playerObject;
 
     [Header("Scene Change")]
     public string sceneToLoad;
@@ -47,12 +50,17 @@ public class CutsceneTrigger : MonoBehaviour
 
         triggered = true;
 
-        GameObject player = other.transform.root.gameObject;
-
-        
-        movementScript = player.GetComponent(movementScriptName) as MonoBehaviour;
-        if (movementScript != null)
-            movementScript.enabled = false;
+        if (playerObject != null)
+        {
+            movementScript = playerObject.GetComponent(movementScriptName) as MonoBehaviour;
+            if (movementScript != null)
+                movementScript.enabled = false;
+        }
+        if (playerCamera != null)
+        {
+            if (cameraController != null) cameraController.enabled = false;
+            if (cameraControllerHandler != null) cameraControllerHandler.enabled = false;
+        }
 
         foreach (var obj in objectsToActivate)
             obj.SetActive(true);
@@ -104,7 +112,7 @@ public class CutsceneTrigger : MonoBehaviour
         {
             elapsed += Time.deltaTime;
             float t = Mathf.Clamp01(elapsed / lookDuration);
-            playerCamera.transform.rotation = Quaternion.Slerp(startRotation, targetRotation, t);
+            playerCamera.transform.rotation = Quaternion.Slerp(startRotation, targetRotation, t * lookSpeed);
             yield return null;
         }
 
