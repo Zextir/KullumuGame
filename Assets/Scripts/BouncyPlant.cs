@@ -22,7 +22,7 @@ public class BouncyPlant : MonoBehaviour
 
         float timer = 0;
 
-        yield return new WaitForSeconds(3 * Time.fixedDeltaTime);
+        //yield return new WaitForSeconds(2 * Time.fixedDeltaTime);
 
         while (timer <= changeTime)
         {
@@ -74,7 +74,8 @@ public class BouncyPlant : MonoBehaviour
 
         var ucl = other.GetComponent<UltimateCharacterLocomotion>();
         
-        if (ucl == null || ucl.Velocity.y > 0) return;
+        if (ucl == null || ucl.Velocity.y > 10) return;
+        //Debug.Log(ucl.Velocity.y);
 
         state = State.SHRINKING;
         StartCoroutine(ChangeSize(shrinkTime));
@@ -96,7 +97,6 @@ public class BouncyPlant : MonoBehaviour
             var ucl = other.GetComponent<UltimateCharacterLocomotion>();
             if (ucl == null) return;
             ucl.AddForce(force);
-            Debug.Log("launched player");
         }
         else
         {
