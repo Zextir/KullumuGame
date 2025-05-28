@@ -15,24 +15,24 @@ public class SmallCreatureAI : MonoBehaviour
     private float timer;
     private int safeAreaMask;
     private bool isDead = false;
+    private bool isActive = false;
 
     void Start()
     {
         agent = GetComponent<NavMeshAgent>();
-        agent.acceleration = 999f;     // Instant acceleration
-        agent.angularSpeed = 999f;     // Instant turning
-        agent.speed = normalSpeed;     // Ensure it's set at start
         anim = GetComponent<Animator>();
+
+        agent.enabled = false;
+        anim.enabled = false;
 
         // Avoid toxic when wandering
         safeAreaMask = ~(1 << NavMesh.GetAreaFromName("Toxic"));
-
         timer = decisionInterval;
     }
 
     void Update()
     {
-        if (isDead) return;
+        if (!isActive || isDead) return;
 
         anim.SetFloat("Speed", agent.velocity.magnitude);
         timer -= Time.deltaTime;
@@ -80,6 +80,13 @@ public class SmallCreatureAI : MonoBehaviour
         }
     }
 
+    public void ActivateAI()
+    {
+        isActive = true;
+        agent.enabled = true;
+        anim.enabled = true;
+    }
+
     bool IsThreatNearby(out Vector3 fleeDir)
     {
         fleeDir = Vector3.zero;
@@ -108,27 +115,19 @@ public class SmallCreatureAI : MonoBehaviour
 
     void Flee(Vector3 dir)
     {
-        //Debug.Log("Fleeing from threat!");
 
         Vector3 target = transform.position + dir * Random.Range(15f, 25f);
 
-        // First, try full NavMesh
         if (NavMesh.SamplePosition(target, out NavMeshHit hit, 6f, NavMesh.AllAreas))
         {
             agent.SetDestination(hit.position);
         }
         else
         {
-            // fallback: flee backward a bit
             Vector3 fallback = transform.position - dir * 5f;
             if (NavMesh.SamplePosition(fallback, out NavMeshHit backupHit, 3f, NavMesh.AllAreas))
             {
                 agent.SetDestination(backupHit.position);
-                //Debug.Log("Used fallback flee target.");
-            }
-            else
-            {
-                //Debug.LogWarning("Critter couldn't find flee destination.");
             }
         }
     }
@@ -150,10 +149,12 @@ public class SmallCreatureAI : MonoBehaviour
         if (isDead) return;
 
         isDead = true;
-        agent.isStopped = true;
-        anim.SetTrigger("Die");
 
-        // Optional: disable further AI movement
-        this.enabled = false;
+        if (agent.enabled && agent.isOnNavMesh)
+        {
+            agent.isStopped = true;
+        }
+    
+        anim.SetTrigger("Die");
     }
 }
