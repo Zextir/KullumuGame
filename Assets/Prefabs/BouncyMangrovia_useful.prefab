@@ -71,7 +71,7 @@ PrefabInstance:
     - target: {fileID: 7030821266229803816, guid: a8c75bf225434a84ebe3b6407b5a61a6,
         type: 3}
       propertyPath: bounceForce
-      value: 150
+      value: 200
       objectReference: {fileID: 0}
     - target: {fileID: 7030821266229803816, guid: a8c75bf225434a84ebe3b6407b5a61a6,
         type: 3}
