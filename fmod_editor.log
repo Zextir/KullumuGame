@@ -4,10 +4,10 @@
 [LOG] SystemI::setOutputInternal               : Setting output to 'FMOD WASAPI Output'
 [LOG] OutputWASAPI::init                       : Mix Format (WAVEFORMATEX): wFormatTag=0xFFFE, nChannels=2, nSamplesPerSec=48000, nAvgBytesPerSec=384000, nBlockAlign=8, wBitsPerSample=32, cbSize=22.
 [LOG] OutputWASAPI::init                       : Mix Format (WAVEFORMATEXTENSIBLE): wValidBitsPerSample=32, dwChannelMask=0x00000003, SubFormat=00000003-0000-0010-8000-00AA00389B71.
-[LOG] OutputWASAPI::init                       : Output buffer size: 4096 samples, latency: 0.00ms, period: 10.00ms, DSP buffer: 1024 * 4
+[LOG] OutputWASAPI::init                       : Output buffer size: 4096 samples, latency: 0.00ms, period: 12.00ms, DSP buffer: 1024 * 4
 [LOG] Thread::initThread                       : Init FMOD stream thread. Affinity: 0x4000000000000003, Priority: 0xFFFF7FFB, Stack Size: 98304, Semaphore: No, Sleep Time: 10, Looping: Yes.
 [LOG] Thread::initThread                       : Init FMOD mixer thread. Affinity: 0x4000000000000001, Priority: 0xFFFF7FFA, Stack Size: 81920, Semaphore: No, Sleep Time: 0, Looping: Yes.
-[LOG] AsyncManager::init                       : manager 000001FF4941CCD8 isAsync 0 updatePeriod 0.02
+[LOG] AsyncManager::init                       : manager 000001957373CE98 isAsync 0 updatePeriod 0.02
 [LOG] AsyncManager::init                       : done
 [LOG] PlaybackSystem::init                     : 
 [LOG] Thread::initThread                       : Init FMOD Studio sample load thread. Affinity: 0x4000000000000003, Priority: 0xFFFF7FFD, Stack Size: 98304, Semaphore: No, Sleep Time: 1, Looping: No.
@@ -18,37 +18,32 @@
 [LOG] Manager::readBank                        : fileversion = 142, compatVersion = 140 (oldest = 44, newest = 142)
 [LOG] Manager::readBank                        : fileversion = 142, compatVersion = 140 (oldest = 44, newest = 142)
 [LOG] PlaybackSystem::acquireMasterBus         : Setting master channel group format to 6
-[LOG] AsyncThread::add                         : add sound to async queue : soundi = 0000020149ADC118, queue head = 00000203F1BA28F8, queue count = 0
-[LOG] AsyncThread::threadFunc                  : Starting Asynchronous operation on sound 0000020149ADC118
-[LOG] AsyncThread::threadFunc                  : Finished Asynchronous operation on sound 0000020149ADC118
-[LOG] SystemI::mixerSuspend                    : Suspending output.
-[LOG] SystemI::mixerResume                     : Resuming output.
-[LOG] AsyncThread::add                         : add sound to async queue : soundi = 0000020149ADC118, queue head = 00000203F1BA28F8, queue count = 0
-[LOG] AsyncThread::threadFunc                  : Starting Asynchronous operation on sound 0000020149ADC118
-[LOG] AsyncThread::threadFunc                  : Finished Asynchronous operation on sound 0000020149ADC118
-[LOG] SoundI::release                          : SFX_Ambient_White-Water-02 (00000203288E5DF8)
-[LOG] SoundI::release                          :     SFX_Ambient_White-Water-02 (000002014A816788)
-[LOG] SoundI::release                          :     SFX_Ambient_White-Water-02 (0000020149ADC118)
-[LOG] SoundI::release                          : SFX_Ambient_Plains_01 (00000203288E53D8)
-[LOG] SoundI::release                          :     SFX_Ambient_Plains_01 (000002014A817E48)
-[LOG] SoundI::release                          :     SFX_Ambient_Plains_01 (000001FF49779EF8)
-[LOG] SoundI::release                          : SFX_Ambient_Lava-Fields-02 (00000201E431AF68)
-[LOG] SoundI::release                          :     SFX_Ambient_Lava-Fields-02 (00000201265D4F78)
-[LOG] SoundI::release                          :     SFX_Ambient_Lava-Fields-02 (0000020149ADCE98)
-[LOG] SoundI::release                          : SFX_Ambient_Kullumu-Tree-01 (00000201E431B628)
-[LOG] SoundI::release                          :     SFX_Ambient_Kullumu-Tree-01 (000002014A8172E8)
-[LOG] SoundI::release                          :     SFX_Ambient_Kullumu-Tree-01 (0000020149ADC7D8)
-[LOG] SoundI::release                          : SFX_Ambient_Kullumu-Tree-01 (00000203288E5588)
-[LOG] SoundI::release                          :     SFX_Ambient_Kullumu-Tree-01 (000002014A8162A8)
-[LOG] SoundI::release                          :     SFX_Ambient_Kullumu-Tree-01 (0000020149ADCCE8)
-[LOG] SoundI::release                          : SFX_Ambient_Kullumu-Tree-01 (00000201E431AC08)
-[LOG] SoundI::release                          :     SFX_Ambient_Kullumu-Tree-01 (000002014A818188)
-[LOG] SoundI::release                          :     SFX_Ambient_Kullumu-Tree-01 (0000020149ADC988)
-[LOG] SoundI::release                          : SFX_Ambient_Kullumu-Tree-01 (00000201E431A8A8)
-[LOG] SoundI::release                          :     SFX_Ambient_Kullumu-Tree-01 (000002014A816C68)
-[LOG] SoundI::release                          :     SFX_Ambient_Kullumu-Tree-01 (0000020149ADC628)
-[LOG] SoundI::release                          :  (00000201938A0F98)
-[LOG] SoundI::release                          :     Fish-Raining_001 (000002014A815F68)
+[LOG] AsyncThread::add                         : add sound to async queue : soundi = 000001942AE54A38, queue head = 0000019674842FA8, queue count = 0
+[LOG] AsyncThread::threadFunc                  : Starting Asynchronous operation on sound 000001942AE54A38
+[LOG] AsyncThread::threadFunc                  : Finished Asynchronous operation on sound 000001942AE54A38
+[LOG] SoundI::release                          : SFX_Ambient_White-Water-02 (00000195731B1598)
+[LOG] SoundI::release                          :     SFX_Ambient_White-Water-02 (00000195715A1168)
+[LOG] SoundI::release                          :     SFX_Ambient_White-Water-02 (0000019633D6F5B8)
+[LOG] SoundI::release                          : SFX_Ambient_Plains_01 (00000195731B1238)
+[LOG] SoundI::release                          :     SFX_Ambient_Plains_01 (00000195715A0C88)
+[LOG] SoundI::release                          :     SFX_Ambient_Plains_01 (0000019633D6F258)
+[LOG] SoundI::release                          : SFX_Ambient_Lava-Fields-02 (000001964A982F38)
+[LOG] SoundI::release                          :     SFX_Ambient_Lava-Fields-02 (0000019567E29D68)
+[LOG] SoundI::release                          :     SFX_Ambient_Lava-Fields-02 (000001942AE54A38)
+[LOG] SoundI::release                          : SFX_Ambient_Kullumu-Tree-01 (0000019572B3C5A8)
+[LOG] SoundI::release                          :     SFX_Ambient_Kullumu-Tree-01 (0000019498E9B778)
+[LOG] SoundI::release                          :     SFX_Ambient_Kullumu-Tree-01 (0000019633D6F918)
+[LOG] SoundI::release                          : SFX_Ambient_Kullumu-Tree-01 (00000195731B1C58)
+[LOG] SoundI::release                          :     SFX_Ambient_Kullumu-Tree-01 (00000195715A1308)
+[LOG] SoundI::release                          :     SFX_Ambient_Kullumu-Tree-01 (0000019633D6F0A8)
+[LOG] SoundI::release                          : SFX_Ambient_Kullumu-Tree-01 (0000019572B3C248)
+[LOG] SoundI::release                          :     SFX_Ambient_Kullumu-Tree-01 (0000019498E98128)
+[LOG] SoundI::release                          :     SFX_Ambient_Kullumu-Tree-01 (0000019633D6FAC8)
+[LOG] SoundI::release                          : SFX_Ambient_Kullumu-Tree-01 (00000195731B1E08)
+[LOG] SoundI::release                          :     SFX_Ambient_Kullumu-Tree-01 (0000019498E9B298)
+[LOG] SoundI::release                          :     SFX_Ambient_Kullumu-Tree-01 (0000019633D6F768)
+[LOG] SoundI::release                          :  (0000019634165708)
+[LOG] SoundI::release                          :     Fish-Raining_001 (00000194A10CCB08)
 [LOG] Thread::callback                         : FMOD Studio update thread finished.
 [LOG] Thread::callback                         : FMOD Studio bank load thread finished.
 [LOG] Profile::disconnectAll                   : Profiler disconnecting all clients
