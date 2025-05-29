@@ -35,7 +35,6 @@ public class SmallCreatureAI : MonoBehaviour
         if (!isActive || isDead) return;
 
         anim.SetFloat("Speed", agent.velocity.magnitude);
-        timer -= Time.deltaTime;
 
         if (IsThreatNearby(out Vector3 fleeDir))
         {
@@ -63,8 +62,8 @@ public class SmallCreatureAI : MonoBehaviour
         }
         else
         {
-            agent.acceleration = 50f;   // Smooth, calm wandering
-            agent.angularSpeed = 120f;  // More natural turning
+            agent.acceleration = 50f;
+            agent.angularSpeed = 120f;
         }
 
     }
@@ -75,7 +74,6 @@ public class SmallCreatureAI : MonoBehaviour
 
         if (other.GetComponent<DeadlyToTouch>() != null)
         {
-            Debug.Log("Entered deadly zone — dying.");
             Die();
         }
     }
