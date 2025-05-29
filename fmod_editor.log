@@ -18,29 +18,26 @@
 [LOG] Manager::readBank                        : fileversion = 142, compatVersion = 140 (oldest = 44, newest = 142)
 [LOG] Manager::readBank                        : fileversion = 142, compatVersion = 140 (oldest = 44, newest = 142)
 [LOG] PlaybackSystem::acquireMasterBus         : Setting master channel group format to 6
-[LOG] SoundI::release                          : SFX_Ambient_White-Water-02 (00000217696D4088)
-[LOG] SoundI::release                          :     SFX_Ambient_White-Water-02 (00000215EAD8E628)
-[LOG] SoundI::release                          :     SFX_Ambient_White-Water-02 (000002156925B428)
-[LOG] SoundI::release                          : SFX_Ambient_Plains_01 (000002153F5ED218)
-[LOG] SoundI::release                          :     SFX_Ambient_Plains_01 (0000021540C928D8)
-[LOG] SoundI::release                          :     SFX_Ambient_Plains_01 (000002156925B788)
-[LOG] SoundI::release                          : SFX_Ambient_Lava-Fields-02 (000002157084E598)
-[LOG] SoundI::release                          :     SFX_Ambient_Lava-Fields-02 (0000021540EF4778)
-[LOG] SoundI::release                          :     SFX_Ambient_Lava-Fields-02 (000002156925BC98)
-[LOG] SoundI::release                          : SFX_Ambient_Kullumu-Tree-01 (000002158B8523F8)
-[LOG] SoundI::release                          :     SFX_Ambient_Kullumu-Tree-01 (0000021769884DB8)
-[LOG] SoundI::release                          :     SFX_Ambient_Kullumu-Tree-01 (000002156925B938)
-[LOG] SoundI::release                          : SFX_Ambient_Kullumu-Tree-01 (000002153F5EDC38)
-[LOG] SoundI::release                          :     SFX_Ambient_Kullumu-Tree-01 (0000021540C92738)
-[LOG] SoundI::release                          :     SFX_Ambient_Kullumu-Tree-01 (000002156925B278)
-[LOG] SoundI::release                          : SFX_Ambient_Kullumu-Tree-01 (000002157084E238)
-[LOG] SoundI::release                          :     SFX_Ambient_Kullumu-Tree-01 (00000217698848D8)
-[LOG] SoundI::release                          :     SFX_Ambient_Kullumu-Tree-01 (000002156925BAE8)
-[LOG] SoundI::release                          : SFX_Ambient_Kullumu-Tree-01 (00000217696D43E8)
-[LOG] SoundI::release                          :     SFX_Ambient_Kullumu-Tree-01 (00000215EAD8E7C8)
-[LOG] SoundI::release                          :     SFX_Ambient_Kullumu-Tree-01 (000002156925B5D8)
-[LOG] SoundI::release                          :  (0000021655BE5ED8)
-[LOG] SoundI::release                          :     Fish-Raining_001 (000002153F443598)
+[LOG] AsyncThread::add                         : add sound to async queue : soundi = 0000021540B7BEA8, queue head = 00000217EE319F18, queue count = 0
+[LOG] AsyncThread::threadFunc                  : Starting Asynchronous operation on sound 0000021540B7BEA8
+[LOG] AsyncThread::threadFunc                  : Finished Asynchronous operation on sound 0000021540B7BEA8
+[LOG] SoundI::release                          : SFX_Ambient_Kullumu-Tree-01 (00000217ED84C288)
+[LOG] SoundI::release                          :     SFX_Ambient_Kullumu-Tree-01 (000002176FECD248)
+[LOG] SoundI::release                          :     SFX_Ambient_Kullumu-Tree-01 (0000021540B7BEA8)
+[LOG] SoundI::release                          : SFX_Ambient_Kullumu-Tree-01 (00000215753F78F8)
+[LOG] SoundI::release                          :     SFX_Ambient_Kullumu-Tree-01 (000002176FECD8C8)
+[LOG] SoundI::release                          :     SFX_Ambient_Kullumu-Tree-01 (000002153DB681C8)
+[LOG] SoundI::release                          : SFX_Ambient_Kullumu-Tree-01 (00000217ED84C0D8)
+[LOG] SoundI::release                          :     SFX_Ambient_Kullumu-Tree-01 (000002158BEACA98)
+[LOG] SoundI::release                          :     SFX_Ambient_Kullumu-Tree-01 (000002151BEF1228)
+[LOG] SoundI::release                          : SFX_Ambient_Kullumu-Tree-01 (00000215753F73E8)
+[LOG] SoundI::release                          :     SFX_Ambient_Kullumu-Tree-01 (000002176FECD588)
+[LOG] SoundI::release                          :     SFX_Ambient_Kullumu-Tree-01 (0000021540B7C058)
+[LOG] SoundI::release                          : SFX_Ambient_Kullumu-Tree-01 (00000217ED84B868)
+[LOG] SoundI::release                          :     SFX_Ambient_Kullumu-Tree-01 (000002158BEACC38)
+[LOG] SoundI::release                          :     SFX_Ambient_Kullumu-Tree-01 (000002151BEF09B8)
+[LOG] SoundI::release                          :  (000002169005AE88)
+[LOG] SoundI::release                          :     Fish-Raining_001 (0000021575B45588)
 [LOG] Thread::callback                         : FMOD Studio update thread finished.
 [LOG] Thread::callback                         : FMOD Studio bank load thread finished.
 [LOG] Profile::disconnectAll                   : Profiler disconnecting all clients
@@ -51,3 +48,12 @@
 [LOG] Thread::callback                         : FMOD mixer thread finished.
 [LOG] Profile::disconnectAll                   : Profiler disconnecting all clients
 [LOG] SystemI::close                           : Closed.
+[LOG] Thread::callback                         : FMOD Studio bank load thread finished.
+[LOG] Thread::callback                         : FMOD Studio sample load thread finished.
+[LOG] LiveUpdate::release                      : 
+[LOG] LiveUpdate::reset                        : Reset connection (reason Disconnected)
+[LOG] Thread::callback                         : FMOD stream thread finished.
+[LOG] Thread::callback                         : FMOD mixer thread finished.
+[LOG] SystemI::close                           : Closed.
+[LOG] Thread::callback                         : FMOD nonblocking thread (0) finished.
+[LOG] Thread::callback                         : FMOD file thread finished.
