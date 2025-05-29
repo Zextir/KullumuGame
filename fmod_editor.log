@@ -4,10 +4,10 @@
 [LOG] SystemI::setOutputInternal               : Setting output to 'FMOD WASAPI Output'
 [LOG] OutputWASAPI::init                       : Mix Format (WAVEFORMATEX): wFormatTag=0xFFFE, nChannels=2, nSamplesPerSec=48000, nAvgBytesPerSec=384000, nBlockAlign=8, wBitsPerSample=32, cbSize=22.
 [LOG] OutputWASAPI::init                       : Mix Format (WAVEFORMATEXTENSIBLE): wValidBitsPerSample=32, dwChannelMask=0x00000003, SubFormat=00000003-0000-0010-8000-00AA00389B71.
-[LOG] OutputWASAPI::init                       : Output buffer size: 4096 samples, latency: 0.00ms, period: 12.00ms, DSP buffer: 1024 * 4
+[LOG] OutputWASAPI::init                       : Output buffer size: 4096 samples, latency: 0.00ms, period: 10.00ms, DSP buffer: 1024 * 4
 [LOG] Thread::initThread                       : Init FMOD stream thread. Affinity: 0x4000000000000003, Priority: 0xFFFF7FFB, Stack Size: 98304, Semaphore: No, Sleep Time: 10, Looping: Yes.
 [LOG] Thread::initThread                       : Init FMOD mixer thread. Affinity: 0x4000000000000001, Priority: 0xFFFF7FFA, Stack Size: 81920, Semaphore: No, Sleep Time: 0, Looping: Yes.
-[LOG] AsyncManager::init                       : manager 00000217A8CF5F38 isAsync 0 updatePeriod 0.02
+[LOG] AsyncManager::init                       : manager 00000257BBD1C9D8 isAsync 0 updatePeriod 0.02
 [LOG] AsyncManager::init                       : done
 [LOG] PlaybackSystem::init                     : 
 [LOG] Thread::initThread                       : Init FMOD Studio sample load thread. Affinity: 0x4000000000000003, Priority: 0xFFFF7FFD, Stack Size: 98304, Semaphore: No, Sleep Time: 1, Looping: No.
@@ -18,74 +18,10 @@
 [LOG] Manager::readBank                        : fileversion = 142, compatVersion = 140 (oldest = 44, newest = 142)
 [LOG] Manager::readBank                        : fileversion = 142, compatVersion = 140 (oldest = 44, newest = 142)
 [LOG] PlaybackSystem::acquireMasterBus         : Setting master channel group format to 6
-[LOG] SystemI::mixerSuspend                    : Suspending output.
-[LOG] SystemI::mixerResume                     : Resuming output.
-[LOG] AsyncThread::add                         : add sound to async queue : soundi = 00000215C175D1F8, queue head = 0000021821CDB208, queue count = 0
-[LOG] AsyncThread::threadFunc                  : Starting Asynchronous operation on sound 00000215C175D1F8
-[LOG] AsyncThread::threadFunc                  : Finished Asynchronous operation on sound 00000215C175D1F8
-[LOG] AsyncThread::add                         : add sound to async queue : soundi = 00000215C175D1F8, queue head = 0000021821CDB208, queue count = 0
-[LOG] AsyncThread::threadFunc                  : Starting Asynchronous operation on sound 00000215C175D1F8
-[LOG] AsyncThread::threadFunc                  : Finished Asynchronous operation on sound 00000215C175D1F8
-[LOG] SystemI::mixerSuspend                    : Suspending output.
-[LOG] SystemI::mixerResume                     : Resuming output.
-[LOG] AsyncThread::add                         : add sound to async queue : soundi = 00000215C175D1F8, queue head = 0000021821CDB208, queue count = 0
-[LOG] AsyncThread::threadFunc                  : Starting Asynchronous operation on sound 00000215C175D1F8
-[LOG] AsyncThread::threadFunc                  : Finished Asynchronous operation on sound 00000215C175D1F8
-[LOG] SystemI::mixerSuspend                    : Suspending output.
-[LOG] SystemI::mixerResume                     : Resuming output.
-[LOG] AsyncThread::add                         : add sound to async queue : soundi = 00000215C175D1F8, queue head = 0000021821CDB208, queue count = 0
-[LOG] AsyncThread::threadFunc                  : Starting Asynchronous operation on sound 00000215C175D1F8
-[LOG] AsyncThread::threadFunc                  : Finished Asynchronous operation on sound 00000215C175D1F8
-[LOG] SystemI::mixerSuspend                    : Suspending output.
-[LOG] SystemI::mixerResume                     : Resuming output.
-[LOG] AsyncThread::add                         : add sound to async queue : soundi = 00000215C175D1F8, queue head = 0000021821CDB208, queue count = 0
-[LOG] AsyncThread::threadFunc                  : Starting Asynchronous operation on sound 00000215C175D1F8
-[LOG] AsyncThread::threadFunc                  : Finished Asynchronous operation on sound 00000215C175D1F8
-[LOG] SystemI::mixerSuspend                    : Suspending output.
-[LOG] SystemI::mixerResume                     : Resuming output.
-[LOG] AsyncThread::add                         : add sound to async queue : soundi = 00000215C175D1F8, queue head = 0000021821CDB208, queue count = 0
-[LOG] AsyncThread::threadFunc                  : Starting Asynchronous operation on sound 00000215C175D1F8
-[LOG] AsyncThread::threadFunc                  : Finished Asynchronous operation on sound 00000215C175D1F8
-[LOG] SystemI::mixerSuspend                    : Suspending output.
-[LOG] SystemI::mixerResume                     : Resuming output.
-[LOG] AsyncThread::add                         : add sound to async queue : soundi = 00000215C175D1F8, queue head = 0000021821CDB208, queue count = 0
-[LOG] AsyncThread::threadFunc                  : Starting Asynchronous operation on sound 00000215C175D1F8
-[LOG] AsyncThread::threadFunc                  : Finished Asynchronous operation on sound 00000215C175D1F8
-[LOG] SystemI::mixerSuspend                    : Suspending output.
-[LOG] SystemI::mixerResume                     : Resuming output.
-[LOG] AsyncThread::add                         : add sound to async queue : soundi = 00000215C175D1F8, queue head = 0000021821CDB208, queue count = 0
-[LOG] AsyncThread::threadFunc                  : Starting Asynchronous operation on sound 00000215C175D1F8
-[LOG] AsyncThread::threadFunc                  : Finished Asynchronous operation on sound 00000215C175D1F8
-[LOG] SoundI::release                          : SFX_Ambient_White-Water-02 (000002170CEA2DA8)
-[LOG] SoundI::release                          :     SFX_Ambient_White-Water-02 (00000215BEA74F38)
-[LOG] SoundI::release                          :     SFX_Ambient_White-Water-02 (00000217B340EA38)
-[LOG] SoundI::release                          : SFX_Ambient_Plains_01 (000002160EF1FAB8)
-[LOG] SoundI::release                          :     SFX_Ambient_Plains_01 (000002168F579F18)
-[LOG] SoundI::release                          :     SFX_Ambient_Plains_01 (00000217B340E6D8)
-[LOG] SoundI::release                          : SFX_Ambient_Lava-Fields-02 (00000217A8CAA7E8)
-[LOG] SoundI::release                          :     SFX_Ambient_Lava-Fields-02 (00000217B412ED78)
-[LOG] SoundI::release                          :     SFX_Ambient_Lava-Fields-02 (00000215C175D1F8)
-[LOG] SoundI::release                          : SFX_Ambient_Kullumu-Tree-01 (000002170CEA2F58)
-[LOG] SoundI::release                          :     SFX_Ambient_Kullumu-Tree-01 (00000215BEA74D98)
-[LOG] SoundI::release                          :     SFX_Ambient_Kullumu-Tree-01 (00000215C175D3A8)
-[LOG] SoundI::release                          : SFX_Ambient_Kullumu-Tree-01 (000002160EF1F758)
-[LOG] SoundI::release                          :     SFX_Ambient_Kullumu-Tree-01 (00000215BEA75278)
-[LOG] SoundI::release                          :     SFX_Ambient_Kullumu-Tree-01 (00000217B340E888)
-[LOG] SoundI::release                          : SFX_Ambient_Kullumu-Tree-01 (000002170CEA2898)
-[LOG] SoundI::release                          :     SFX_Ambient_Kullumu-Tree-01 (00000215BEA74BF8)
-[LOG] SoundI::release                          :     SFX_Ambient_Kullumu-Tree-01 (00000215C175D558)
-[LOG] SoundI::release                          : SFX_Ambient_Kullumu-Tree-01 (000002170CEA26E8)
-[LOG] SoundI::release                          :     SFX_Ambient_Kullumu-Tree-01 (00000215BEA74718)
-[LOG] SoundI::release                          :     SFX_Ambient_Kullumu-Tree-01 (00000215C175D708)
-[LOG] SoundI::release                          :  (00000217B87F9AA8)
-[LOG] SoundI::release                          :     Fish-Raining_001 (00000215CD1DD998)
-[LOG] Thread::callback                         : FMOD Studio update thread finished.
 [LOG] Thread::callback                         : FMOD Studio bank load thread finished.
-[LOG] Profile::disconnectAll                   : Profiler disconnecting all clients
 [LOG] Thread::callback                         : FMOD Studio sample load thread finished.
 [LOG] LiveUpdate::release                      : 
 [LOG] LiveUpdate::reset                        : Reset connection (reason Disconnected)
 [LOG] Thread::callback                         : FMOD stream thread finished.
 [LOG] Thread::callback                         : FMOD mixer thread finished.
-[LOG] Profile::disconnectAll                   : Profiler disconnecting all clients
 [LOG] SystemI::close                           : Closed.
