@@ -7,7 +7,7 @@
 [LOG] OutputWASAPI::init                       : Output buffer size: 4096 samples, latency: 0.00ms, period: 10.00ms, DSP buffer: 1024 * 4
 [LOG] Thread::initThread                       : Init FMOD stream thread. Affinity: 0x4000000000000003, Priority: 0xFFFF7FFB, Stack Size: 98304, Semaphore: No, Sleep Time: 10, Looping: Yes.
 [LOG] Thread::initThread                       : Init FMOD mixer thread. Affinity: 0x4000000000000001, Priority: 0xFFFF7FFA, Stack Size: 81920, Semaphore: No, Sleep Time: 0, Looping: Yes.
-[LOG] AsyncManager::init                       : manager 000001F42C52FDA8 isAsync 0 updatePeriod 0.02
+[LOG] AsyncManager::init                       : manager 000001F45CC80A38 isAsync 0 updatePeriod 0.02
 [LOG] AsyncManager::init                       : done
 [LOG] PlaybackSystem::init                     : 
 [LOG] Thread::initThread                       : Init FMOD Studio sample load thread. Affinity: 0x4000000000000003, Priority: 0xFFFF7FFD, Stack Size: 98304, Semaphore: No, Sleep Time: 1, Looping: No.
@@ -18,6 +18,56 @@
 [LOG] Manager::readBank                        : fileversion = 142, compatVersion = 140 (oldest = 44, newest = 142)
 [LOG] Manager::readBank                        : fileversion = 142, compatVersion = 140 (oldest = 44, newest = 142)
 [LOG] PlaybackSystem::acquireMasterBus         : Setting master channel group format to 6
+[LOG] AsyncThread::add                         : add sound to async queue : soundi = 000001F3720084A8, queue head = 000001F2A5F71D08, queue count = 0
+[LOG] AsyncThread::threadFunc                  : Starting Asynchronous operation on sound 000001F3720084A8
+[LOG] AsyncThread::add                         :     add sound to async queue : soundi = 000001F2A62245C8, queue head = 000001F2A5F71D08, queue count = 0
+[LOG] AsyncThread::threadFunc                  : Finished Asynchronous operation on sound 000001F3720084A8
+[LOG] AsyncThread::threadFunc                  : Starting Asynchronous operation on sound 000001F2A62245C8
+[LOG] AsyncThread::threadFunc                  : Finished Asynchronous operation on sound 000001F2A62245C8
+[LOG] AsyncThread::add                         : add sound to async queue : soundi = 000001F2A62240B8, queue head = 000001F2A5F71D08, queue count = 0
+[LOG] AsyncThread::threadFunc                  : Starting Asynchronous operation on sound 000001F2A62240B8
+[LOG] AsyncThread::threadFunc                  : Finished Asynchronous operation on sound 000001F2A62240B8
+[LOG] AsyncThread::add                         : add sound to async queue : soundi = 000001F2A62240B8, queue head = 000001F2A5F71D08, queue count = 0
+[LOG] AsyncThread::threadFunc                  : Starting Asynchronous operation on sound 000001F2A62240B8
+[LOG] AsyncThread::threadFunc                  : Finished Asynchronous operation on sound 000001F2A62240B8
+[LOG] SystemI::mixerSuspend                    : Suspending output.
+[LOG] SystemI::mixerResume                     : Resuming output.
+[LOG] AsyncThread::add                         : add sound to async queue : soundi = 000001F2A62245C8, queue head = 000001F2A5F71D08, queue count = 0
+[LOG] AsyncThread::threadFunc                  : Starting Asynchronous operation on sound 000001F2A62245C8
+[LOG] AsyncThread::threadFunc                  : Finished Asynchronous operation on sound 000001F2A62245C8
+[LOG] SoundI::release                          : SFX_Ambient_White-Water-02 (000001F2D32B3DF8)
+[LOG] SoundI::release                          :     SFX_Ambient_White-Water-02 (000001F43F51CD38)
+[LOG] SoundI::release                          :     SFX_Ambient_White-Water-02 (000001F2A62245C8)
+[LOG] SoundI::release                          : SFX_Ambient_Plains_01 (000001F2D92E90B8)
+[LOG] SoundI::release                          :     SFX_Ambient_Plains_01 (000001F43F51DBD8)
+[LOG] SoundI::release                          :     SFX_Ambient_Plains_01 (000001F3720084A8)
+[LOG] SoundI::release                          : SFX_Ambient_Lava-Fields-02 (000001F2D8AAEEA8)
+[LOG] SoundI::release                          :     SFX_Ambient_Lava-Fields-02 (000001F43F51FDF8)
+[LOG] SoundI::release                          :     SFX_Ambient_Lava-Fields-02 (000001F2CAE0F138)
+[LOG] SoundI::release                          : SFX_Ambient_Kullumu-Tree-01 (000001F2D32B3C48)
+[LOG] SoundI::release                          :     SFX_Ambient_Kullumu-Tree-01 (000001F43F51C518)
+[LOG] SoundI::release                          :     SFX_Ambient_Kullumu-Tree-01 (000001F45CBF4D88)
+[LOG] SoundI::release                          : SFX_Ambient_Kullumu-Tree-01 (000001F2D32B4308)
+[LOG] SoundI::release                          :     SFX_Ambient_Kullumu-Tree-01 (000001F43F51DF18)
+[LOG] SoundI::release                          :     SFX_Ambient_Kullumu-Tree-01 (000001F3720082F8)
+[LOG] SoundI::release                          : SFX_Ambient_Kullumu-Tree-01 (000001F2D8AAE998)
+[LOG] SoundI::release                          :     SFX_Ambient_Kullumu-Tree-01 (000001F43F51E598)
+[LOG] SoundI::release                          :     SFX_Ambient_Kullumu-Tree-01 (000001F2CAE0F9A8)
+[LOG] SoundI::release                          : SFX_Ambient_Kullumu-Tree-01 (000001F2D32B3FA8)
+[LOG] SoundI::release                          :     SFX_Ambient_Kullumu-Tree-01 (000001F43F520138)
+[LOG] SoundI::release                          :     SFX_Ambient_Kullumu-Tree-01 (000001F2A62240B8)
+[LOG] SoundI::release                          :  (000001F462FC0B48)
+[LOG] SoundI::release                          :     Fish-Raining_001 (000001F43F51D3B8)
+[LOG] Thread::callback                         : FMOD Studio update thread finished.
+[LOG] Thread::callback                         : FMOD Studio bank load thread finished.
+[LOG] Profile::disconnectAll                   : Profiler disconnecting all clients
+[LOG] Thread::callback                         : FMOD Studio sample load thread finished.
+[LOG] LiveUpdate::release                      : 
+[LOG] LiveUpdate::reset                        : Reset connection (reason Disconnected)
+[LOG] Thread::callback                         : FMOD stream thread finished.
+[LOG] Thread::callback                         : FMOD mixer thread finished.
+[LOG] Profile::disconnectAll                   : Profiler disconnecting all clients
+[LOG] SystemI::close                           : Closed.
 [LOG] Thread::callback                         : FMOD Studio bank load thread finished.
 [LOG] Thread::callback                         : FMOD Studio sample load thread finished.
 [LOG] LiveUpdate::release                      : 
@@ -25,3 +75,5 @@
 [LOG] Thread::callback                         : FMOD stream thread finished.
 [LOG] Thread::callback                         : FMOD mixer thread finished.
 [LOG] SystemI::close                           : Closed.
+[LOG] Thread::callback                         : FMOD nonblocking thread (0) finished.
+[LOG] Thread::callback                         : FMOD file thread finished.
