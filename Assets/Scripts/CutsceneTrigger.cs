@@ -2,8 +2,6 @@ using System.Collections;
 using Opsive.UltimateCharacterController.Camera;
 using UnityEngine;
 using UnityEngine.SceneManagement;
-
-
 public class CutsceneTrigger : MonoBehaviour
 {
     public GameObject[] objectsToActivate;
@@ -46,7 +44,7 @@ public class CutsceneTrigger : MonoBehaviour
 
     void OnTriggerEnter(Collider other)
     {
-        if (triggered || !other.transform.root.CompareTag(playerTag)) return;
+        if (triggered || !other.CompareTag(playerTag)) return;
 
         triggered = true;
 

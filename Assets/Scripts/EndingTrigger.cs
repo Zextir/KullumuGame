@@ -2,10 +2,13 @@ using Opsive.UltimateCharacterController.Character;
 using UnityEngine;
 using UnityEngine.Rendering;
 using UnityEngine.Rendering.Universal;
+using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
 public class BloomTrigger : MonoBehaviour
 {
+    
+
     [Header("Bloom Settings")]
     public Volume volume;
     private Bloom bloom;
@@ -43,6 +46,12 @@ public class BloomTrigger : MonoBehaviour
     public float slowMotionDuration = 3f;
     public float slowMotionStartDelay = 1f;
     public float slowMotionTransitionDuration = 1f;
+
+    [Header("Scene change settings")]
+    public string menuSceneName = "MainMenuUI";
+    public float toMenuDelay = 10f;
+    private float toMenuTimer = 0f;
+
 
     private Camera cameraComponent;
     private UltimateCharacterLocomotion ucl;
@@ -175,6 +184,7 @@ public class BloomTrigger : MonoBehaviour
                 {
                     objectToActivate.SetActive(true);
                     objectActivated = true;
+                    toMenuTimer = 0f;
                 }
             }
 
@@ -227,6 +237,13 @@ public class BloomTrigger : MonoBehaviour
                     Time.timeScale = 1f;
                     isInSlowMotion = false;
                 }
+            }
+
+            // Go to menu after everything has appeared
+            if (objectActivated)
+            {
+                toMenuTimer += Time.deltaTime;
+                if (toMenuTimer > toMenuDelay) SceneManager.LoadScene(menuSceneName);
             }
         }
     }
